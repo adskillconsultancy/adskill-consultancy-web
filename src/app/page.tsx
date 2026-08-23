@@ -8,7 +8,7 @@ import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f8f9fa] overflow-hidden relative">
+    <main className="min-h-screen bg-[#f8f9fa] relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         {/* Faint Background Image */}

@@ -1,7 +1,8 @@
 import { getService, services } from "@/lib/services";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, ChevronRight, Info } from "lucide-react";
+import { CheckCircle2, ChevronRight, Info } from "lucide-react";
+import ServiceHero from "@/components/ServiceHero";
 
 export function generateStaticParams() {
   return services.map((service) => ({
@@ -33,21 +34,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       {/* Hero Section */}
-      <div className="bg-brand-dark text-white py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <Link href="/services" className="inline-flex items-center gap-2 text-brand-secondary hover:text-white transition-colors mb-8 font-medium">
-            <ArrowLeft size={16} /> Back to All Services
-          </Link>
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight">
-              {service.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-light border-l-4 border-brand-secondary pl-4">
-              {service.tagline}
-            </p>
-          </div>
-        </div>
-      </div>
+      <ServiceHero title={service.title} tagline={service.tagline} />
 
       <div className="mx-auto max-w-7xl px-6 mt-12 grid lg:grid-cols-3 gap-12">
         {/* Main Content */}

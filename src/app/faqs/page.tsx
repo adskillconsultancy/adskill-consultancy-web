@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown, ChevronRight, MessageCircleQuestion } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { faqCategories } from "@/lib/faqData";
 
 export default function FaqPage() {
@@ -14,30 +14,63 @@ export default function FaqPage() {
     setOpenFaqId(openFaqId === id ? null : id);
   };
 
+  const heroRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const updateScale = () => {
+      if (!bgRef.current) return;
+      const scrollY = window.scrollY;
+      const scale = 1 + Math.min(scrollY / 500, 1) * 0.6;
+      bgRef.current.style.transform = `scale(${scale})`;
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScale);
+        ticking = true;
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-[#f8f9fa] pt-28 pb-20">
+    <main className="min-h-screen bg-[#f8f9fa] pb-20">
       
       {/* Hero Section */}
-      <div className="bg-brand-dark py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden mb-16 mx-4 lg:mx-12 rounded-3xl">
-        <div 
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4) 1px, transparent 1px)',
-            backgroundSize: '24px 24px'
-          }}
-        />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-primary/20 text-brand-primary mb-6">
-            <MessageCircleQuestion size={32} />
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            How Can We Help You?
+      <section ref={heroRef} className="relative overflow-hidden min-h-[35vh] lg:min-h-[40vh] flex items-start pt-28 pb-12 mb-16">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            ref={bgRef}
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
+            alt="FAQ background"
+            className="w-full h-full object-cover"
+            style={{ transform: "scale(1)", transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)" }}
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-brand-dark/70" />
+        </div>
+
+        {/* Decorative dots */}
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">FAQs</span>
+          <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
+            How Can We <span className="text-brand-primary">Help You?</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base lg:text-lg text-gray-300 max-w-2xl">
             Find answers to the most common questions about our visa categories, consulting services, and the U.S. immigration process.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Main Content Area */}
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">

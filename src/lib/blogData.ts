@@ -18,5 +18,25 @@ export const recentBlogs = [
     id: "eb1a-extraordinary-ability",
     title: "Winning the EB-1A: What Counts as Extraordinary in 2026?",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "green-card-family",
+    title: "Family-Based Green Card: Timeline and Requirements",
+    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "o-1-visa-artists",
+    title: "O-1 Visa for Artists and Entertainers: A Complete Guide",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "citizenship-test-2026",
+    title: "U.S. Citizenship Test 2026: What's New and Changed",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "eb5-investment-update",
+    title: "EB-5 Investment Visa: New Rules and Opportunities",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
   }
 ];

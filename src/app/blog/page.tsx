@@ -8,10 +8,10 @@ import { recentBlogs } from "@/lib/blogData";
 export default function BlogPage() {
   return (
     <main className="min-h-screen bg-[#f8f9fa] pt-28 pb-20">
-      
+
       {/* Hero Section */}
       <div className="bg-brand-dark py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden mb-16 mx-4 lg:mx-12 rounded-3xl">
-        <div 
+        <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4) 1px, transparent 1px)',
@@ -33,14 +33,14 @@ export default function BlogPage() {
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
-          
+
           {/* Main Content: Blog Grid */}
           <div className="w-full lg:w-[70%]">
             <div className="grid md:grid-cols-2 gap-8">
               {recentBlogs.map((blog) => (
                 <div key={blog.id} className="group relative bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
                   <div className="relative w-full h-[240px] overflow-hidden bg-gray-200">
-                    <Image 
+                    <Image
                       src={blog.image}
                       alt={blog.title}
                       fill
@@ -51,15 +51,13 @@ export default function BlogPage() {
                       Visa Updates
                     </div>
                   </div>
-
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold text-brand-dark mb-4 leading-snug line-clamp-2 group-hover:text-brand-primary transition-colors flex-grow">
                       <Link href={`/blog/${blog.id}`}>
                         {blog.title}
                       </Link>
                     </h3>
-
-                    <Link 
+                    <Link
                       href={`/blog/${blog.id}`}
                       className="inline-flex items-center gap-2 text-sm font-bold text-brand-dark group-hover:text-brand-primary transition-colors mt-auto pt-4 border-t border-gray-100"
                     >
@@ -74,14 +72,14 @@ export default function BlogPage() {
 
           {/* Sidebar */}
           <div className="w-full lg:w-[30%] shrink-0 flex flex-col gap-8 lg:sticky lg:top-32">
-            
+
             {/* Search Box */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
               <h3 className="text-lg font-bold text-brand-dark mb-4">Search Articles</h3>
               <div className="relative">
-                <input 
-                  type="text" 
-                  placeholder="Search keywords..." 
+                <input
+                  type="text"
+                  placeholder="Search keywords..."
                   className="w-full h-12 pl-12 pr-4 rounded bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all text-sm"
                 />
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
@@ -112,7 +110,7 @@ export default function BlogPage() {
               <p className="text-sm text-gray-400 mb-6 relative z-10 leading-relaxed">
                 Book a consultation with our experienced attorneys to discuss your case.
               </p>
-              <Link 
+              <Link
                 href="/contact"
                 className="inline-flex w-full items-center justify-center h-11 rounded bg-brand-primary text-brand-dark font-bold text-sm hover:bg-white transition-colors relative z-10"
               >

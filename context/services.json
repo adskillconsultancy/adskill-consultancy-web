@@ -4,6 +4,7 @@
     "title": "E-2 Investor Visa",
     "tagline": "Start or Invest in a U.S. Business and Live in the United States Legally",
     "overview": "The E-2 Treaty Investor Visa allows eligible foreign nationals from treaty countries to live and work in the United States by investing in a qualifying U.S. business — ideal for entrepreneurs, investors, and business owners who want to establish or purchase a business in the United States.",
+    "short_description": "Invest in U.S. business from treaty country. Live and work legally while operating enterprise.",
     "quick_facts": {
       "Typical Minimum Investment": "$100K+",
       "Processing Time": "4 – 6 Months",
@@ -105,6 +106,7 @@
     "title": "EB-1A Extraordinary Ability",
     "tagline": "Achieve Your U.S. Green Card Through Extraordinary Ability (EB-1A)",
     "overview": "If you’ve reached the top of your field in science, business, arts, education, or athletics — the EB-1A visa could be your path to a U.S. Green Card. The EB-1A visa is designed for individuals with extraordinary achievements recognized at a national or international level. This category allows you to self-petition without needing a U.S. job offer or employer sponsorship.",
+    "short_description": "Self-petition Green Card. Extraordinary ability in science, arts, business, education, or athletics. No employer needed.",
     "quick_facts": {
       "U.S. Green Card": "Permanent Residency",
       "Priority Category": "Fastest Green Card Route",
@@ -189,6 +191,7 @@
     "title": "EB-2 (NIW – National Interest Waiver)",
     "tagline": "Get a US Green Card without employer sponsorship through EB-2 NIW",
     "overview": "The EB-2 National Interest Waiver (NIW) allows professionals with advanced degrees or exceptional ability to bypass the traditional employer sponsorship and labor certification process, provided their work is in the national interest of the United States.",
+    "short_description": "Green Card without employer sponsorship. Bypass labor certification if your work serves U.S. national interest.",
     "quick_facts": {
       "U.S. Green Card": "Permanent Residency",
       "No Employer Needed": "Self-petition allowed",
@@ -260,6 +263,7 @@
     "title": "EB-3 (Skilled, Professional, and Unskilled Workers)",
     "tagline": "Secure Your U.S. Green Card through the EB-3 Program",
     "overview": "The EB-3 visa offers a direct path to permanent residency for skilled, professional, and unskilled workers seeking stable employment in the United States. It requires a permanent, full-time job offer and labor certification.",
+    "short_description": "Green Card via employer sponsorship. Permanent job offer + PERM labor certification required.",
     "quick_facts": {
       "U.S. Green Card": "Permanent Residency",
       "Employer Sponsorship": "Required",
@@ -335,6 +339,7 @@
     "title": "EB-4 (Special Immigrants)",
     "tagline": "Special Immigrant Visas Including Religious Workers",
     "overview": "The EB-4 preference category is designed for 'Special Immigrants', which includes a wide variety of specific applicants such as religious workers, broadcasters, and certain government employees, offering them a pathway to U.S. permanent residency.",
+    "short_description": "Green Card for special immigrants — religious workers, broadcasters, and other qualifying categories.",
     "quick_facts": {
       "U.S. Green Card": "Permanent Residency",
       "Employer Sponsorship": "Usually Required (depends on subcategory)",
@@ -393,6 +398,7 @@
     "title": "EB-5 (Investor Visa Program)",
     "tagline": "Invest and Secure U.S. Residency for Your Family",
     "overview": "The EB-5 Immigrant Investor Program allows foreign investors to obtain a U.S. Green Card by making a substantial capital investment in a U.S. commercial enterprise that creates jobs for American workers.",
+    "short_description": "Green Card through investment. $800K+ capital and 10 full-time job creation required.",
     "quick_facts": {
       "U.S. Green Card": "Permanent Residency",
       "Minimum Investment": "$800,000 (TEA) or $1.05 Million",
@@ -464,6 +470,7 @@
     "title": "L1A (Executive & Manager Transfer Visa)",
     "tagline": "Transfer Key Executives and Managers to the U.S.",
     "overview": "The L-1A nonimmigrant visa enables a U.S. employer to transfer an executive or manager from one of its affiliated foreign offices to one of its offices in the United States, or to send an executive to establish a new affiliated office.",
+    "short_description": "Executive/manager transfer to U.S. company branch. Fast track to EB-1C Green Card.",
     "quick_facts": {
       "Visa Type": "Nonimmigrant Work Visa (Dual Intent)",
       "Target Group": "Executives and Managers",
@@ -526,6 +533,7 @@
     "title": "All Immigration Services & Paperwork",
     "tagline": "Comprehensive Legal Form Assistance & End-to-End Support",
     "overview": "Beyond specific visa pathways, we offer comprehensive immigration services and paperwork assistance to ensure your applications, petitions, and responses to USCIS are handled with expert care and precision.",
+    "short_description": "Forms, applications, and USCIS paperwork handled end-to-end.",
     "quick_facts": {
       "Services Included": "File Preparation, Form Assistance",
       "Support Level": "End-to-End Support"
@@ -553,6 +561,7 @@
     "title": "Interview Preparation with Ex-Visa Officers",
     "tagline": "Gain the Confidence You Need for Your Embassy Interview",
     "overview": "Facing a consular interview can be daunting. Our interview preparation service pairs you with Ex-Visa Officers to provide real mock interviews, personalized feedback, and the training you need to succeed.",
+    "short_description": "Mock interviews and coaching with Ex-Visa Officers. Build confidence for your embassy interview.",
     "quick_facts": {
       "Format": "Mock Interviews",
       "Instructors": "Ex-Visa Officers",

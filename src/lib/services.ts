@@ -20,6 +20,7 @@ export interface Service {
   title: string;
   tagline: string;
   overview: string;
+  short_description: string;
   quick_facts: QuickFacts;
   benefits: ServiceItem[];
   eligibility: ServiceItem[];

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -119,148 +119,166 @@ const SOCIAL_LINKS = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 250);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   function toggleDropdown(label: string) {
     setOpenDropdown((prev) => (prev === label ? null : label));
   }
 
-  return (
-    <header className="sticky top-0 z-50 w-full shadow-md">
-      {/* ── Top bar ── */}
-      <div className="hidden md:block bg-white border-b border-gray-100 relative">
-        <div className="absolute top-0 right-0 bottom-0 w-[50%] bg-brand-primary z-0 hidden lg:block" />
-        <div className="mx-auto max-w-[1440px] flex items-stretch relative z-10">
-          <div className="flex items-center gap-6 px-6 py-2.5 flex-1 text-sm bg-white">
-            <a
-              href="mailto:adskillconsultancyinc@gmail.com"
-              className="flex items-center gap-2 hover:text-brand-primary transition-colors font-medium text-gray-700"
-            >
-              <Mail size={16} className="text-brand-teal" />
-              adskillconsultancyinc@gmail.com
-            </a>
-            <span className="flex items-center gap-2 font-medium text-gray-700">
-              <MapPin size={16} className="text-brand-teal" />
-              37-13 74th Street, Floor 2 Jackson Heights, NY 11372
-            </span>
-          </div>
-          <div className="flex items-center gap-5 px-6 py-2.5 bg-brand-primary text-sm font-medium text-gray-900">
-            {TOP_LINKS.map((link) => (
-              <Link key={link.label} href={link.href} className="hover:text-gray-700 transition-colors">
+  const NavContent = (
+    <div className="mx-auto max-w-[1440px] px-6 flex items-center gap-4 h-20">
+      {/* Logo */}
+      <Link href="/" className="flex items-center shrink-0 mr-6" aria-label="Adskill Consultancy — home">
+        <Image 
+          src="/adskillconsultancy.png" 
+          alt="Adskill Consultancy" 
+          width={240} 
+          height={60} 
+          className="h-14 w-auto object-contain" 
+          priority
+        />
+      </Link>
+
+      {/* Desktop nav links */}
+      <ul className="hidden lg:flex items-center gap-2 flex-1 justify-center" role="list">
+        {NAV_LINKS.map((link) => (
+          <li key={link.label} className="relative group">
+            {link.children ? (
+              <>
+                <button
+                  className="group/btn flex items-center gap-1.5 px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap relative"
+                  aria-haspopup="true"
+                  aria-expanded={openDropdown === link.label}
+                  onClick={() => toggleDropdown(link.label)}
+                  onBlur={() => setTimeout(() => setOpenDropdown(null), 150)}
+                >
+                  {link.label}
+                  <ChevronDown size={14} className="transition-transform group-hover/btn:rotate-180" />
+                  <span className="absolute left-4 right-4 bottom-4 h-[2px] bg-brand-secondary scale-x-0 origin-left transition-transform duration-300 group-hover/btn:scale-x-100"></span>
+                </button>
+                <ul
+                  className={cn(
+                    "absolute left-0 top-full min-w-[240px] shadow-xl rounded-b-lg overflow-hidden transition-all duration-300 bg-white border border-gray-100",
+                    openDropdown === link.label
+                      ? "opacity-100 translate-y-0 pointer-events-auto"
+                      : "opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto"
+                  )}
+                  role="menu"
+                >
+                  {link.children.map((child) => (
+                    <li key={child.href} role="none" className="relative">
+                      <Link
+                        href={child.href}
+                        role="menuitem"
+                        className="block px-5 py-3 text-[15px] font-medium text-gray-700 hover:text-brand-secondary hover:pl-6 hover:bg-gray-50 transition-all duration-300 border-b border-gray-50 last:border-0"
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <Link
+                href={link.href}
+                className="group/link block px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap relative"
+              >
                 {link.label}
+                <span className="absolute left-4 right-4 bottom-4 h-[2px] bg-brand-secondary scale-x-0 origin-left transition-transform duration-300 group-hover/link:scale-x-100"></span>
               </Link>
-            ))}
-            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="hover:text-gray-700 transition-colors ml-2 first-of-type:ml-4">
-                <Icon size={15} />
-              </a>
-            ))}
+            )}
+          </li>
+        ))}
+      </ul>
+
+      {/* Right: phone + CTA */}
+      <div className="hidden lg:flex items-center gap-6 ml-auto shrink-0">
+        <div className="flex items-center gap-3">
+          <span className="flex items-center justify-center w-11 h-11 rounded-full bg-brand-primary text-brand-dark">
+            <Phone size={18} strokeWidth={2.5} />
+          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-brand-teal">PHONE:</span>
+            <a href="tel:+16467728544" className="text-sm font-bold text-gray-900 hover:text-brand-secondary transition-colors">
+              +1 646-772-8544
+            </a>
           </div>
         </div>
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center px-6 h-[46px] rounded text-sm font-semibold text-white bg-brand-dark hover:bg-brand-teal transition-colors whitespace-nowrap"
+        >
+          Contact Now
+        </Link>
       </div>
 
-      {/* ── Main nav ── */}
-      <nav className="bg-white" aria-label="Main navigation">
-        <div className="mx-auto max-w-360 px-6 flex items-center gap-4 h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0 mr-6" aria-label="Adskill Consultancy — home">
-            <Image 
-              src="/adskillconsultancy.png" 
-              alt="Adskill Consultancy" 
-              width={240} 
-              height={60} 
-              className="h-14 w-auto object-contain" 
-              priority
-            />
-          </Link>
+      {/* Hamburger */}
+      <button
+        className="lg:hidden ml-auto p-2 text-gray-700 hover:text-brand-secondary transition-colors"
+        aria-label={mobileOpen ? "Close menu" : "Open menu"}
+        aria-expanded={mobileOpen}
+        aria-controls="mobile-nav"
+        onClick={() => setMobileOpen((v) => !v)}
+      >
+        {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+      </button>
+    </div>
+  );
 
-          {/* Desktop nav links */}
-          <ul className="hidden lg:flex items-center gap-2 flex-1 justify-center" role="list">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label} className="relative group">
-                {link.children ? (
-                  <>
-                    <button
-                      className="flex items-center gap-1.5 px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap"
-                      aria-haspopup="true"
-                      aria-expanded={openDropdown === link.label}
-                      onClick={() => toggleDropdown(link.label)}
-                      onBlur={() => setTimeout(() => setOpenDropdown(null), 150)}
-                    >
-                      {link.label}
-                      <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
-                    </button>
-                    <ul
-                      className={cn(
-                        "absolute left-0 top-full min-w-[240px] shadow-xl rounded-b-lg overflow-hidden transition-all duration-200 bg-white border border-gray-100",
-                        openDropdown === link.label
-                          ? "opacity-100 translate-y-0 pointer-events-auto"
-                          : "opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto"
-                      )}
-                      role="menu"
-                    >
-                      {link.children.map((child) => (
-                        <li key={child.href} role="none">
-                          <Link
-                            href={child.href}
-                            role="menuitem"
-                            className="block px-5 py-3 text-[15px] font-medium text-gray-700 hover:text-brand-secondary hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0"
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className="block px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap"
-                  >
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          {/* Right: phone + CTA */}
-          <div className="hidden lg:flex items-center gap-6 ml-auto shrink-0">
-            <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-11 h-11 rounded-full bg-brand-primary text-brand-dark">
-                <Phone size={18} strokeWidth={2.5} />
+  return (
+    <>
+      {/* ORIGINAL IN-FLOW HEADER (Scrolls out of view normally) */}
+      <header className="relative w-full z-40 bg-white shadow-sm">
+        {/* ── Top bar ── */}
+        <div className="hidden md:block bg-white border-b border-gray-100 relative">
+          <div className="absolute top-0 right-0 bottom-0 w-[50%] bg-brand-primary z-0 hidden lg:block" />
+          <div className="mx-auto max-w-[1440px] flex items-stretch relative z-10">
+            <div className="flex items-center gap-6 px-6 py-2.5 flex-1 text-sm bg-white">
+              <a
+                href="mailto:adskillconsultancyinc@gmail.com"
+                className="flex items-center gap-2 hover:text-brand-primary transition-colors font-medium text-gray-700"
+              >
+                <Mail size={16} className="text-brand-teal" />
+                adskillconsultancyinc@gmail.com
+              </a>
+              <span className="flex items-center gap-2 font-medium text-gray-700">
+                <MapPin size={16} className="text-brand-teal" />
+                37-13 74th Street, Floor 2 Jackson Heights, NY 11372
               </span>
-              <div className="flex flex-col leading-tight">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-teal">PHONE:</span>
-                <a href="tel:+16467728544" className="text-sm font-bold text-gray-900 hover:text-brand-secondary transition-colors">
-                  +1 646-772-8544
-                </a>
-              </div>
             </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 h-[46px] rounded text-sm font-semibold text-white bg-brand-dark hover:bg-brand-teal transition-colors whitespace-nowrap"
-            >
-              Contact Now
-            </Link>
+            <div className="flex items-center gap-5 px-6 py-2.5 bg-brand-primary text-sm font-medium text-gray-900">
+              {TOP_LINKS.map((link) => (
+                <Link key={link.label} href={link.href} className="hover:text-gray-700 transition-colors">
+                  {link.label}
+                </Link>
+              ))}
+              {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="hover:text-gray-700 transition-colors ml-2 first-of-type:ml-4">
+                  <Icon size={15} />
+                </a>
+              ))}
+            </div>
           </div>
-
-          {/* Hamburger */}
-          <button
-            className="lg:hidden ml-auto p-2 text-gray-700 hover:text-brand-secondary transition-colors"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-nav"
-            onClick={() => setMobileOpen((v) => !v)}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
 
+        {/* ── Main nav ── */}
+        <nav className="bg-white" aria-label="Main navigation">
+          {NavContent}
+        </nav>
+        
         {/* ── Mobile menu ── */}
         <div
           id="mobile-nav"
           className={cn(
-            "lg:hidden overflow-hidden transition-all duration-300 bg-white border-t border-gray-100",
+            "lg:hidden overflow-hidden transition-all duration-300 bg-white border-t border-gray-100 absolute w-full",
             mobileOpen ? "max-h-screen" : "max-h-0"
           )}
           aria-hidden={!mobileOpen}
@@ -341,8 +359,19 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-      </nav>
-    </header>
+      </header>
+
+      {/* STICKY CLONE - Drops down smoothly after 250px scroll */}
+      <div
+        className={cn(
+          "fixed top-0 left-0 w-full z-50 bg-white shadow-md hidden lg:block",
+          isSticky ? "translate-y-0 transition-transform duration-500 ease-out" : "-translate-y-full transition-none"
+        )}
+      >
+        <nav className="bg-white" aria-hidden={!isSticky}>
+          {NavContent}
+        </nav>
+      </div>
+    </>
   );
 }
-

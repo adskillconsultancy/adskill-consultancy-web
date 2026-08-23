@@ -69,11 +69,12 @@ export default function FaqSection() {
             Adskill is the hub for ambitious global citizens, offering expert, transparent, and seamless visa consultancy before your journey begins.
           </p>
 
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center justify-center px-8 h-12 bg-white text-brand-dark font-bold hover:bg-brand-primary transition-colors text-sm"
+          <Link
+            href="/faqs"
+            className="inline-flex items-center gap-2 px-6 h-12 bg-brand-primary text-brand-dark font-bold hover:bg-white transition-colors text-sm"
           >
-            Get A Quote
+            View All FAQs
+            <ChevronRight size={16} />
           </Link>
         </div>
 
