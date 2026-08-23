@@ -27,7 +27,7 @@ export interface Service {
   link: string;
 }
 
-export const services: Service[] = data as Service[];
+export const services: Service[] = data as unknown as Service[];
 
 export function getService(id: string): Service | undefined {
   return services.find((s) => s.id === id);

@@ -132,9 +132,9 @@ export default function Footer() {
                 <Phone className="text-brand-primary shrink-0" size={18} />
                 <a href="tel:+16467728544" className="hover:text-white transition-colors">+1 646-772-8544</a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Mail className="text-brand-primary shrink-0" size={18} />
-                <a href="mailto:admin@adskillconsultancy.com" className="hover:text-white transition-colors">admin@adskillconsultancy.com</a>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="text-brand-primary shrink-0" />
+                <a href="mailto:adskillconsultancyinc@gmail.com" className="hover:text-white transition-colors">adskillconsultancyinc@gmail.com</a>
               </li>
             </ul>
 

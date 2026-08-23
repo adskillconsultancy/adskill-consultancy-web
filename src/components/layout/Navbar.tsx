@@ -132,11 +132,11 @@ export default function Navbar() {
         <div className="mx-auto max-w-[1440px] flex items-stretch relative z-10">
           <div className="flex items-center gap-6 px-6 py-2.5 flex-1 text-sm bg-white">
             <a
-              href="mailto:admin@adskillconsultancy.com"
+              href="mailto:adskillconsultancyinc@gmail.com"
               className="flex items-center gap-2 hover:text-brand-primary transition-colors font-medium text-gray-700"
             >
               <Mail size={16} className="text-brand-teal" />
-              admin@adskillconsultancy.com
+              adskillconsultancyinc@gmail.com
             </a>
             <span className="flex items-center gap-2 font-medium text-gray-700">
               <MapPin size={16} className="text-brand-teal" />
@@ -151,7 +151,7 @@ export default function Navbar() {
             ))}
             {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="hover:text-gray-700 transition-colors ml-2 first-of-type:ml-4">
-                <Icon size={15} strokeWidth={2} />
+                <Icon size={15} />
               </a>
             ))}
           </div>

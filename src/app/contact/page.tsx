@@ -51,17 +51,39 @@ const socials = [
 const contactInfo = [
   { icon: MapPin, label: "Address", value: "37-13 74th Street, Floor 2<br/>Jackson Heights, NY 11372", href: "https://maps.google.com/?q=37-13+74th+Street+Jackson+Heights+NY+11372" },
   { icon: Phone, label: "Phone", value: "+1 646-772-8544", href: "tel:+16467728544" },
-  { icon: Mail, label: "Email", value: "admin@adskillconsultancy.com", href: "mailto:admin@adskillconsultancy.com" },
+  { icon: Mail, label: "Email", value: "adskillconsultancyinc@gmail.com", href: "mailto:adskillconsultancyinc@gmail.com" },
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        const data = await res.json();
+        setErrorMsg(data.error || "Something went wrong.");
+      }
+    } catch (err) {
+      setErrorMsg("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const heroRef = useRef<HTMLElement>(null);
@@ -201,37 +223,42 @@ export default function ContactPage() {
                       <div className="mb-10">
                         <h2 className="text-3xl lg:text-4xl font-bold text-brand-dark mb-3">Send Us a Message</h2>
                         <p className="text-gray-500">Fill out the form below and our team will respond promptly.</p>
+                        {errorMsg && (
+                          <div className="mt-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm font-medium border border-red-100">
+                            {errorMsg}
+                          </div>
+                        )}
                       </div>
                       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-sm font-semibold text-brand-dark ml-1">Full Name *</label>
-                            <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="John Doe" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
+                            <input type="text" name="name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="John Doe" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
                           </div>
                           <div className="space-y-1.5">
                             <label className="text-sm font-semibold text-brand-dark ml-1">Email Address *</label>
-                            <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
+                            <input type="email" name="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
                           </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-1.5">
                             <label className="text-sm font-semibold text-brand-dark ml-1">Phone Number</label>
-                            <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+1 (555) 000-0000" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
+                            <input type="tel" name="phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/[^0-9+\-()\s]/g, '') })} placeholder="+1 (555) 000-0000" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
                           </div>
                           <div className="space-y-1.5">
                             <label className="text-sm font-semibold text-brand-dark ml-1">Subject</label>
-                            <input type="text" placeholder="How can we help?" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
+                            <input type="text" name="subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="How can we help?" className="w-full px-5 py-3.5 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all placeholder:text-gray-400 font-medium" />
                           </div>
                         </div>
                         <div className="space-y-1.5">
                           <label className="text-sm font-semibold text-brand-dark ml-1">Your Message *</label>
-                          <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your situation..." className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all resize-none placeholder:text-gray-400 font-medium" />
+                          <textarea required name="message" rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your situation..." className="w-full px-5 py-4 rounded-xl bg-gray-50/50 border border-gray-200 text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 focus:bg-white transition-all resize-none placeholder:text-gray-400 font-medium" />
                         </div>
-                        <button type="submit" className="group inline-flex items-center justify-center gap-2 bg-brand-dark text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg hover:shadow-brand-primary/25 mt-2 overflow-hidden relative">
+                        <button type="submit" disabled={isSubmitting} className="group inline-flex items-center justify-center gap-2 bg-brand-dark text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg hover:shadow-brand-primary/25 mt-2 overflow-hidden relative disabled:opacity-70 disabled:cursor-not-allowed">
                           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                           <span className="relative z-10 flex items-center gap-2">
-                            Send Message
-                            <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                            {isSubmitting ? "Sending..." : "Send Message"}
+                            {!isSubmitting && <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />}
                           </span>
                         </button>
                       </form>
