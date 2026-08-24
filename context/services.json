@@ -98,8 +98,7 @@
         "title": "Visa Approval & U.S. Entry",
         "description": "Once approved, you may enter the United States to direct, operate, and grow your E-2 business. Your spouse and children may also enter as E-2 dependents."
       }
-    ],
-    "link": "https://adskillconsultancy.com/e-2/"
+    ]
   },
   {
     "id": "eb-1a",
@@ -183,8 +182,7 @@
         "title": "Follow-up Support",
         "description": "Guidance until your Green Card is approved. We monitor your case status, respond to any USCIS requests for evidence (RFE), and keep you informed at every stage — from petition receipt through final Green Card approval."
       }
-    ],
-    "link": "https://adskillconsultancy.com/eb-1a/"
+    ]
   },
   {
     "id": "eb-2",
@@ -255,8 +253,7 @@
         "title": "Filing & Follow-up",
         "description": "Submitting the application and handling any Requests for Evidence (RFE) until approval."
       }
-    ],
-    "link": "https://adskillconsultancy.com/eb-2/"
+    ]
   },
   {
     "id": "eb-3",
@@ -331,8 +328,7 @@
         "title": "Adjustment of Status or Consular Processing",
         "description": "After I-140 approval and when a visa number is available, file for adjustment of status in the U.S. or undergo consular processing abroad."
       }
-    ],
-    "link": "https://adskillconsultancy.com/eb-3/"
+    ]
   },
   {
     "id": "eb-4",
@@ -390,8 +386,7 @@
         "title": "Green Card Application",
         "description": "Upon I-360 approval, file for an adjustment of status if in the U.S. or apply for an immigrant visa through consular processing."
       }
-    ],
-    "link": "https://adskillconsultancy.com/eb-4/"
+    ]
   },
   {
     "id": "eb-5",
@@ -462,8 +457,7 @@
         "title": "File Form I-829",
         "description": "At the end of the 2-year period, file to remove conditions by proving the investment was sustained and jobs were created, resulting in a permanent Green Card."
       }
-    ],
-    "link": "https://adskillconsultancy.com/eb-5/"
+    ]
   },
   {
     "id": "l1a",
@@ -525,8 +519,7 @@
         "title": "Visa Application",
         "description": "Once the petition is approved, the employee applies for the L-1A visa at a U.S. Embassy or Consulate."
       }
-    ],
-    "link": "https://adskillconsultancy.com/l1a-visa/"
+    ]
   },
   {
     "id": "all-services",
@@ -553,8 +546,7 @@
       }
     ],
     "eligibility": [],
-    "process": [],
-    "link": "https://adskillconsultancy.com/all-immigration-services-paperwork/"
+    "process": []
   },
   {
     "id": "interview-prep",
@@ -582,7 +574,6 @@
       }
     ],
     "eligibility": [],
-    "process": [],
-    "link": "https://adskillconsultancy.com/interview-preparation/"
+    "process": []
   }
 ]

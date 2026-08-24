@@ -7,11 +7,13 @@ import {
   Menu,
   X,
   ChevronDown,
+  ChevronRight,
   Phone,
   Mail,
   MapPin,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { services } from "@/lib/services";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -20,14 +22,7 @@ const NAV_LINKS = [
     href: "/services",
     children: [
       { label: "All Services", href: "/services" },
-      { label: "E-2 Investor Visa", href: "/services/e-2" },
-      { label: "EB-1A Extraordinary Ability", href: "/services/eb-1a" },
-      { label: "EB-2 (NIW – National Interest Waiver)", href: "/services/eb-2" },
-      { label: "EB-3 Workers", href: "/services/eb-3" },
-      { label: "EB-4 Special Immigrants", href: "/services/eb-4" },
-      { label: "EB-5 Investor Visa", href: "/services/eb-5" },
-      { label: "L1A Transfer Visa", href: "/services/l1a" },
-      { label: "Interview Prep", href: "/services/interview-prep" },
+      ...services.map((s) => ({ label: s.title, href: s.link || `/services/${s.id}` })),
     ],
   },
   {
@@ -39,12 +34,8 @@ const NAV_LINKS = [
     ],
   },
   {
-    label: "Portfolio",
-    href: "/portfolio",
-    children: [
-      { label: "Success Stories", href: "/portfolio/success-stories" },
-      { label: "Case Studies", href: "/portfolio/case-studies" },
-    ],
+    label: "Success Story",
+    href: "/success-stories",
   },
   { label: "News", href: "/blog" },
   { label: "FAQs", href: "/faqs" },
@@ -134,9 +125,18 @@ export default function Navbar() {
   }
 
   const NavContent = (
-    <div className="mx-auto max-w-[1440px] px-6 flex items-center gap-4 h-20">
+    <div className="mx-auto max-w-360 px-6 flex items-center gap-4 h-20">
       {/* Logo */}
-      <Link href="/" className="flex items-center shrink-0 mr-6" aria-label="Adskill Consultancy — home">
+      <Link 
+        href="/" 
+        className="flex items-center shrink-0 mr-6" 
+        aria-label="Adskill Consultancy — home"
+        onClick={() => {
+          if (window.location.pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}
+      >
         <Image 
           src="/adskillconsultancy.png" 
           alt="Adskill Consultancy" 
@@ -153,34 +153,33 @@ export default function Navbar() {
           <li key={link.label} className="relative group">
             {link.children ? (
               <>
-                <button
-                  className="group/btn flex items-center gap-1.5 px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap relative"
+                <div
+                  className="group/btn flex items-center gap-1.5 px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap relative cursor-default"
                   aria-haspopup="true"
-                  aria-expanded={openDropdown === link.label}
-                  onClick={() => toggleDropdown(link.label)}
-                  onBlur={() => setTimeout(() => setOpenDropdown(null), 150)}
                 >
                   {link.label}
                   <ChevronDown size={14} className="transition-transform group-hover/btn:rotate-180" />
-                  <span className="absolute left-4 right-4 bottom-4 h-[2px] bg-brand-secondary scale-x-0 origin-left transition-transform duration-300 group-hover/btn:scale-x-100"></span>
-                </button>
+                  <span className="absolute left-4 right-4 bottom-4 h-0.5 bg-brand-secondary scale-x-0 origin-left transition-transform duration-300 group-hover/btn:scale-x-100"></span>
+                </div>
                 <ul
                   className={cn(
-                    "absolute left-0 top-full min-w-[240px] shadow-xl rounded-b-lg overflow-hidden transition-all duration-300 bg-white border border-gray-100",
-                    openDropdown === link.label
-                      ? "opacity-100 translate-y-0 pointer-events-auto"
-                      : "opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto"
+                    "absolute left-0 top-full shadow-xl rounded-b-lg transition-all duration-300 bg-white border border-gray-100 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto p-4",
+                    link.label === "Services" ? "w-[600px] grid grid-cols-2 gap-x-4 gap-y-2" : "min-w-60 flex flex-col gap-1"
                   )}
                   role="menu"
                 >
                   {link.children.map((child) => (
-                    <li key={child.href} role="none" className="relative">
+                    <li key={child.href} role="none" className={cn("relative", child.label === "All Services" && link.label === "Services" ? "col-span-2 mb-2 pb-2 border-b border-gray-100" : "")}>
                       <Link
                         href={child.href}
                         role="menuitem"
-                        className="block px-5 py-3 text-[15px] font-medium text-gray-700 hover:text-brand-secondary hover:pl-6 hover:bg-gray-50 transition-all duration-300 border-b border-gray-50 last:border-0"
+                        className={cn(
+                          "group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300",
+                          child.label === "All Services" && "text-brand-dark font-bold bg-gray-50"
+                        )}
                       >
-                        {child.label}
+                        <span className="group-hover/item:translate-x-1 transition-transform">{child.label}</span>
+                        <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
                       </Link>
                     </li>
                   ))}
@@ -190,9 +189,14 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className="group/link block px-4 py-6 text-base font-semibold text-gray-900 hover:text-brand-secondary transition-colors whitespace-nowrap relative"
+                onClick={() => {
+                  if (window.location.pathname === link.href) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
               >
                 {link.label}
-                <span className="absolute left-4 right-4 bottom-4 h-[2px] bg-brand-secondary scale-x-0 origin-left transition-transform duration-300 group-hover/link:scale-x-100"></span>
+                <span className="absolute left-4 right-4 bottom-4 h-0.5 bg-brand-secondary scale-x-0 origin-left transition-transform duration-300 group-hover/link:scale-x-100"></span>
               </Link>
             )}
           </li>
@@ -214,7 +218,7 @@ export default function Navbar() {
         </div>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center px-6 h-[46px] rounded text-sm font-semibold text-white bg-brand-dark hover:bg-brand-teal transition-colors whitespace-nowrap"
+          className="inline-flex items-center justify-center px-6 h-11.5 rounded text-sm font-semibold text-white bg-brand-dark hover:bg-brand-teal transition-colors whitespace-nowrap"
         >
           Contact Now
         </Link>
@@ -240,7 +244,7 @@ export default function Navbar() {
         {/* ── Top bar ── */}
         <div className="hidden md:block bg-white border-b border-gray-100 relative">
           <div className="absolute top-0 right-0 bottom-0 w-[50%] bg-brand-primary z-0 hidden lg:block" />
-          <div className="mx-auto max-w-[1440px] flex items-stretch relative z-10">
+          <div className="mx-auto max-w-360 flex items-stretch relative z-10">
             <div className="flex items-center gap-6 px-6 py-2.5 flex-1 text-sm bg-white">
               <a
                 href="mailto:adskillconsultancyinc@gmail.com"
@@ -319,7 +323,12 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className="block py-2.5 text-sm font-medium text-gray-700 border-b border-gray-100 hover:text-brand-secondary transition-colors"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      if (window.location.pathname === link.href) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
                   >
                     {link.label}
                   </Link>

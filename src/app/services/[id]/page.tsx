@@ -103,8 +103,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-8">
-          <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 sticky top-24">
+        <div className="space-y-8 lg:sticky lg:top-24 h-fit">
+          <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100">
             <h3 className="text-xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4">Quick Facts</h3>
             <ul className="space-y-4 mb-8">
               {Object.entries(service.quick_facts).map(([key, value], idx) => (

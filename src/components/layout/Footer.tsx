@@ -59,13 +59,13 @@ export default function Footer() {
           
           {/* Col 1: About & Logo */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block bg-white/5 p-4 rounded-xl w-fit backdrop-blur-sm border border-white/10">
+            <Link href="/" className="inline-block bg-white p-4 rounded-xl w-fit shadow-sm">
               <Image 
                 src="/adskillconsultancy.png" 
                 alt="Adskill Consultancy" 
                 width={200} 
                 height={50} 
-                className="h-10 w-auto object-contain brightness-0 invert" 
+                className="h-10 w-auto object-contain" 
               />
             </Link>
             <p className="text-gray-400 leading-relaxed text-sm">

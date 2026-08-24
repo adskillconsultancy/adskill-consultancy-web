@@ -21,10 +21,10 @@ export interface Service {
   tagline: string;
   overview: string;
   short_description: string;
-  quick_facts: QuickFacts;
   benefits: ServiceItem[];
   eligibility: ServiceItem[];
   process: ProcessStep[];
+  quick_facts: QuickFacts;
   link: string;
 }
 

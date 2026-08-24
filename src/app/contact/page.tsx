@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Mail, MapPin, Phone, Send, CalendarClock } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CalendarClock, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/lib/useFadeIn";
 
@@ -51,6 +51,7 @@ const socials = [
 const contactInfo = [
   { icon: MapPin, label: "Address", value: "37-13 74th Street, Floor 2<br/>Jackson Heights, NY 11372", href: "https://maps.google.com/?q=37-13+74th+Street+Jackson+Heights+NY+11372" },
   { icon: Phone, label: "Phone", value: "+1 646-772-8544", href: "tel:+16467728544" },
+  { icon: MessageCircle, label: "WhatsApp", value: "+1 646-772-8544", href: "https://wa.me/16467728544" },
   { icon: Mail, label: "Email", value: "adskillconsultancyinc@gmail.com", href: "mailto:adskillconsultancyinc@gmail.com" },
 ];
 

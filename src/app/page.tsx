@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#f8f9fa] relative">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+      <div className="absolute top-0 left-0 w-full h-full z-0">
         {/* Faint Background Image */}
         <img 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12 pt-20 pb-32 lg:pt-32 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-start">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-8 items-center">
           
           {/* Left Column: Text Content */}
           <div className="max-w-2xl lg:-mt-10">
@@ -84,14 +84,14 @@ export default function Home() {
           </div>
 
           {/* Right Column: Floating Images & Badges Grid */}
-          <div className="relative h-[600px] lg:h-[700px] w-full flex justify-center items-center lg:-mt-28">
-            
+          <div className="relative h-[400px] sm:h-[500px] lg:h-[700px] w-full flex justify-center items-center lg:-mt-28 overflow-visible">
+
             {/* Background Spinning Circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full border-[2px] border-dashed border-gray-300 animate-spin-slow opacity-60" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-full border-[1px] border-solid border-gray-200" />
-            
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full border-[2px] border-dashed border-gray-300 animate-spin-slow opacity-60" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[380px] rounded-full border-[1px] border-solid border-gray-200" />
+
             {/* Main Consultant Image */}
-            <div className="relative z-10 w-[80%] max-w-[450px] h-[500px] lg:h-[600px] animate-float-y rounded-full overflow-hidden border-[8px] border-white shadow-2xl">
+            <div className="relative z-10 w-[75%] sm:w-[70%] md:w-[80%] max-w-[450px] h-[300px] sm:h-[400px] lg:h-[600px] animate-float-y rounded-full overflow-hidden border-[4px] sm:border-[8px] border-white shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
                 alt="Expert Consultant"
@@ -100,7 +100,7 @@ export default function Home() {
             </div>
 
             {/* Floating Badge 1: Stats */}
-            <div className="absolute top-[10%] -left-4 md:left-4 z-20 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute top-[8%] -left-2 sm:left-4 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 sm:gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '0.5s' }}>
               <div className="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
                 <CheckCircle2 size={24} />
               </div>
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
 
             {/* Floating Badge 2: Revenue/Growth */}
-            <div className="absolute bottom-[20%] -left-4 md:-left-8 z-20 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default" style={{ animationDelay: '1.2s' }}>
+            <div className="absolute bottom-[15%] -left-2 sm:-left-8 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 sm:gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '1.2s' }}>
               <div className="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-white">
                 <TrendingUp size={24} />
               </div>
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
 
             {/* Floating Badge 3: Happy Clients */}
-            <div className="absolute top-[40%] -right-4 md:-right-8 z-20 bg-white p-5 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center gap-2 animate-float-y hover:-translate-y-2 transition-transform cursor-default" style={{ animationDelay: '0.8s' }}>
+            <div className="absolute top-[35%] -right-2 sm:-right-4 md:-right-8 z-20 bg-white p-4 sm:p-5 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center gap-2 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '0.8s' }}>
               <div className="flex -space-x-3 mb-1">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden relative shadow-sm">

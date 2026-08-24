@@ -115,10 +115,10 @@ export default function ConsultancySection() {
               
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-gray-100 shadow-sm">
-                  <img src="https://i.pravatar.cc/100?img=11" alt="Founder" className="w-full h-full object-cover" />
+                  <img src="/founder iamge.png" alt="Founder" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-bold text-xl text-brand-dark" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Michel Devid</p>
+                  <p className="text-2xl text-brand-dark -rotate-2" style={{ fontFamily: "'Caveat', 'Dancing Script', 'Brush Script MT', 'Lucida Handwriting', cursive", letterSpacing: '1px' }}>Adil Mohammad</p>
                   <p className="text-xs text-brand-primary font-semibold mt-0.5">Founder</p>
                 </div>
               </div>

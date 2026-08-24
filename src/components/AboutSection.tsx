@@ -38,11 +38,11 @@ export default function AboutSection() {
       
       {/* --- SECTION 1: ABOUT AREA --- */}
       <div className="py-16 lg:py-24 relative">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="max-w-360 mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* Left: Image with Rotating Badge */}
-            <div className="relative w-full lg:w-[90%] h-[400px] md:h-[500px]">
+            <div className="relative w-full lg:w-[90%] h-100 md:h-125">
               
               {/* Image Container with hidden overflow */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
@@ -78,7 +78,7 @@ export default function AboutSection() {
             <div className="lg:pl-8">
               <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary text-brand-dark text-xs font-bold uppercase tracking-wider mb-5">About Us</div>
               <h2 className="text-3xl md:text-5xl font-bold text-brand-dark leading-tight tracking-tight mb-6">
-                We Provide Brilliant Idea To Grow The Consulting Agency <span className="text-brand-dark">Your Sharp Brand</span>
+                Expert Guidance for Your Global Immigration <span className="text-brand-dark">and Business Success</span>
               </h2>
               <p className="text-gray-500 text-sm leading-relaxed mb-8">
                 AdSkill Consultancy Inc. is a United States–based immigration consulting and business advisory company. We assist qualified professionals, students, entrepreneurs, and global investors in strategically preparing for lawful immigration opportunities.
@@ -95,23 +95,23 @@ export default function AboutSection() {
                   <div className="flex -space-x-3">
                     {[1, 2, 3].map((i) => (
                       <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden relative shadow-sm">
-                        <img src={`https://i.pravatar.cc/100?img=${i * 12}`} alt="Client" className="object-cover w-full h-full" />
+                        <Image src={`https://i.pravatar.cc/100?img=${i * 12}`} alt="Client" width={40} height={40} className="object-cover w-full h-full" />
                       </div>
                     ))}
                   </div>
-                  <span className="text-sm font-bold text-brand-dark border-b-2 border-brand-primary pb-0.5">10M+ Impact Across the World.</span>
+                  <span className="text-sm font-bold text-brand-dark border-b-2 border-brand-primary pb-0.5">Trusted by professionals worldwide.</span>
                 </div>
               </div>
               
               {/* Overlapping Circle Stats */}
               <div className="flex items-center gap-4 relative">
-                <div className="w-[180px] md:w-[220px] h-[180px] md:h-[220px] rounded-full border border-gray-100 shadow-sm flex flex-col items-center justify-center bg-white z-10 transition-transform hover:-translate-y-2">
+                <div className="w-45 md:w-55 h-45 md:h-55 rounded-full border border-gray-100 shadow-sm flex flex-col items-center justify-center bg-white z-10 transition-transform hover:-translate-y-2">
                   <div className="text-5xl md:text-6xl font-bold text-brand-dark leading-none mb-2">15<span className="text-3xl">+</span></div>
-                  <p className="text-xs md:text-sm text-gray-500 font-medium text-center">Experience Team<br/>Help you</p>
+                  <p className="text-xs md:text-sm text-gray-500 font-medium text-center">Experienced Professionals<br/>Ready to Assist</p>
                 </div>
-                <div className="w-[180px] md:w-[220px] h-[180px] md:h-[220px] rounded-full border border-gray-100 shadow-sm flex flex-col items-center justify-center bg-white -ml-16 transition-transform hover:-translate-y-2">
-                  <div className="text-5xl md:text-6xl font-bold text-brand-dark leading-none mb-2">18<span className="text-3xl">M</span></div>
-                  <p className="text-xs md:text-sm text-gray-500 font-medium text-center">We helped to get<br/>companies</p>
+                <div className="w-45 md:w-55 h-45 md:h-55 rounded-full border border-gray-100 shadow-sm flex flex-col items-center justify-center bg-white -ml-16 transition-transform hover:-translate-y-2">
+                  <div className="text-5xl md:text-6xl font-bold text-brand-dark leading-none mb-2">98<span className="text-3xl">%</span></div>
+                  <p className="text-xs md:text-sm text-gray-500 font-medium text-center">Success Rate<br/>for Clients</p>
                 </div>
               </div>
 
@@ -122,20 +122,20 @@ export default function AboutSection() {
 
       {/* --- SECTION 2: SERVICES ACCORDION --- */}
       <div className="bg-[#f8f9fa] py-16 lg:py-24">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="max-w-360 mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left Content */}
             <div className="lg:pr-8">
               <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary text-brand-dark text-xs font-bold uppercase tracking-wider mb-5">Services</div>
               <h2 className="text-3xl md:text-5xl font-bold text-brand-dark leading-tight tracking-tight mb-6">
-                Solutions Drive Business Sustain Growth
+                Strategic Solutions for Sustainable Success
               </h2>
               <p className="text-gray-500 text-sm leading-relaxed mb-10">
-                Business consulting is a dynamic and multifaceted field that plays a pivotal role in helping organizations thrive in today's competitive landscape.
+                Business consulting is a dynamic and multifaceted field that plays a pivotal role in helping organizations thrive in today&apos;s competitive landscape.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-y-4 gap-x-4 mb-10">
-                {["Optimized Sprint Planning", "Incremental Delivery Approach", "Continuous Improvement", "Delivering Innovative"].map((item) => (
+                {["Comprehensive Case Evaluation", "Strategic Business Planning", "Dedicated Client Support", "Proven Track Record"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Check size={18} className="text-brand-dark shrink-0" strokeWidth={2.5} />
                     <span className="text-brand-dark font-bold text-sm">{item}</span>
@@ -203,12 +203,12 @@ export default function AboutSection() {
             className="object-cover opacity-10 grayscale"
           />
         </div>
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-360 mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
             <div>
               <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary text-brand-dark text-xs font-bold uppercase tracking-wider mb-5">Growth Rate</div>
               <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">
-                Building Connections For Grow Limitless Opportunities.
+                Building Global Connections for Limitless Opportunities.
               </h2>
             </div>
             <div className="lg:text-right">
@@ -220,22 +220,22 @@ export default function AboutSection() {
 
           <div className="grid md:grid-cols-3 gap-10 pt-10 border-t border-white/10">
             {[
-              { percent: 90, title: "Scalable Solutions", text: "End to end fiber optic cable nnectivity for stable" },
-              { percent: 95, title: "Automation Features", text: "End to end fiber optic cable nnectivity for stable" },
-              { percent: 75, title: "24/7 Support", text: "End to end fiber optic cable nnectivity for stable" },
+              { percent: 98, title: "High Success Rate", text: "Consistently delivering positive outcomes for complex immigration and business cases." },
+              { percent: 95, title: "Client Satisfaction", text: "Providing dedicated support and clear communication throughout the entire process." },
+              { percent: 100, title: "Global Reach", text: "Successfully assisting professionals, investors, and students across the world." },
             ].map((stat) => (
               <div key={stat.title} className="flex items-center gap-6">
                 {/* Circular Progress SVG */}
-                <div className="relative w-[100px] h-[100px] shrink-0">
+                <div className="relative w-25 h-25 shrink-0">
                   <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
                     <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="8" />
-                    <circle 
-                      cx="50" cy="50" r="45" 
-                      fill="none" stroke="#ccff00" 
-                      strokeWidth="8" 
-                      strokeDasharray="283" 
+                    <circle
+                      cx="50" cy="50" r="45"
+                      fill="none" stroke="var(--color-brand-primary)"
+                      strokeWidth="8"
+                      strokeDasharray="283"
                       strokeDashoffset={283 - (283 * stat.percent) / 100}
-                      className="transition-all duration-1000 ease-out" 
+                      className="transition-all duration-1000 ease-out"
                     />
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center bg-white m-3 rounded-full shadow-inner">
@@ -252,148 +252,184 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* --- SECTION 4: PROCESS TABS --- */}
-      <div className="bg-white py-16 lg:py-24">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-          
-          {/* Top Wavy Stats */}
-          <div className="grid lg:grid-cols-4 gap-8 lg:gap-12 border-b border-gray-100 pb-16 mb-16 items-center">
-            <div className="lg:pr-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight tracking-tight">
-                We Help Real People Do More Business Plan
-              </h2>
-            </div>
-            
-            {[
-              { val: "90%", label: "Clients Satisfactions" },
-              { val: "40%", label: "Decrease Expense" },
-              { val: "7M", label: "Money Flow Users" },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col justify-center lg:border-l border-gray-100 lg:pl-10 relative">
-                {/* Wavy Line SVG */}
-                <svg width="40" height="12" viewBox="0 0 40 12" fill="none" className="text-brand-primary mb-5">
-                  <path d="M0 6 Q5 0 10 6 T20 6 T30 6 T40 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"/>
-                </svg>
-                <div className="text-5xl font-bold text-brand-dark mb-2">{stat.val}</div>
-                <div className="text-sm font-bold text-brand-dark">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+      {/* --- SECTION 4: PROCESS --- */}
+      <div className="bg-white py-16 lg:py-28">
+        <div className="max-w-1440 mx-auto px-6 lg:px-12">
 
-          {/* Process Tabs */}
-          <div className="text-center mb-16">
+          {/* Header */}
+          <div className="text-center mb-20">
             <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary text-brand-dark text-xs font-bold uppercase tracking-wider mb-5">Process</div>
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark leading-tight tracking-tight">
-              Ensure The Success Of <br/> Your Business Venture.
+            <h2 className="text-3xl md:text-5xl lg:text-[54px] font-bold text-brand-dark leading-[1.1] tracking-tight">
+              Ensure the Success of <br/> Your Immigration Journey.
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Tabs Navigation */}
-            <div className="flex justify-between relative mb-16 px-4 md:px-12">
-              {/* Connecting Line */}
-              <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gray-200 -translate-y-1/2 -z-10"></div>
-              
-              {["Business Analysis", "Business Strategy", "Final Execution"].map((tab, idx) => (
-                <button 
-                  key={tab}
-                  onClick={() => setActiveTab(idx)}
-                  className="flex flex-col items-center gap-4 bg-white px-2 md:px-4 transition-all group"
-                >
-                  <span className={cn(
-                    "text-xs md:text-sm font-bold transition-colors", 
-                    activeTab === idx ? "text-brand-dark" : "text-gray-500 group-hover:text-brand-dark"
-                  )}>
-                    {tab}
-                  </span>
-                  <div className={cn(
-                    "w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors shadow-sm",
-                    activeTab === idx ? "bg-brand-dark text-white border-[6px] border-gray-100" : "bg-gray-100 text-gray-500 border-4 border-white group-hover:bg-brand-primary group-hover:text-brand-dark"
-                  )}>
-                    0{idx + 1}
-                  </div>
-                </button>
-              ))}
+          {/* Tabs + Dashboard */}
+          <div className="max-w-6xl mx-auto">
+
+            {/* Tab Navigation */}
+            <div className="relative flex justify-center items-center gap-0 mb-16 lg:mb-24">
+              {/* Background pill */}
+              <div className="flex bg-gray-50 rounded-full p-1.5 border border-gray-100 relative">
+                {["Initial Assessment", "Strategic Planning", "Final Execution"].map((tab, idx) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(idx)}
+                    className={cn(
+                      "relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300",
+                      activeTab === idx
+                        ? "bg-brand-dark text-white shadow-md"
+                        : "text-gray-500 hover:text-brand-dark"
+                    )}
+                  >
+                    <span className="hidden sm:inline">{tab}</span>
+                    <span className="sm:hidden">0{idx + 1}</span>
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Tab Content */}
-            <div className="grid md:grid-cols-2 gap-12 items-center min-h-[400px]">
-              
-              {/* Content Box (Left) */}
-              <div className="transition-all duration-500 ease-in-out">
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight mb-4">
-                  Essential Features for {["Business Analysis", "Business Strategy", "Final Execution"][activeTab]}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+              {/* Left: Content */}
+              <div className="order-2 lg:order-1">
+                <h3 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight mb-5">
+                  Core Principles of {["Initial Assessment", "Strategic Planning", "Final Execution"][activeTab]}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                  Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium totamto aperiame eaque ipsa quae ab illo inventore veritatis
+                <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-md">
+                  We meticulously analyze your unique situation to develop a tailored strategy that maximizes your chances of success and aligns with your long-term goals.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-y-4 gap-x-4">
-                  {["Optimized Sprint Planning", "Incremental Delivery Approach", "Continuous Improvement", "Delivering Innovative"].map((item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <Check size={18} className="text-brand-dark shrink-0" strokeWidth={2.5} />
+                <div className="grid sm:grid-cols-2 gap-3 mb-10">
+                  {["Thorough Documentation", "Regulatory Compliance", "Expert Representation", "Clear Communication"].map((item) => (
+                    <div key={item} className="flex items-center gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">
+                        <Check size={12} className="text-brand-dark" strokeWidth={3} />
+                      </div>
                       <span className="text-brand-dark font-bold text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
-              </div>
 
-              {/* Image / Dashboard Box (Right) */}
-              <div className="relative h-full flex justify-center items-center">
-                <div className="absolute w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-gray-50 rounded-full -z-10"></div>
-                
-                <div className="relative z-10 w-full max-w-[320px] transition-transform duration-700 ease-out hover:-translate-y-2">
-                   {/* Main Dashboard Card */}
-                   <div className="bg-white rounded-xl shadow-xl p-6 border border-gray-100">
-                     <p className="text-sm font-bold text-brand-dark mb-4">Project Cost Performance</p>
-                     
-                     {/* Speedometer placeholder */}
-                     <div className="w-full h-[120px] bg-gray-50 rounded-t-full border-b-2 border-gray-200 mb-6 flex items-end justify-center pb-2 relative overflow-hidden">
-                        {/* Gauge Colors */}
-                        <div className="absolute top-0 left-0 w-full h-full rounded-t-full border-[20px] border-t-brand-primary border-l-red-500 border-r-blue-500 border-b-transparent"></div>
-                        <div className="absolute bottom-0 w-3 h-20 bg-brand-dark rounded-full origin-bottom rotate-45 shadow-md"></div>
-                     </div>
-                     <div className="flex justify-between items-center">
-                        <div>
-                           <p className="text-2xl font-bold text-brand-dark">$ 85.632</p>
-                           <p className="text-xs text-gray-500">Total budget</p>
-                        </div>
-                     </div>
-                   </div>
-                   
-                   {/* Floating Dashboard Card */}
-                   <div className="absolute -bottom-10 -right-6 md:-right-12 bg-white rounded-xl shadow-2xl p-4 md:p-5 border border-gray-100 w-[220px] md:w-[240px] animate-float-y">
-                      <div className="flex justify-between items-center mb-4">
-                         <span className="text-sm font-bold text-brand-dark">Expenses</span>
-                         <span className="text-[10px] bg-blue-500 text-white px-3 py-1 rounded-full">view all</span>
-                      </div>
-                      {[
-                        { name: "Avanoda Inc.", amount: 1386.00, up: true },
-                        { name: "Rouge Mc", amount: 711.32, up: true },
-                        { name: "Magesty", amount: 392.32, up: false },
-                      ].map((item, i) => (
-                         <div key={i} className="flex items-center justify-between mb-3 last:mb-0">
-                           <div className="flex items-center gap-2">
-                             <div className="w-6 h-6 bg-brand-dark rounded-md flex items-center justify-center text-[10px] text-white">★</div>
-                             <div>
-                               <p className="text-[10px] font-bold text-brand-dark leading-none">{item.name}</p>
-                               <p className="text-[8px] text-gray-500 mt-0.5">23 Jan, 2023</p>
-                             </div>
-                           </div>
-                           <div className="flex items-center gap-1">
-                             <ArrowUpRight size={12} className={item.up ? "text-brand-primary" : "text-red-500 rotate-90"} />
-                             <span className="text-[11px] font-bold text-brand-dark">${item.amount.toFixed(2)}</span>
-                           </div>
-                         </div>
-                      ))}
-                   </div>
+                {/* Step indicator pills */}
+                <div className="flex items-center gap-3">
+                  <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Step</span>
+                  <div className="flex gap-2">
+                    {[0, 1, 2].map((i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveTab(i)}
+                        className={cn(
+                          "w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all",
+                          i === activeTab
+                            ? "bg-brand-dark text-white scale-110"
+                            : "bg-gray-100 text-gray-400 hover:bg-gray-200"
+                        )}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-
               </div>
-            </div>
 
+              {/* Right: Stats Visual */}
+              <div className="order-1 lg:order-2 relative flex justify-center items-center min-h-100">
+                <div className="absolute w-72 md:w-96 h-72 md:h-96 bg-gray-50 rounded-full -z-10" />
+
+                <div className="relative z-10 w-full max-w-[380px] space-y-4">
+
+                  {/* Hero Stat */}
+                  <div className="bg-brand-dark rounded-xl shadow-lg p-5 flex items-center gap-5">
+                    <div className="relative w-20 h-20 shrink-0">
+                      <svg viewBox="0 0 36 36" className="w-full h-full transform -rotate-90">
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="3" />
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="var(--color-brand-primary)" strokeWidth="3" strokeDasharray="88" strokeDashoffset="8" strokeLinecap="round" />
+                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white">91%</span>
+                    </div>
+                    <div>
+                      <p className="text-lg font-bold text-white">Approval Rate</p>
+                      <p className="text-xs text-gray-400 leading-relaxed">Across all petition types<br/>filed in the last 5 years</p>
+                    </div>
+                  </div>
+
+                  {/* Case Pipeline */}
+                  <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-5">
+                    <p className="text-sm font-bold text-brand-dark mb-1">Case Pipeline</p>
+                    <p className="text-[10px] text-gray-400 mb-4">Current active cases by stage</p>
+                    <div className="space-y-3">
+                      {[
+                        { label: "Under Review", count: 38, pct: 76, color: "bg-brand-primary" },
+                        { label: "RFE Received", count: 12, pct: 24, color: "bg-brand-primary" },
+                        { label: "Interview Ready", count: 25, pct: 50, color: "bg-brand-primary" },
+                        { label: "Approved", count: 67, pct: 100, color: "bg-brand-dark" },
+                      ].map((item) => (
+                        <div key={item.label}>
+                          <div className="flex justify-between mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color === 'bg-brand-dark' ? 'var(--color-brand-dark)' : 'var(--color-brand-primary)' }} />
+                              <span className="text-[11px] font-bold text-brand-dark">{item.label}</span>
+                            </div>
+                            <span className="text-[11px] font-bold text-gray-400">{item.count}</span>
+                          </div>
+                          <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div className="h-full rounded-full transition-all" style={{ width: `${item.pct}%`, backgroundColor: item.color === 'bg-brand-dark' ? 'var(--color-brand-dark)' : 'var(--color-brand-primary)' }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Row: Processing + Countries */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {/* Processing Time */}
+                    <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">Avg. Processing Time</p>
+                      <div className="space-y-3">
+                        {[
+                          { label: "EB-1A", time: "8-12 mo", badge: "Fast" },
+                          { label: "EB-2 NIW", time: "12-18 mo", badge: "Fast" },
+                          { label: "EB-5", time: "24-36 mo", badge: "Long" },
+                        ].map((item) => (
+                          <div key={item.label} className="flex items-center justify-between">
+                            <div>
+                              <p className="text-[11px] font-bold text-brand-dark">{item.label}</p>
+                              <p className="text-[9px] text-gray-400">{item.time}</p>
+                            </div>
+                            <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${item.badge === "Fast" ? "bg-brand-primary/20 text-brand-dark" : "bg-gray-200 text-gray-500"}`}>{item.badge}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Regional Distribution */}
+                    <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">Clients By Region</p>
+                      <div className="space-y-2.5">
+                        {[
+                          { label: "South Asia", pct: 78 },
+                          { label: "East Asia", pct: 64 },
+                          { label: "South America", pct: 41 },
+                        ].map((c) => (
+                          <div key={c.label} className="flex items-center justify-between">
+                            <span className="text-[11px] font-bold text-brand-dark">{c.label}</span>
+                            <span className="text-[11px] font-bold text-gray-400">{c.pct}%</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
       </div>
+
 
     </section>
   );

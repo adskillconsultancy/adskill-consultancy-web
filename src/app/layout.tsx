@@ -5,6 +5,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+import GlobalCTA from "@/components/GlobalCTA";
+
 const outfit = Outfit({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -30,14 +32,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${outfit.variable} h-full antialiased`}
+      className={`${outfit.variable} h-full antialiased overflow-x-clip`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans overflow-x-clip">
         <Navbar />
         <div className="flex-1">
           {children}
         </div>
+        <GlobalCTA />
         <WhatsAppButton />
         <Footer />
       </body>
