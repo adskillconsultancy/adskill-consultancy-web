@@ -117,9 +117,18 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             
             <Link 
               href="/contact"
-              className="flex items-center justify-center w-full py-4 rounded-lg bg-brand-secondary text-white font-bold hover:opacity-90 transition-colors shadow-sm"
+              className="flex items-center justify-center w-full py-4 rounded-lg bg-brand-secondary text-white font-bold hover:opacity-90 transition-colors shadow-sm mb-3"
             >
               Consult with an Expert
+            </Link>
+            
+            <Link 
+              href="https://calendly.com/adskillconsultancyinc/30-minutes-consulation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full py-4 rounded-lg bg-white border-2 border-gray-200 text-brand-dark font-bold hover:border-brand-primary hover:bg-brand-primary/5 transition-colors shadow-sm"
+            >
+              Book Strategy Session
             </Link>
           </div>
         </div>

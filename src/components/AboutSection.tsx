@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Check, ArrowRight, ArrowUpRight, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function CountUp({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
@@ -63,9 +63,83 @@ const accordionItems = [
 export default function AboutSection() {
   const [openAcc, setOpenAcc] = useState(3);
   const [activeTab, setActiveTab] = useState(2);
+  
+  const heroRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    let ticking = false;
+    const updateScale = () => {
+      if (!bgRef.current) return;
+      const scrollY = window.scrollY;
+      const scale = 1 + Math.min(scrollY / 500, 1) * 0.6;
+      bgRef.current.style.transform = `scale(${scale})`;
+      ticking = false;
+    };
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScale);
+        ticking = true;
+      }
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section className="relative bg-white overflow-hidden">
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section
+        ref={heroRef}
+        className="relative overflow-hidden min-h-[35vh] lg:min-h-[40vh] flex items-start pt-28 pb-12 mb-16"
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            ref={bgRef}
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop"
+            alt="About background"
+            fill
+            sizes="100vw"
+            className="object-cover origin-center"
+            style={{
+              transform: "scale(1)",
+              transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)",
+            }}
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-brand-dark/70" />
+        </div>
+
+        {/* Decorative dots */}
+        <div
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+          <Link href="/" className="lg:hidden inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors mb-6 font-bold text-sm">
+            <ArrowLeft size={16} /> Back to Home
+          </Link>
+          <div>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">
+              About Us
+            </span>
+          </div>
+          <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
+            Who We <span className="text-brand-primary">Are</span>
+          </h1>
+          <p className="text-base lg:text-lg text-gray-300 max-w-2xl">
+            Expert Guidance for Your Global Immigration and Business Success
+          </p>
+        </div>
+      </section>
+
+      <section className="relative bg-white overflow-hidden">
       
       {/* --- SECTION 1: ABOUT AREA --- */}
       <div className="py-16 lg:py-24 relative">
@@ -467,5 +541,6 @@ export default function AboutSection() {
 
 
     </section>
+    </main>
   );
 }

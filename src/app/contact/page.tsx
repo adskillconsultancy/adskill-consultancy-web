@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Mail, MapPin, Phone, Send, CalendarClock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CalendarClock, MessageCircle, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeIn } from "@/lib/useFadeIn";
@@ -142,7 +142,12 @@ export default function ContactPage() {
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
         <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Contact Us</span>
+          <Link href="/" className="lg:hidden inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors mb-6 font-bold text-sm">
+            <ArrowLeft size={16} /> Back to Home
+          </Link>
+          <div>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Contact Us</span>
+          </div>
           <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
             Let&rsquo;s Start Your <span className="text-brand-primary">Immigration</span> Journey
           </h1>

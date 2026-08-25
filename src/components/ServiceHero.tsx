@@ -58,7 +58,7 @@ export default function ServiceHero({ title, tagline }: ServiceHeroProps) {
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
-        <Link href="/services" className="inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors mb-6 font-bold text-sm">
+        <Link href="/services" className="lg:hidden inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors mb-6 font-bold text-sm">
           <ArrowLeft size={16} /> Back to All Services
         </Link>
         <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">

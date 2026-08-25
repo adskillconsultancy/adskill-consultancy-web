@@ -155,8 +155,8 @@ export default function ServiceSection() {
             <Link
               key={`${service.id}-${index}`}
               href={`/services/${service.id}`}
-              className="w-[450px] md:w-150 shrink-0 flex h-100 group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 cursor-grab active:cursor-grabbing">
-              <div className="w-1/2 bg-brand-dark p-8 flex flex-col justify-between relative group-hover:bg-opacity-95 transition-colors overflow-hidden">
+              className="w-[450px] md:w-150 shrink-0 flex h-[300px] md:h-100 group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 cursor-grab active:cursor-grabbing">
+              <div className="w-1/2 bg-brand-dark p-6 md:p-8 flex flex-col justify-between relative group-hover:bg-opacity-95 transition-colors overflow-hidden">
                 <div
                   className="absolute inset-0 opacity-10 pointer-events-none"
                   style={{
@@ -184,13 +184,13 @@ export default function ServiceSection() {
                   </svg>
                 </div>
                 <div className="relative z-10">
-                  <span className="text-brand-primary font-bold text-lg mb-2 block">
+                  <span className="text-brand-primary font-bold text-base md:text-lg mb-1 md:mb-2 block">
                     {String((index % services.length) + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">
+                  <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-3 group-hover:text-brand-primary transition-colors leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                  <p className="text-gray-400 text-xs md:text-sm leading-snug md:leading-relaxed line-clamp-3">
                     {service.overview}
                   </p>
                 </div>
@@ -205,8 +205,8 @@ export default function ServiceSection() {
                 />
               </div>
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                <span className="flex items-center justify-center w-16 h-32 rounded-full bg-brand-primary text-brand-dark group-hover:bg-white group-hover:text-brand-dark transition-all duration-500 ease-in-out shadow-xl">
-                  <ArrowUpRight size={18} strokeWidth={2.5} />
+                <span className="flex items-center justify-center w-12 h-24 md:w-16 md:h-32 rounded-full bg-brand-primary text-brand-dark group-hover:bg-white group-hover:text-brand-dark transition-all duration-500 ease-in-out shadow-xl">
+                  <ArrowUpRight className="w-[15px] md:w-[18px]" strokeWidth={2.5} />
                 </span>
               </div>
             </Link>

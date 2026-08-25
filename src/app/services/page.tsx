@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { services } from "@/lib/services";
-import { Settings, Megaphone, TrendingUp, Briefcase, Globe, FileCheck } from "lucide-react";
+import { Settings, Megaphone, TrendingUp, Briefcase, Globe, FileCheck, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const ICONS = [Settings, Megaphone, TrendingUp, Briefcase, Globe, FileCheck];
 
@@ -54,7 +55,12 @@ export default function ServicesPage() {
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
         <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Our Services</span>
+          <Link href="/" className="lg:hidden inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors mb-6 font-bold text-sm">
+            <ArrowLeft size={16} /> Back to Home
+          </Link>
+          <div>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Our Services</span>
+          </div>
           <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
             Immigration <span className="text-brand-primary">Services</span>
           </h1>
