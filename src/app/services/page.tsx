@@ -76,7 +76,7 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 onMouseEnter={() => setActiveIndex(index)}
-                className="block relative flex flex-col items-center text-center p-8 h-full transition-all duration-300 border cursor-pointer bg-white border-gray-100 hover:border-gray-300"
+                className="relative flex flex-col items-center text-center p-8 h-full transition-all duration-300 border cursor-pointer bg-white border-gray-100 hover:border-gray-300"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%)'
                 }}
@@ -86,7 +86,7 @@ export default function ServicesPage() {
                 <div className="relative z-10 flex flex-col items-center w-full h-full">
 
                   {/* Icon Circle */}
-                  <div className={`w-[90px] h-[90px] rounded-full flex items-center justify-center mb-6 transition-all duration-300 ${
+                  <div className={`w-22.5 h-22.5 rounded-full flex items-center justify-center mb-6 transition-all duration-300 ${
                     isActive ? "bg-brand-dark text-white scale-110" : "bg-brand-primary text-brand-dark"
                   }`}>
                     <Icon size={36} strokeWidth={1.5} />
@@ -131,7 +131,7 @@ export default function ServicesPage() {
 
                   {/* Pill Button */}
                   <div
-                    className={`inline-flex items-center justify-center min-w-[150px] px-6 h-[46px] rounded-full font-bold text-[13px] uppercase tracking-wide transition-all duration-300 mt-auto border ${
+                    className={`inline-flex items-center justify-center min-w-37.5 px-6 h-11.5 rounded-full font-bold text-[13px] uppercase tracking-wide transition-all duration-300 mt-auto border ${
                       isActive
                         ? "bg-brand-dark text-white border-brand-dark"
                         : "bg-transparent text-gray-900 border-gray-200"
