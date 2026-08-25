@@ -53,7 +53,7 @@ export default function ServicesPage() {
         {/* Decorative dots */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Our Services</span>
           <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
             Immigration <span className="text-brand-primary">Services</span>
@@ -66,7 +66,7 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <div className="relative bg-gray-50 overflow-hidden">
-        <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
+        <div className="relative z-10 max-w-360 mx-auto px-6 lg:px-12 py-16 lg:py-20">
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const isActive = activeIndex === index;
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                   </h2>
 
                   {/* Short description */}
-                  <p className={`text-[15px] mb-6 flex-grow transition-colors duration-300 leading-[1.8] line-clamp-2 ${
+                  <p className={`text-[15px] mb-6 grow transition-colors duration-300 leading-[1.8] line-clamp-2 ${
                     isActive ? "text-brand-dark/80 font-medium" : "text-gray-500"
                   }`}>
                     {service.short_description}

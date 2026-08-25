@@ -30,7 +30,7 @@ export default function ServiceSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto">
+      <div className="relative z-10 max-w-360 mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-10 px-6 lg:px-12">
           <div className="max-w-xl">
             <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary mb-4">
@@ -59,7 +59,7 @@ export default function ServiceSection() {
             <Link
               key={`${service.id}-${index}`}
               href={`/services/${service.id}`}
-              className="w-[450px] md:w-[600px] shrink-0 flex h-[400px] group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100"
+              className="w-[450px] md:w-150 shrink-0 flex h-100 group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100"
             >
               <div className="w-1/2 bg-brand-dark p-8 flex flex-col justify-between relative group-hover:bg-opacity-95 transition-colors overflow-hidden">
                 <div

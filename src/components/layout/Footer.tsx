@@ -52,7 +52,7 @@ export default function Footer() {
         }}
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-360 mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
@@ -162,7 +162,7 @@ export default function Footer() {
               <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
               Our Location
             </h3>
-            <div className="w-full h-[220px] rounded-xl overflow-hidden border-2 border-white/10 shadow-lg relative bg-white/5">
+            <div className="w-full h-55 rounded-xl overflow-hidden border-2 border-white/10 shadow-lg relative bg-white/5">
               <iframe 
                 src="https://maps.google.com/maps?q=37-13%2074th%20Street,%20Jackson%20Heights,%20NY%2011372&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
@@ -180,7 +180,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
+        <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-8" />
 
         {/* Bottom Section */}
         <div className="flex flex-col gap-6">

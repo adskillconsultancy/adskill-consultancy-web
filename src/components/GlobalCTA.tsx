@@ -30,7 +30,7 @@ export default function GlobalCTA() {
 
   return (
     <div className="w-full bg-[#f8f9fa] pt-10 pb-16" ref={sectionRef}>
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-360 mx-auto px-6 lg:px-12">
         <div className="relative w-full bg-brand-primary rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-center justify-between p-10 md:p-14 lg:p-20 shadow-xl border border-brand-primary/50">
           
           {/* Grid Pattern Background on the right half */}
@@ -49,7 +49,7 @@ export default function GlobalCTA() {
               {titleWords.map((word, i) => (
                 <span 
                   key={i} 
-                  className={`inline-block transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0 blur-none" : "opacity-0 translate-y-8 blur-[4px]"}`}
+                  className={`inline-block transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0 blur-none" : "opacity-0 translate-y-8 blur-xs"}`}
                   style={{ transitionDelay: `${i * 120}ms` }}
                 >
                   {word}
@@ -80,7 +80,7 @@ export default function GlobalCTA() {
                 animation: floatX 2.5s ease-in-out infinite;
               }
             `}</style>
-            <Image src="/ary.png" alt="Arrow" width={120} height={120} className="w-[120px] h-auto object-contain opacity-80 animate-float-x" />
+            <Image src="/ary.png" alt="Arrow" width={120} height={120} className="w-30 h-auto object-contain opacity-80 animate-float-x" />
           </div>
 
           {/* Right Button */}

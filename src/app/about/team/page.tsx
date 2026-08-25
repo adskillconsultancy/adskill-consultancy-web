@@ -1,22 +1,8 @@
 "use client";
 
-import { Link as LucideLink } from "lucide-react";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-
-// Team members array - structured to easily add more team members in the future
-const teamMembers = [
-  {
-    id: 1,
-    name: "Adil Mohammad",
-    role: "Founder, AdSkill Consultancy Inc.",
-    description:
-      "U.S. Business & Investment Advisor | Supporting Entrepreneurship, Small Business Growth & Foreign Investment in the United States",
-    image: "/founder iamge.png",
-    linkedin: "https://www.linkedin.com/in/adiiladnaan/", // Add the actual LinkedIn URL here
-  },
-  // You can add more team members below following the same structure
-];
+import { teamMembers, TeamCard } from "@/components/TeamSection";
 
 export default function TeamPage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -80,7 +66,7 @@ export default function TeamPage() {
           }}
         />
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">
             Our Team
           </span>
@@ -95,46 +81,14 @@ export default function TeamPage() {
       </section>
 
       {/* Team Content Area */}
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-360 mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {teamMembers.map((member) => (
-            <div
-              key={member.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-1">
-              <div className="relative h-80 overflow-hidden">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                {/* Overlay for social icon on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-6 right-6 bg-brand-teal text-white p-3 rounded-full opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-brand-primary shadow-lg z-10 delay-100"
-                  aria-label={`LinkedIn profile for ${member.name}`}>
-                    <LucideLink size={18} strokeWidth={2.5} />
-                </a>
-              </div>
-              <div className="p-8 flex flex-col flex-grow relative bg-white">
-                <h3 className="text-2xl font-bold text-brand-dark mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-brand-teal font-semibold text-sm mb-5 pb-5 border-b border-gray-100">
-                  {member.role}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed flex-grow">
-                  {member.description}
-                </p>
-              </div>
-            </div>
+            <TeamCard key={member.id} member={member} />
           ))}
         </div>
       </div>
     </main>
   );
 }
+

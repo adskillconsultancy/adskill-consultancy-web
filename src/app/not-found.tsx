@@ -13,13 +13,13 @@ export default function NotFound() {
             backgroundSize: '32px 32px'
           }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-brand-primary/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 md:w-150 h-100 md:h-150 bg-brand-primary/10 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative z-10 max-w-2xl w-full text-center bg-white p-10 md:p-16 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center">
         {/* 404 Text */}
         <div className="relative mb-4 md:mb-6">
-          <h1 className="text-[100px] md:text-[160px] font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-dark to-brand-primary leading-none select-none drop-shadow-sm">
+          <h1 className="text-[100px] md:text-[160px] font-black text-transparent bg-clip-text bg-linear-to-br from-brand-dark to-brand-primary leading-none select-none drop-shadow-sm">
             404
           </h1>
         </div>

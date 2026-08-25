@@ -79,7 +79,7 @@ export default function SuccessStoriesPage() {
           }}
         />
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4">
             Portfolio
           </span>
@@ -94,7 +94,7 @@ export default function SuccessStoriesPage() {
       </section>
 
       {/* Main Content */}
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 pb-24">
+      <div className="max-w-360 mx-auto px-6 lg:px-12 pb-24">
         {/* Stats Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {[
@@ -254,7 +254,7 @@ export default function SuccessStoriesPage() {
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       openIndex === index
-                        ? "max-h-[200px] opacity-100"
+                        ? "max-h-50 opacity-100"
                         : "max-h-0 opacity-0"
                     }`}
                   >

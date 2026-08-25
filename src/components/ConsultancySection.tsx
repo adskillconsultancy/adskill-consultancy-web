@@ -1,15 +1,88 @@
+"use client";
+
 import { Lightbulb, PenTool } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
+
+function AnimatedProgressBar() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const text = "Business Success";
+
+  return (
+    <div ref={ref} className="mb-8">
+      <div className="flex justify-between items-center mb-2 overflow-hidden">
+        <span className="font-bold text-brand-dark flex">
+          {text.split('').map((char, index) => (
+            <span 
+              key={index} 
+              className={`transition-all duration-500 ease-out inline-block ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+              style={{ transitionDelay: `${index * 30}ms` }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          ))}
+        </span>
+      </div>
+      <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+        <div 
+          className="bg-brand-teal h-1.5 rounded-full transition-all duration-[1.5s] ease-out" 
+          style={{ width: isVisible ? '75%' : '0%' }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function FadeInElement({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function ConsultancySection() {
   return (
     <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+      <div className="mx-auto max-w-360 px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Images */}
-          <div className="relative h-[450px] lg:h-[600px] w-full flex items-center justify-center lg:justify-start">
+          <div className="relative h-[450px] lg:h-150 w-full flex items-center justify-center lg:justify-start">
             
             {/* Main Image */}
             <div className="absolute left-0 top-0 w-[80%] md:w-[75%] h-[80%] md:h-[85%] rounded-2xl overflow-hidden shadow-2xl z-10 border-8 border-white bg-gray-100 group cursor-pointer">
@@ -62,55 +135,54 @@ export default function ConsultancySection() {
 
           {/* Right Column: Content */}
           <div className="max-w-xl">
-            <div className="inline-block px-5 py-1.5 rounded-full bg-brand-primary/20 mb-4">
-              <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">
-                CONSULTANCY
-              </span>
-            </div>
+            <FadeInElement delay={0}>
+              <div className="inline-block px-5 py-1.5 rounded-full bg-brand-primary/20 mb-4">
+                <span className="text-xs font-bold text-brand-dark uppercase tracking-wider">
+                  CONSULTANCY
+                </span>
+              </div>
+            </FadeInElement>
             
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-brand-dark leading-[1.2] mb-4">
-              The Journey Behind Our Business Success
-            </h2>
+            <FadeInElement delay={100}>
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-brand-dark leading-[1.2] mb-4">
+                The Journey Behind Our Business Success
+              </h2>
+            </FadeInElement>
             
-            <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
-              Adskill is your trusted partner for visa and immigration consultancy, providing expert guidance and personalized solutions to help you navigate global opportunities seamlessly.
-            </p>
+            <FadeInElement delay={200}>
+              <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
+                Adskill is your trusted partner for visa and immigration consultancy, providing expert guidance and personalized solutions to help you navigate global opportunities seamlessly.
+              </p>
+            </FadeInElement>
             
             <div className="space-y-6 mb-8">
-              <div className="flex gap-4">
-                <div className="mt-1 flex-shrink-0">
-                  <Lightbulb size={32} strokeWidth={1.5} className="text-brand-dark" />
+              <FadeInElement delay={300}>
+                <div className="flex gap-4">
+                  <div className="mt-1 shrink-0">
+                    <Lightbulb size={32} strokeWidth={1.5} className="text-brand-dark" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-brand-dark mb-3">Tailored Guidance</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">Every immigration journey is unique. We provide personalized strategies tailored to your specific visa requirements and goals.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-3">Tailored Guidance</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">Every immigration journey is unique. We provide personalized strategies tailored to your specific visa requirements and goals.</p>
-                </div>
-              </div>
+              </FadeInElement>
 
-              <div className="flex gap-4">
-                <div className="mt-1 flex-shrink-0">
-                  <PenTool size={32} strokeWidth={1.5} className="text-brand-dark" />
+              <FadeInElement delay={400}>
+                <div className="flex gap-4">
+                  <div className="mt-1 shrink-0">
+                    <PenTool size={32} strokeWidth={1.5} className="text-brand-dark" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-brand-dark mb-3">Proven Expertise</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">With a high success rate and deep understanding of immigration laws, we ensure a smooth and hassle-free visa application process.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-3">Proven Expertise</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">With a high success rate and deep understanding of immigration laws, we ensure a smooth and hassle-free visa application process.</p>
-                </div>
-              </div>
+              </FadeInElement>
             </div>
 
-            {/* Progress Bar */}
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-2">
-                <span className="font-bold text-brand-dark">Business Success</span>
-                {/* <span className="font-bold text-brand-dark">85%</span> */}
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-1.5">
-                <div className="bg-brand-teal h-1.5 rounded-full relative" style={{ width: '75%' }}>
-                   {/* Optional thumb */}
-                   {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-2 border-[#2c5a58] rounded-full"></div> */}
-                </div>
-              </div>
-            </div>
+            {/* Animated Progress Bar */}
+            <AnimatedProgressBar />
 
             <div className="flex flex-wrap items-center gap-8">
               <Link 

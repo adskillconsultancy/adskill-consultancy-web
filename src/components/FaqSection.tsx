@@ -25,7 +25,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-brand-dark relative overflow-hidden flex flex-col lg:flex-row min-h-[600px]">
+    <section className="bg-brand-dark relative overflow-hidden flex flex-col lg:flex-row min-h-150">
       {/* Subtle background map/pattern (simulated with a subtle gradient/noise) */}
       <div 
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
@@ -36,7 +36,7 @@ export default function FaqSection() {
       />
 
       {/* Left Image Section */}
-      <div className="w-full lg:w-[35%] relative h-[400px] lg:h-auto z-10 shrink-0">
+      <div className="w-full lg:w-[35%] relative h-100 lg:h-auto z-10 shrink-0">
         <Image 
           src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1000&auto=format&fit=crop"
           alt="Consultants working together"
@@ -107,7 +107,7 @@ export default function FaqSection() {
                 
                 <div 
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-50 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="px-6 pb-5 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">

@@ -164,7 +164,7 @@ export default function Navbar() {
                 <ul
                   className={cn(
                     "absolute left-0 top-full shadow-xl rounded-b-lg transition-all duration-300 bg-white border border-gray-100 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto p-4",
-                    link.label === "Services" ? "w-[600px] grid grid-cols-2 gap-x-4 gap-y-2" : "min-w-60 flex flex-col gap-1"
+                    link.label === "Services" ? "w-150 grid grid-cols-2 gap-x-4 gap-y-2" : "min-w-60 flex flex-col gap-1"
                   )}
                   role="menu"
                 >

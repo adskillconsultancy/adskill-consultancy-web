@@ -52,7 +52,7 @@ export default function BlogPage() {
         {/* Decorative dots */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Blogs & News</span>
           <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
             Latest Immigration <span className="text-brand-primary">Insights & Updates</span>
@@ -64,7 +64,7 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Grid + Sidebar */}
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+      <div className="max-w-360 mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
 
           {/* Main Content: Blog Grid */}
@@ -72,7 +72,7 @@ export default function BlogPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {recentBlogs.map((blog) => (
                 <div key={blog.id} className="group relative bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative w-full h-[240px] overflow-hidden bg-gray-200">
+                  <div className="relative w-full h-60 overflow-hidden bg-gray-200">
                     <Image
                       src={blog.image}
                       alt={blog.title}
@@ -84,8 +84,8 @@ export default function BlogPage() {
                       Visa Updates
                     </div>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-brand-dark mb-4 leading-snug line-clamp-2 group-hover:text-brand-primary transition-colors flex-grow">
+                  <div className="p-6 flex flex-col grow">
+                    <h3 className="text-xl font-bold text-brand-dark mb-4 leading-snug line-clamp-2 group-hover:text-brand-primary transition-colors grow">
                       <Link href={`/blog/${blog.id}`}>
                         {blog.title}
                       </Link>

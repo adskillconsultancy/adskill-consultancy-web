@@ -81,7 +81,7 @@ export default function MissionVisionSection() {
 
   return (
     <section className="py-12 lg:py-16 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-360 mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
           {/* Left Content */}
@@ -119,10 +119,10 @@ export default function MissionVisionSection() {
             </p>
 
             {/* Checklist */}
-            <div className="grid sm:grid-cols-2 gap-y-3 gap-x-8 mb-8 min-h-[80px]">
+            <div className="grid sm:grid-cols-2 gap-y-3 gap-x-8 mb-8 min-h-20">
               {currentContent.checklist.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
-                  <div className="flex-shrink-0 text-brand-dark">
+                  <div className="shrink-0 text-brand-dark">
                     <Check size={18} strokeWidth={3.5} />
                   </div>
                   <span className="text-brand-dark font-bold text-sm">{item}</span>
@@ -141,7 +141,7 @@ export default function MissionVisionSection() {
           {/* Right Content - Image & Stats Card */}
           <div className="relative mt-8 lg:mt-0">
             {/* Main Image */}
-            <div className="relative h-[400px] md:h-[480px] w-full lg:w-[90%] lg:ml-auto">
+            <div className="relative h-100 md:h-120 w-full lg:w-[90%] lg:ml-auto">
               <Image 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
                 alt="Team working together"
@@ -152,7 +152,7 @@ export default function MissionVisionSection() {
             </div>
 
             {/* Stats Card */}
-            <div className="absolute -bottom-8 -left-4 md:-left-12 lg:-left-4 bg-brand-primary p-6 md:p-8 shadow-2xl z-10 w-[240px] md:w-[300px]">
+            <div className="absolute -bottom-8 -left-4 md:-left-12 lg:-left-4 bg-brand-primary p-6 md:p-8 shadow-2xl z-10 w-60 md:w-75">
               
               {/* Stat 1 */}
               <div className="flex items-center gap-4 mb-6">

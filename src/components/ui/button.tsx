@@ -19,11 +19,11 @@ const buttonVariants = cva(
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
         brand:
-          "bg-[var(--brand-gold)] text-[var(--brand-navy)] font-semibold hover:bg-[var(--brand-gold-hover)] focus-visible:ring-[var(--brand-gold)]/50",
+          "bg-(--brand-gold) text-(--brand-navy) font-semibold hover:bg-(--brand-gold-hover) focus-visible:ring-(--brand-gold)/50",
         "brand-outline":
-          "border border-[var(--brand-gold)] text-[var(--brand-gold)] bg-transparent hover:bg-[var(--brand-gold)] hover:text-[var(--brand-navy)] focus-visible:ring-[var(--brand-gold)]/50",
+          "border border-(--brand-gold) text-(--brand-gold) bg-transparent hover:bg-(--brand-gold) hover:text-(--brand-navy) focus-visible:ring-(--brand-gold)/50",
         "brand-nav":
-          "bg-transparent text-white hover:text-[var(--brand-gold)] focus-visible:ring-0 rounded-none px-0",
+          "bg-transparent text-white hover:text-(--brand-gold) focus-visible:ring-0 rounded-none px-0",
       },
       size: {
         default:

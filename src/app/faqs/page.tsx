@@ -64,7 +64,7 @@ export default function FaqPage() {
         {/* Decorative dots */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">FAQs</span>
           <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
             How Can We <span className="text-brand-primary">Help You?</span>
@@ -76,7 +76,7 @@ export default function FaqPage() {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-360 mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
           {/* Sidebar / Categories */}
@@ -145,7 +145,7 @@ export default function FaqPage() {
                     
                     <div 
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+                        isOpen ? "max-h-75 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
                       <div className="px-6 lg:px-8 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4">

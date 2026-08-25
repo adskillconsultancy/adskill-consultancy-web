@@ -71,7 +71,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <div className="space-y-6">
                 {service.eligibility.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-50 text-brand-secondary flex items-center justify-center font-bold border border-gray-100">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-gray-50 text-brand-secondary flex items-center justify-center font-bold border border-gray-100">
                       {idx + 1}
                     </div>
                     <div>
@@ -90,7 +90,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <div className="relative border-l-2 border-gray-100 ml-4 space-y-8">
                 {service.process.map((step, idx) => (
                   <div key={idx} className="relative pl-8">
-                    <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-brand-secondary text-white flex items-center justify-center text-sm font-bold ring-4 ring-white">
+                    <div className="absolute left-[-17px] top-1 w-8 h-8 rounded-full bg-brand-secondary text-white flex items-center justify-center text-sm font-bold ring-4 ring-white">
                       {step.step}
                     </div>
                     <h3 className="font-bold text-gray-900 mb-2 text-lg">{step.title}</h3>

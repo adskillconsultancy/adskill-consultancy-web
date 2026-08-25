@@ -39,7 +39,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
 
   return (
     <main className="min-h-screen bg-[#f8f9fa] pt-28 pb-20">
-      <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <div className="max-w-200 mx-auto px-6 lg:px-12">
         
         {/* Back Link */}
         <div className="mb-8">
@@ -68,7 +68,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
         </div>
 
         {/* Featured Image */}
-        <div className="relative w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden mb-12 shadow-md">
+        <div className="relative w-full h-75 md:h-[450px] rounded-2xl overflow-hidden mb-12 shadow-md">
           <Image 
             src={post.image}
             alt={post.title}
@@ -87,7 +87,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
         {/* Footer / CTA */}
         <div className="mt-16 pt-10 border-t border-gray-200">
           <div className="bg-brand-dark rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-brand-primary/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-75 h-75 bg-brand-primary/20 rounded-full blur-3xl pointer-events-none" />
             
             <h3 className="text-2xl md:text-3xl font-bold mb-4 relative z-10">
               Ready to start your immigration journey?

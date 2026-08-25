@@ -75,7 +75,7 @@ export default function BlogSection() {
               }}>
               {recentBlogs.map((blog) => (
                 <div key={blog.id} className="shrink-0 px-2 group" style={{ width: `${pct}%` }}>
-                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-xl bg-gray-200">
+                  <div className="relative w-full aspect-4/3 overflow-hidden rounded-t-xl bg-gray-200">
                     <Image
                       src={blog.image}
                       alt={blog.title}

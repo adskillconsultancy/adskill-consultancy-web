@@ -141,7 +141,7 @@ export default function ContactPage() {
         {/* Decorative dots */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
+        <div className="max-w-360 w-full mx-auto px-6 lg:px-12 relative z-10 text-left">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-4 animate-float-y">Contact Us</span>
           <h1 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white leading-[1.1] mb-4">
             Let&rsquo;s Start Your <span className="text-brand-primary">Immigration</span> Journey
@@ -155,12 +155,12 @@ export default function ContactPage() {
       {/* Redesigned Contact Section */}
       <div className="relative bg-[#f8f9fa] overflow-hidden">
         {/* Subtle Background Elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-40 left-0 w-[600px] h-[600px] bg-brand-dark/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-125 h-125 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-40 left-0 w-150 h-150 bg-brand-dark/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(10, 35, 66, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(10, 35, 66, 0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
         <FadeIn>
-          <section className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+          <section className="relative z-10 max-w-360 mx-auto px-6 lg:px-12 py-16 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
               
               {/* Left Column: Contact Cards */}
@@ -196,7 +196,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Calendly CTA */}
-                <a href="https://calendly.com/adskillconsultancyinc/30-minutes-consulation" target="_blank" rel="noopener noreferrer" className="group relative bg-gradient-to-br from-brand-primary to-brand-secondary text-brand-dark rounded-2xl p-6 text-center overflow-hidden hover:shadow-lg transition-all duration-300">
+                <a href="https://calendly.com/adskillconsultancyinc/30-minutes-consulation" target="_blank" rel="noopener noreferrer" className="group relative bg-linear-to-br from-brand-primary to-brand-secondary text-brand-dark rounded-2xl p-6 text-center overflow-hidden hover:shadow-lg transition-all duration-300">
                   <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="relative z-10">
                     <p className="font-bold text-lg mb-1 flex items-center justify-center gap-2">
@@ -211,11 +211,11 @@ export default function ContactPage() {
               <div className="lg:col-span-8">
                 <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-white shadow-xl relative">
                   {/* Form Glow */}
-                  <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-75 h-75 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
                   
                   {submitted ? (
                     <div className="flex flex-col items-center justify-center py-20 text-center animate-in fade-in zoom-in duration-500">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-green-400 to-green-500 flex items-center justify-center text-white mb-6 shadow-lg shadow-green-500/30">
+                      <div className="w-20 h-20 rounded-full bg-linear-to-tr from-green-400 to-green-500 flex items-center justify-center text-white mb-6 shadow-lg shadow-green-500/30">
                         <svg width={36} height={36} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
                       <h3 className="text-3xl font-bold text-brand-dark mb-3">Message Sent!</h3>
@@ -277,9 +277,9 @@ export default function ContactPage() {
 
         {/* Floating Map Section */}
         <FadeIn delay={0.2}>
-          <section className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 pb-24">
+          <section className="relative z-10 max-w-360 mx-auto px-6 lg:px-12 pb-24">
             <div className="bg-white/60 backdrop-blur-xl rounded-[2rem] p-4 lg:p-6 border border-white shadow-2xl shadow-brand-dark/5">
-              <div className="rounded-2xl overflow-hidden h-[400px] lg:h-[500px] relative">
+              <div className="rounded-2xl overflow-hidden h-100 lg:h-125 relative">
                 {/* Map Overlay Glow */}
                 <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none" />
                 <iframe

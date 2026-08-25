@@ -1,10 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, ArrowRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+function CountUp({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        let startTime: number;
+        const animate = (timestamp: number) => {
+          if (!startTime) startTime = timestamp;
+          const progress = timestamp - startTime;
+          const percentage = Math.min(progress / duration, 1);
+          // Easing function for smoother counting
+          const easeOutQuart = 1 - Math.pow(1 - percentage, 4);
+          setCount(Math.floor(end * easeOutQuart));
+          if (progress < duration) {
+            requestAnimationFrame(animate);
+          }
+        };
+        requestAnimationFrame(animate);
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return <div ref={ref} className="inline-block">{count}{suffix && <span className="text-3xl">{suffix}</span>}</div>;
+}
 
 const accordionItems = [
   {
@@ -47,7 +78,7 @@ export default function AboutSection() {
               {/* Image Container with hidden overflow */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop"
+                  src="/founder iamge.png"
                   alt="Consulting Expert"
                   fill
                   className="object-cover"
@@ -86,7 +117,7 @@ export default function AboutSection() {
               
               <div className="flex flex-wrap items-center gap-8 mb-12">
                 <Link
-                  href="/work"
+                  href="/success-stories"
                   className="inline-flex items-center gap-2 px-8 h-12 bg-brand-primary text-brand-dark font-bold rounded-full hover:bg-brand-dark hover:text-white transition-colors text-sm"
                 >
                   Our Work <ArrowUpRight size={16} />
@@ -105,13 +136,17 @@ export default function AboutSection() {
               
               {/* Overlapping Circle Stats */}
               <div className="flex items-center gap-4 relative">
-                <div className="w-45 md:w-55 h-45 md:h-55 rounded-full border border-gray-100 shadow-sm flex flex-col items-center justify-center bg-white z-10 transition-transform hover:-translate-y-2">
-                  <div className="text-5xl md:text-6xl font-bold text-brand-dark leading-none mb-2">15<span className="text-3xl">+</span></div>
-                  <p className="text-xs md:text-sm text-gray-500 font-medium text-center">Experienced Professionals<br/>Ready to Assist</p>
+                <div className="w-45 md:w-55 h-45 md:h-55 rounded-full shadow-lg flex flex-col items-center justify-center bg-brand-primary z-10 transition-transform hover:-translate-y-2">
+                  <div className="text-5xl md:text-6xl font-bold text-brand-dark leading-none mb-2">
+                    <CountUp end={15} suffix="+" />
+                  </div>
+                  <p className="text-xs md:text-sm text-brand-dark/80 font-bold text-center">Experienced Professionals<br/>Ready to Assist</p>
                 </div>
-                <div className="w-45 md:w-55 h-45 md:h-55 rounded-full border border-gray-100 shadow-sm flex flex-col items-center justify-center bg-white -ml-16 transition-transform hover:-translate-y-2">
-                  <div className="text-5xl md:text-6xl font-bold text-brand-dark leading-none mb-2">98<span className="text-3xl">%</span></div>
-                  <p className="text-xs md:text-sm text-gray-500 font-medium text-center">Success Rate<br/>for Clients</p>
+                <div className="w-45 md:w-55 h-45 md:h-55 rounded-full shadow-lg flex flex-col items-center justify-center bg-brand-dark -ml-16 transition-transform hover:-translate-y-2 border-4 border-white">
+                  <div className="text-5xl md:text-6xl font-bold text-white leading-none mb-2">
+                    <CountUp end={98} suffix="%" />
+                  </div>
+                  <p className="text-xs md:text-sm text-gray-300 font-medium text-center">Success Rate<br/>for Clients</p>
                 </div>
               </div>
 
@@ -337,7 +372,7 @@ export default function AboutSection() {
               <div className="order-1 lg:order-2 relative flex justify-center items-center min-h-100">
                 <div className="absolute w-72 md:w-96 h-72 md:h-96 bg-gray-50 rounded-full -z-10" />
 
-                <div className="relative z-10 w-full max-w-[380px] space-y-4">
+                <div className="relative z-10 w-full max-w-95 space-y-4">
 
                   {/* Hero Stat */}
                   <div className="bg-brand-dark rounded-xl shadow-lg p-5 flex items-center gap-5">
