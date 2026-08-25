@@ -68,7 +68,7 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ id:
         </div>
 
         {/* Featured Image */}
-        <div className="relative w-full h-75 md:h-[450px] rounded-2xl overflow-hidden mb-12 shadow-md">
+        <div className="relative w-full h-75 md:h-112.5 rounded-2xl overflow-hidden mb-12 shadow-md">
           <Image 
             src={post.image}
             alt={post.title}

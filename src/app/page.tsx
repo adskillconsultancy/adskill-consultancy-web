@@ -70,7 +70,7 @@ export default function Home() {
               <Link 
                 href="/services" 
                 aria-label="Discover more about our services"
-                className="inline-flex items-center gap-3 px-8 h-[54px] rounded bg-brand-dark text-white font-semibold hover:bg-brand-teal transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center gap-3 px-8 h-13.5 rounded bg-brand-dark text-white font-semibold hover:bg-brand-teal transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Discover More
                 <ArrowRight size={18} />
@@ -99,7 +99,7 @@ export default function Home() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-50 h-50 sm:w-75 sm:h-75 md:w-95 md:h-95 rounded-full border border-solid border-gray-200" />
 
             {/* Main Consultant Image */}
-            <div className="relative z-10 w-[75%] sm:w-[70%] md:w-[80%] max-w-[450px] h-75 sm:h-100 lg:h-150 animate-float-y rounded-full overflow-hidden border-4 sm:border-8 border-white shadow-2xl">
+            <div className="relative z-10 w-[75%] sm:w-[70%] md:w-[80%] max-w-112.5 h-75 sm:h-100 lg:h-150 animate-float-y rounded-full overflow-hidden border-4 sm:border-8 border-white shadow-2xl">
               <Image 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
                 alt="Expert Consultant"
@@ -110,7 +110,7 @@ export default function Home() {
             </div>
 
             {/* Floating Badge 1: Stats */}
-            <div className="absolute top-[8%] -left-2 sm:left-4 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 sm:gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute top-[8%] -left-2 sm:left-4 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 items-center gap-3 sm:gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '0.5s' }}>
               <div className="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
                 <CheckCircle2 size={24} />
               </div>
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
 
             {/* Floating Badge 2: Revenue/Growth */}
-            <div className="absolute bottom-[15%] -left-2 sm:-left-8 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 sm:gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '1.2s' }}>
+            <div className="absolute bottom-[15%] -left-2 sm:-left-8 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 items-center gap-3 sm:gap-4 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '1.2s' }}>
               <div className="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-white">
                 <TrendingUp size={24} />
               </div>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
 
             {/* Floating Badge 3: Happy Clients */}
-            <div className="absolute top-[35%] -right-2 sm:-right-4 md:-right-8 z-20 bg-white p-4 sm:p-5 rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center gap-2 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '0.8s' }}>
+            <div className="absolute top-[35%] -right-2 sm:-right-4 md:-right-8 z-20 bg-white p-4 sm:p-5 rounded-2xl shadow-xl border border-gray-100 flex-col items-center gap-2 animate-float-y hover:-translate-y-2 transition-transform cursor-default hidden sm:flex" style={{ animationDelay: '0.8s' }}>
               <div className="flex -space-x-3 mb-1">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden relative shadow-sm">

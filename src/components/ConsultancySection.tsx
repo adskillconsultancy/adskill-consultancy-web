@@ -82,7 +82,7 @@ export default function ConsultancySection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Images */}
-          <div className="relative h-[450px] lg:h-150 w-full flex items-center justify-center lg:justify-start">
+          <div className="relative h-112.5 lg:h-150 w-full flex items-center justify-center lg:justify-start">
             
             {/* Main Image */}
             <div className="absolute left-0 top-0 w-[80%] md:w-[75%] h-[80%] md:h-[85%] rounded-2xl overflow-hidden shadow-2xl z-10 border-8 border-white bg-gray-100 group cursor-pointer">
@@ -187,7 +187,7 @@ export default function ConsultancySection() {
             <div className="flex flex-wrap items-center gap-8">
               <Link 
                 href="/services" 
-                className="inline-flex items-center justify-center px-8 h-[50px] rounded bg-brand-teal text-white font-semibold hover:bg-brand-dark transition-colors shadow-md"
+                className="inline-flex items-center justify-center px-8 h-12.5 rounded bg-brand-teal text-white font-semibold hover:bg-brand-dark transition-colors shadow-md"
               >
                 Find Services
               </Link>

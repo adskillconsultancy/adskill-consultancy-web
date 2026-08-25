@@ -5,8 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, ChevronRight, ChevronDown, Quote } from "lucide-react";
 
+interface Review {
+  author_name: string;
+  profile_photo_url: string;
+  rating: number;
+  relative_time_description: string;
+  text: string;
+}
+
 export default function SuccessStoriesPage() {
-  const [reviews, setReviews] = useState<any[]>([]);
+  const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -50,6 +58,14 @@ export default function SuccessStoriesPage() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-[#f8f9fa] flex items-center justify-center">
+        <div className="text-xl font-bold text-brand-dark animate-pulse">Loading stories...</div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[#f8f9fa]">

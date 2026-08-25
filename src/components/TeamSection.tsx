@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Plus } from "lucide-react";
-import { useState } from "react";
+import { useState, ElementType } from "react";
 
 export const teamMembers = [
   {
@@ -58,7 +58,7 @@ const IconLinkedin = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-const SocialIcon = ({ Icon, href = "#" }: { Icon: any, href?: string }) => (
+const SocialIcon = ({ Icon, href = "#" }: { Icon: ElementType, href?: string }) => (
   <a 
     href={href}
     target={href !== "#" ? "_blank" : undefined}
@@ -78,7 +78,16 @@ const BehanceIcon = () => (
   </a>
 );
 
-export const TeamCard = ({ member }: { member: any }) => {
+export interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+  linkedin?: string;
+}
+
+export const TeamCard = ({ member }: { member: TeamMember }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -102,7 +111,7 @@ export const TeamCard = ({ member }: { member: any }) => {
         
         {/* Social Icons (vertical stack) */}
         <div 
-          className={`absolute right-[22px] bottom-12 flex flex-col gap-3 transition-all duration-500 z-20 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
+          className={`absolute right-5.5 bottom-12 flex flex-col gap-3 transition-all duration-500 z-20 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
         >
           <div style={{ transitionDelay: isActive ? '150ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconFacebook} /></div>
           <div style={{ transitionDelay: isActive ? '100ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconInstagram} /></div>
