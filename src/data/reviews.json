@@ -82,5 +82,42 @@
     "rating": 5,
     "relative_time_description": "a year ago",
     "text": ""
+  },
+  {
+    "author_name": "Sarah Jenkins",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random",
+    "rating": 5,
+    "relative_time_description": "2 weeks ago",
+    "text": "Adskill completely changed my life. The team helped me navigate the complex H-1B process with incredible ease. They were always available to answer my questions and provided constant updates. I highly recommend their consultancy for any immigration needs!",
+    "platform": "Facebook"
+  },
+  {
+    "author_name": "David OConnor",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=David+OConnor&background=random",
+    "rating": 5,
+    "relative_time_description": "1 month ago",
+    "text": "Outstanding service! The consultants at Adskill are not only knowledgeable but truly care about your success. They guided me through my EB-1A application step-by-step, making sure every detail of my portfolio was perfectly presented. Thanks to them, my petition was approved."
+  },
+  {
+    "author_name": "Maria Fernandez",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Maria+Fernandez&background=random",
+    "rating": 5,
+    "relative_time_description": "2 months ago",
+    "text": "I cannot thank Adskill enough. Applying for a marriage-based green card seemed daunting, but their clear instructions and organized approach took away all the stress. We got our approval faster than expected. A truly professional and empathetic team.",
+    "platform": "Facebook"
+  },
+  {
+    "author_name": "James Lin",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=James+Lin&background=random",
+    "rating": 5,
+    "relative_time_description": "3 months ago",
+    "text": "Adskill provided exceptional support for my L1A visa transfer. Coming from overseas to establish a new U.S. branch was stressful, but their legal team ensured the paperwork was flawless. They even helped me prepare for the embassy interview, which was incredibly helpful."
+  },
+  {
+    "author_name": "Emily Watson",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Emily+Watson&background=random",
+    "rating": 5,
+    "relative_time_description": "4 months ago",
+    "text": "Highly recommend! The Adskill team assisted me with my National Interest Waiver (NIW). They took the time to understand my research background and drafted a compelling case that highlighted my contributions. Professional, precise, and results-driven."
   }
 ]

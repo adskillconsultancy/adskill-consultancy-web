@@ -11,12 +11,14 @@ interface Review {
   rating: number;
   relative_time_description: string;
   text: string;
+  platform?: string;
 }
 
 export default function SuccessStoriesPage() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     fetch("/api/reviews")
@@ -106,94 +108,85 @@ export default function SuccessStoriesPage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <div className="max-w-360 mx-auto px-6 lg:px-12 mb-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 bg-white rounded-3xl p-6 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100">
-          {[
-            { value: "500+", label: "Clients Served" },
-            { value: "98%", label: "Success Rate" },
-            { value: "4.9", label: "Google Rating" },
-            { value: "15+", label: "Years Experience" },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`text-center flex flex-col items-center ${i !== 0 ? 'md:border-l md:border-gray-100' : ''}`}
-            >
-              <p className="text-4xl md:text-5xl font-extrabold text-brand-dark mb-2 tracking-tight">
-                {stat.value}
-              </p>
-              <p className="text-sm uppercase tracking-wider text-gray-500 font-bold">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="max-w-360 mx-auto px-6 lg:px-12">
         {/* Featured Stories Grid */}
         <div className="mb-32">
           <div className="flex flex-col items-center text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4 tracking-tight">
-              Featured Experiences
+              Success Stories of Our Clients
             </h2>
             <div className="w-24 h-1.5 bg-brand-primary rounded-full" />
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {featuredReviews.slice(0, 6).map((review, i) => (
+            {featuredReviews.slice(0, visibleCount).map((review, i) => (
               <div
                 key={i}
-                className="group bg-white rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 hover:border-brand-primary/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full relative overflow-hidden"
+                className="bg-white p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] border border-gray-100 hover:border-brand-primary/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full relative"
               >
-                {/* Large Background Quote Icon */}
-                <Quote className="absolute -top-6 -right-6 w-32 h-32 text-gray-50 transform rotate-12 transition-transform duration-500 group-hover:scale-110 group-hover:text-brand-primary/5" />
-                
-                <div className="flex gap-1 mb-6 relative z-10">
+                <div className="flex gap-1 mb-4">
                   {[...Array(review.rating || 5)].map((_, idx) => (
-                    <Star
-                      key={idx}
-                      size={18}
-                      className="text-yellow-400 fill-yellow-400"
-                    />
+                    <Star key={idx} size={18} className="text-brand-primary fill-brand-primary" />
                   ))}
                 </div>
-
-                <div className="relative flex-1 mb-8 z-10">
-                  <p className="text-gray-700 text-base leading-loose font-medium">
+                
+                <div className="relative flex-1 mb-6">
+                  <p className="text-gray-700 text-base leading-relaxed font-medium">
                     "{review.text}"
                   </p>
                 </div>
-
-                <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between relative z-10">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src={review.profile_photo_url}
-                      alt={review.author_name}
-                      width={56}
-                      height={56}
-                      className="w-14 h-14 rounded-full object-cover shadow-md ring-4 ring-gray-50"
-                    />
+                
+                <div className="pt-5 border-t border-gray-50 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden relative shadow-sm border border-gray-100 shrink-0">
+                      <Image 
+                        src={review.profile_photo_url} 
+                        alt={review.author_name} 
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    </div>
                     <div>
-                      <h4 className="font-bold text-brand-dark text-lg">
-                        {review.author_name}
-                      </h4>
-                      <p className="text-sm text-gray-500 font-medium">
-                        {review.relative_time_description}
-                      </p>
+                      <h4 className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</h4>
+                      <span className="text-xs text-gray-500 font-semibold">{review.relative_time_description}</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-100">
+                  <div className="flex items-center gap-2">
                     <Image
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                      alt="Google Review"
-                      width={16}
-                      height={16}
-                      className="w-4 h-4"
+                      src={review.platform === 'Facebook' ? 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg' : 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg'}
+                      alt={`${review.platform || 'Google'} Review`}
+                      width={18}
+                      height={18}
+                      className="w-[18px] h-[18px]"
                     />
-                    <span className="text-xs font-bold text-gray-500 hidden sm:block">Posted on Google</span>
+                    <span className="text-xs font-bold text-gray-500 hidden sm:block">
+                      Posted on {review.platform || 'Google'}
+                    </span>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="flex justify-center gap-4 mt-12">
+            {visibleCount < featuredReviews.length && (
+              <button
+                onClick={() => setVisibleCount((prev) => prev + 6)}
+                className="px-8 py-4 bg-brand-primary text-brand-dark font-bold rounded-full hover:bg-white transition-colors shadow-lg hover:shadow-xl"
+              >
+                Load More Stories
+              </button>
+            )}
+            {visibleCount > 6 && (
+              <button
+                onClick={() => setVisibleCount(6)}
+                className="px-8 py-4 bg-white text-brand-dark font-bold rounded-full border-2 border-gray-100 hover:border-brand-primary hover:bg-brand-primary/10 transition-colors shadow-md hover:shadow-lg"
+              >
+                Show Less
+              </button>
+            )}
           </div>
         </div>
 
