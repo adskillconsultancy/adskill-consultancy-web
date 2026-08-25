@@ -105,11 +105,13 @@ export default function BlogSection() {
             <>
               <button
                 onClick={prev}
+                aria-label="Previous slide"
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-colors z-20">
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={next}
+                aria-label="Next slide"
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-colors z-20">
                 <ChevronRight size={20} />
               </button>

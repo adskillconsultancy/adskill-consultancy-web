@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -79,7 +80,7 @@ export default function GlobalCTA() {
                 animation: floatX 2.5s ease-in-out infinite;
               }
             `}</style>
-            <img src="/ary.png" alt="Arrow" className="w-[120px] h-auto object-contain opacity-80 animate-float-x" />
+            <Image src="/ary.png" alt="Arrow" width={120} height={120} className="w-[120px] h-auto object-contain opacity-80 animate-float-x" />
           </div>
 
           {/* Right Button */}

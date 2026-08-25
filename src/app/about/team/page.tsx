@@ -1,7 +1,8 @@
 "use client";
 
-import { Link } from "lucide-react";
+import { Link as LucideLink } from "lucide-react";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 // Team members array - structured to easily add more team members in the future
 const teamMembers = [
@@ -53,11 +54,13 @@ export default function TeamPage() {
         className="relative overflow-hidden min-h-[35vh] lg:min-h-[40vh] flex items-start pt-28 pb-12 mb-16">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             ref={bgRef}
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop"
             alt="Team background"
-            className="w-full h-full object-cover origin-center"
+            fill
+            sizes="100vw"
+            className="object-cover origin-center"
             style={{
               transform: "scale(1)",
               transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)",
@@ -99,10 +102,12 @@ export default function TeamPage() {
               key={member.id}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-1">
               <div className="relative h-80 overflow-hidden">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 {/* Overlay for social icon on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -112,7 +117,7 @@ export default function TeamPage() {
                   rel="noopener noreferrer"
                   className="absolute bottom-6 right-6 bg-brand-teal text-white p-3 rounded-full opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-brand-primary shadow-lg z-10 delay-100"
                   aria-label={`LinkedIn profile for ${member.name}`}>
-                  <Link size={22} />
+                    <LucideLink size={18} strokeWidth={2.5} />
                 </a>
               </div>
               <div className="p-8 flex flex-col flex-grow relative bg-white">

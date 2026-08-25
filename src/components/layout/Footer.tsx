@@ -73,16 +73,16 @@ export default function Footer() {
             </p>
             
             <div className="flex items-center gap-4 mt-2">
-              <a href="https://www.facebook.com/AdskillConsultancyINC" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
+              <a href="https://www.facebook.com/AdskillConsultancyINC" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
                 <IconFacebook size={18} />
               </a>
-              <a href="https://www.instagram.com/adskillconsultancyinc/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
+              <a href="https://www.instagram.com/adskillconsultancyinc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
                 <IconInstagram size={18} />
               </a>
-              <a href="https://www.tiktok.com/@adskill.consultancy" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
+              <a href="https://www.tiktok.com/@adskill.consultancy" aria-label="TikTok" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
                 <IconTikTok size={18} />
               </a>
-              <a href="https://www.linkedin.com/company/adskillconsultancyinc/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
+              <a href="https://www.linkedin.com/company/adskillconsultancyinc/posts/?feedView=all" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300">
                 <IconLinkedIn size={18} />
               </a>
             </div>

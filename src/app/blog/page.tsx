@@ -36,11 +36,13 @@ export default function BlogPage() {
       <section className="relative overflow-hidden min-h-[35vh] lg:min-h-[40vh] flex items-start pt-28 pb-12 mb-16">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             ref={bgRef}
             src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1920&auto=format&fit=crop"
             alt="Blog background"
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             style={{ transform: "scale(1)", transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)" }}
           />
           {/* Dark overlay */}

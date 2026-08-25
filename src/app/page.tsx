@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CalendarClock, CheckCircle2, TrendingUp, Users } from "lucide-react";
 import ConsultancySection from "@/components/ConsultancySection";
 import ServiceSection from "@/components/ServiceSection";
@@ -11,11 +12,13 @@ export default function Home() {
     <main className="min-h-screen bg-[#f8f9fa] relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
-        {/* Faint Background Image */}
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
           alt="Clean Minimal Office Background"
-          className="absolute inset-0 w-full h-full object-cover grayscale opacity-10"
+          fill
+          sizes="100vw"
+          className="object-cover grayscale opacity-10"
+          priority
         />
         {/* Subtle Grid Pattern */}
         <div 
@@ -62,6 +65,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-6">
               <Link 
                 href="/services" 
+                aria-label="Discover more about our services"
                 className="inline-flex items-center gap-3 px-8 h-[54px] rounded bg-brand-dark text-white font-semibold hover:bg-brand-teal transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 Discover More
@@ -92,10 +96,12 @@ export default function Home() {
 
             {/* Main Consultant Image */}
             <div className="relative z-10 w-[75%] sm:w-[70%] md:w-[80%] max-w-[450px] h-[300px] sm:h-[400px] lg:h-[600px] animate-float-y rounded-full overflow-hidden border-[4px] sm:border-[8px] border-white shadow-2xl">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
                 alt="Expert Consultant"
-                className="object-cover w-full h-full"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
 
@@ -126,9 +132,11 @@ export default function Home() {
               <div className="flex -space-x-3 mb-1">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden relative shadow-sm">
-                    <img 
+                    <Image 
                       src={`https://i.pravatar.cc/100?img=${i * 12}`} 
                       alt="Client" 
+                      width={40}
+                      height={40}
                       className="object-cover w-full h-full"
                     />
                   </div>

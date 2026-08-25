@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Mail, MapPin, Phone, Send, CalendarClock, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/lib/useFadeIn";
 
 function IconFacebook({ size = 20 }: { size?: number }) {
@@ -123,11 +124,13 @@ export default function ContactPage() {
       <section ref={heroRef} className="relative overflow-hidden min-h-[35vh] lg:min-h-[40vh] flex items-start pt-28 pb-12">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             ref={bgRef}
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
             alt="Office background"
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             // Snappy but smooth easing for the dramatic zoom
             style={{ transform: "scale(1)", transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)" }}
           />

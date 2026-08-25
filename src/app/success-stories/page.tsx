@@ -57,11 +57,13 @@ export default function SuccessStoriesPage() {
       <section ref={heroRef} className="relative overflow-hidden min-h-[35vh] lg:min-h-[40vh] flex items-start pt-28 pb-12 mb-16">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             ref={bgRef}
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
             alt="Success stories background"
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             style={{ transform: "scale(1)", transition: "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)" }}
           />
           <div className="absolute inset-0 bg-brand-dark/70" />
@@ -126,9 +128,11 @@ export default function SuccessStoriesPage() {
               >
                 <div className="p-8 flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-5">
-                    <img
+                    <Image
                       src={review.profile_photo_url}
                       alt={review.author_name}
+                      width={48}
+                      height={48}
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
@@ -162,9 +166,11 @@ export default function SuccessStoriesPage() {
                   </div>
 
                   <div className="mt-6 pt-5 border-t border-gray-50 flex items-center gap-2">
-                    <img
+                    <Image
                       src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                       alt="Google"
+                      width={16}
+                      height={16}
                       className="w-4 h-4"
                     />
                     <span className="text-xs font-bold text-gray-500">
@@ -200,9 +206,11 @@ export default function SuccessStoriesPage() {
                     className="w-full px-6 lg:px-8 py-5 lg:py-6 flex items-center justify-between text-left focus:outline-none"
                   >
                     <div className="flex items-center gap-4 pr-6">
-                      <img
+                      <Image
                         src={review.profile_photo_url}
                         alt={review.author_name}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 rounded-full object-cover shrink-0"
                       />
                       <div>
@@ -272,10 +280,12 @@ export default function SuccessStoriesPage() {
         {/* CTA Section */}
         <div className="mt-24 bg-brand-dark rounded-2xl p-8 lg:p-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop"
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
           </div>
           <div className="relative z-10">

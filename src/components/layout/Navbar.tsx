@@ -374,10 +374,10 @@ export default function Navbar() {
       <div
         className={cn(
           "fixed top-0 left-0 w-full z-50 bg-white shadow-md hidden lg:block",
-          isSticky ? "translate-y-0 transition-transform duration-500 ease-out" : "-translate-y-full transition-none"
+          isSticky ? "translate-y-0 transition-transform duration-500 ease-out visible" : "-translate-y-full transition-none invisible"
         )}
       >
-        <nav className="bg-white" aria-hidden={!isSticky}>
+        <nav className="bg-white" aria-label="Sticky navigation">
           {NavContent}
         </nav>
       </div>

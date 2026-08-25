@@ -1,5 +1,6 @@
 import { Lightbulb, PenTool } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ConsultancySection() {
   return (
@@ -12,10 +13,12 @@ export default function ConsultancySection() {
             
             {/* Main Image */}
             <div className="absolute left-0 top-0 w-[80%] md:w-[75%] h-[80%] md:h-[85%] rounded-2xl overflow-hidden shadow-2xl z-10 border-8 border-white bg-gray-100 group cursor-pointer">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
                 alt="Business Discussion"
-                className="object-cover w-full h-full"
+                fill
+                sizes="(max-width: 768px) 80vw, 40vw"
+                className="object-cover"
               />
               {/* Dark slide-down overlay on hover/click */}
               <div className="absolute top-0 left-0 w-full h-full bg-black/40 -translate-y-full group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500 ease-in-out"></div>
@@ -23,10 +26,12 @@ export default function ConsultancySection() {
 
             {/* Smaller overlapping Image */}
             <div className="absolute right-0 bottom-0 w-[60%] md:w-[50%] h-[45%] md:h-[50%] rounded-2xl overflow-hidden shadow-2xl z-20 border-8 border-white bg-gray-100 animate-float-y group cursor-pointer" style={{ animationDelay: '0.3s' }}>
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop"
                 alt="Working Woman"
-                className="object-cover w-full h-full"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover"
               />
               {/* Dark slide-down overlay on hover/click */}
               <div className="absolute top-0 left-0 w-full h-full bg-black/40 -translate-y-full group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500 ease-in-out"></div>
@@ -38,9 +43,11 @@ export default function ConsultancySection() {
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden relative shadow-sm">
-                    <img 
+                    <Image 
                       src={`https://i.pravatar.cc/100?img=${i * 15}`} 
                       alt="Team Member" 
+                      width={32}
+                      height={32}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -75,7 +82,7 @@ export default function ConsultancySection() {
                   <Lightbulb size={32} strokeWidth={1.5} className="text-brand-dark" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-brand-dark mb-3">Tailored Guidance</h4>
+                  <h3 className="text-xl font-bold text-brand-dark mb-3">Tailored Guidance</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">Every immigration journey is unique. We provide personalized strategies tailored to your specific visa requirements and goals.</p>
                 </div>
               </div>
@@ -85,7 +92,7 @@ export default function ConsultancySection() {
                   <PenTool size={32} strokeWidth={1.5} className="text-brand-dark" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-brand-dark mb-3">Proven Expertise</h4>
+                  <h3 className="text-xl font-bold text-brand-dark mb-3">Proven Expertise</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">With a high success rate and deep understanding of immigration laws, we ensure a smooth and hassle-free visa application process.</p>
                 </div>
               </div>
@@ -115,7 +122,7 @@ export default function ConsultancySection() {
               
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-gray-100 shadow-sm">
-                  <img src="/founder iamge.png" alt="Founder" className="w-full h-full object-cover" />
+                  <Image src="/founder iamge.png" alt="Founder" width={56} height={56} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="text-2xl text-brand-dark -rotate-2" style={{ fontFamily: "'Caveat', 'Dancing Script', 'Brush Script MT', 'Lucida Handwriting', cursive", letterSpacing: '1px' }}>Adil Mohammad</p>
