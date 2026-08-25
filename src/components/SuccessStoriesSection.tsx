@@ -47,7 +47,7 @@ export default function SuccessStoriesSection() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</h4>
+                        <p className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</p>
                         <span className="text-[11px] text-gray-500 font-semibold">{review.relative_time_description}</span>
                       </div>
                     </div>
@@ -134,7 +134,7 @@ export default function SuccessStoriesSection() {
                         />
                       </div>
                       <div>
-                        <h4 className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</h4>
+                        <p className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</p>
                         <span className="text-[11px] text-gray-500 font-semibold">{review.relative_time_description}</span>
                       </div>
                     </div>

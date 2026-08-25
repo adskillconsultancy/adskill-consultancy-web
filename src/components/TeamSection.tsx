@@ -58,20 +58,22 @@ const IconLinkedin = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-const SocialIcon = ({ Icon, href = "#" }: { Icon: ElementType, href?: string }) => (
+const SocialIcon = ({ Icon, href = "#", ariaLabel }: { Icon: ElementType, href?: string, ariaLabel?: string }) => (
   <a 
     href={href}
     target={href !== "#" ? "_blank" : undefined}
     rel={href !== "#" ? "noopener noreferrer" : undefined}
+    aria-label={ariaLabel || "Social Media Profile"}
     className="w-10 h-10 rounded-full bg-white text-brand-dark flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors shadow-md"
   >
     <Icon size={18} />
   </a>
 );
 
-const BehanceIcon = () => (
+const BehanceIcon = ({ ariaLabel }: { ariaLabel?: string }) => (
   <a 
     href="#"
+    aria-label={ariaLabel || "Behance Profile"}
     className="w-10 h-10 rounded-full bg-white text-brand-dark flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors shadow-md"
   >
     <span className="font-bold text-[15px] leading-none">Bē</span>
@@ -113,16 +115,17 @@ export const TeamCard = ({ member }: { member: TeamMember }) => {
         <div 
           className={`absolute right-5.5 bottom-12 flex flex-col gap-3 transition-all duration-500 z-20 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
         >
-          <div style={{ transitionDelay: isActive ? '150ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconFacebook} /></div>
-          <div style={{ transitionDelay: isActive ? '100ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconInstagram} /></div>
-          <div style={{ transitionDelay: isActive ? '50ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconLinkedin} href={member.linkedin} /></div>
-          <div style={{ transitionDelay: isActive ? '0ms' : '0ms' }} className="transition-all duration-300"><BehanceIcon /></div>
+          <div style={{ transitionDelay: isActive ? '150ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconFacebook} ariaLabel={`${member.name} Facebook Profile`} /></div>
+          <div style={{ transitionDelay: isActive ? '100ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconInstagram} ariaLabel={`${member.name} Instagram Profile`} /></div>
+          <div style={{ transitionDelay: isActive ? '50ms' : '0ms' }} className="transition-all duration-300"><SocialIcon Icon={IconLinkedin} href={member.linkedin} ariaLabel={`${member.name} LinkedIn Profile`} /></div>
+          <div style={{ transitionDelay: isActive ? '0ms' : '0ms' }} className="transition-all duration-300"><BehanceIcon ariaLabel={`${member.name} Behance Profile`} /></div>
         </div>
       </div>
 
       {/* Toggle Button */}
       <button 
         onClick={() => setIsActive(!isActive)}
+        aria-label={isActive ? `Hide ${member.name} social links` : `Show ${member.name} social links`}
         className={`absolute right-5 top-74 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 z-30 shadow-lg ${isActive ? 'bg-brand-primary text-brand-dark rotate-45' : 'bg-brand-dark text-white rotate-0'}`}
       >
         <Plus size={24} />
@@ -135,7 +138,7 @@ export const TeamCard = ({ member }: { member: TeamMember }) => {
         <h3 className={`text-xl font-bold mb-1 transition-colors duration-500 ${isActive ? 'text-white' : 'text-brand-dark'}`}>
           {member.name}
         </h3>
-        <p className={`text-sm font-semibold transition-colors duration-500 ${isActive ? 'text-gray-300' : 'text-brand-primary'}`}>
+        <p className={`text-sm font-semibold transition-colors duration-500 ${isActive ? 'text-gray-300' : 'text-gray-700'}`}>
           {member.role}
         </p>
         {member.description && (

@@ -21,6 +21,7 @@ export default function ServiceSection() {
   const loopServices = [...services, ...services, ...services];
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
   const isHoveredRef = React.useRef(false);
+  const isDraggingRef = React.useRef(false);
 
   React.useEffect(() => {
     const container = scrollContainerRef.current;
@@ -31,27 +32,46 @@ export default function ServiceSection() {
     let currentScroll = container.scrollLeft;
 
     const scrollLoop = () => {
-      if (!isHoveredRef.current) {
-        targetScroll += 1.5; // Auto-scroll speed
-      }
-
-      // Smooth lerp (momentum) scrolling - lowered to 0.04 for maximum smoothness/glide
-      currentScroll += (targetScroll - currentScroll) * 0.04;
-
       const singleSetWidth = container.scrollWidth / 3;
 
-      // Infinite loop forwards
-      if (currentScroll >= singleSetWidth) {
-        currentScroll -= singleSetWidth;
-        targetScroll -= singleSetWidth;
-      }
-      // Infinite loop backwards (if user scrolls left manually)
-      else if (currentScroll <= 0) {
-        currentScroll += singleSetWidth;
-        targetScroll += singleSetWidth;
+      if (isDraggingRef.current) {
+        // User is swiping on mobile! Let them scroll natively.
+        // Sync our JS variables so when they let go, it resumes smoothly from where they are.
+        currentScroll = container.scrollLeft;
+        targetScroll = container.scrollLeft;
+
+        // Wrap around seamlessly if they swipe past the edge
+        if (container.scrollLeft >= singleSetWidth) {
+          container.scrollLeft -= singleSetWidth;
+          currentScroll = container.scrollLeft;
+          targetScroll = container.scrollLeft;
+        } else if (container.scrollLeft <= 0) {
+          container.scrollLeft += singleSetWidth;
+          currentScroll = container.scrollLeft;
+          targetScroll = container.scrollLeft;
+        }
+      } else {
+        if (!isHoveredRef.current) {
+          targetScroll += 1.5; // Auto-scroll speed
+        }
+
+        // Smooth lerp (momentum) scrolling
+        currentScroll += (targetScroll - currentScroll) * 0.04;
+
+        // Infinite loop forwards
+        if (currentScroll >= singleSetWidth) {
+          currentScroll -= singleSetWidth;
+          targetScroll -= singleSetWidth;
+        }
+        // Infinite loop backwards (if user scrolls left manually with mouse wheel)
+        else if (currentScroll <= 0) {
+          currentScroll += singleSetWidth;
+          targetScroll += singleSetWidth;
+        }
+
+        container.scrollLeft = currentScroll;
       }
 
-      container.scrollLeft = currentScroll;
       animationId = requestAnimationFrame(scrollLoop);
     };
 
@@ -128,8 +148,9 @@ export default function ServiceSection() {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           onMouseEnter={() => (isHoveredRef.current = true)}
           onMouseLeave={() => (isHoveredRef.current = false)}
-          onTouchStart={() => (isHoveredRef.current = true)}
-          onTouchEnd={() => (isHoveredRef.current = false)}>
+          onTouchStart={() => (isDraggingRef.current = true)}
+          onTouchEnd={() => (isDraggingRef.current = false)}
+          onTouchCancel={() => (isDraggingRef.current = false)}>
           {loopServices.map((service, index) => (
             <Link
               key={`${service.id}-${index}`}
