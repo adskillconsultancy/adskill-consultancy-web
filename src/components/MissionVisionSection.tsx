@@ -132,7 +132,7 @@ export default function MissionVisionSection() {
 
             <Link 
               href="/about" 
-              className="inline-flex items-center justify-center px-10 h-14 bg-brand-dark text-white font-bold hover:bg-brand-primary hover:text-brand-dark transition-colors"
+              className="relative z-10 inline-flex items-center justify-center px-10 h-14 bg-brand-dark text-white font-bold hover:bg-brand-primary hover:text-brand-dark transition-colors"
             >
               Discover More
             </Link>
