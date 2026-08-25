@@ -1,0 +1,66 @@
+[
+  {
+    "author_name": "Ahmed R.",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Ahmed+R.&background=random",
+    "rating": 5,
+    "relative_time_description": "a month ago",
+    "text": "Very reliable service. My shipments always arrive safely, on time, and with complete care.",
+    "platform": "Google"
+  },
+  {
+    "author_name": "Beatrice A.",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Beatrice+A.&background=random",
+    "rating": 5,
+    "relative_time_description": "2 months ago",
+    "text": "Handled our international shipping smoothly. Timely delivery and excellent service throughout the entire process.",
+    "platform": "Facebook"
+  },
+  {
+    "author_name": "Sarah K.",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Sarah+K.&background=random",
+    "rating": 5,
+    "relative_time_description": "3 months ago",
+    "text": "Reliable and on-time cargo delivery every time. Our shipments always arrive safely without delays.",
+    "platform": "Google"
+  },
+  {
+    "author_name": "Maria D.",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Maria+D.&background=random",
+    "rating": 5,
+    "relative_time_description": "4 months ago",
+    "text": "Highly recommended logistics partner. Dependable, efficient, and professional service for all shipment needs.",
+    "platform": "Facebook"
+  },
+  {
+    "author_name": "John Doe",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=John+Doe&background=random",
+    "rating": 5,
+    "relative_time_description": "5 months ago",
+    "text": "The best consultancy I have ever worked with! Very detailed and responsive.",
+    "platform": "Google"
+  },
+  {
+    "author_name": "Jane Smith",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Jane+Smith&background=random",
+    "rating": 4,
+    "relative_time_description": "6 months ago",
+    "text": "Great service, helped me a lot with my business planning and execution.",
+    "platform": "Google"
+  },
+  {
+    "author_name": "Emily Chen",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Emily+Chen&background=random",
+    "rating": 5,
+    "relative_time_description": "7 months ago",
+    "text": "Their team is exceptional. From start to finish, the process was seamless and stress-free.",
+    "platform": "Facebook"
+  },
+  {
+    "author_name": "Michael Brown",
+    "profile_photo_url": "https://ui-avatars.com/api/?name=Michael+Brown&background=random",
+    "rating": 5,
+    "relative_time_description": "8 months ago",
+    "text": "Outstanding support and incredibly fast turnaround times. I wouldn't trust anyone else.",
+    "platform": "Google"
+  }
+]

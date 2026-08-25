@@ -8,6 +8,7 @@ import FaqSection from "@/components/FaqSection";
 import TeamSection from "@/components/TeamSection";
 import BlogSection from "@/components/BlogSection";
 import TypingAnimation from "@/components/TypingAnimation";
+import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 
 export default function Home() {
   return (
@@ -163,6 +164,7 @@ export default function Home() {
       <ServiceSection />
       <MissionVisionSection />
       <FaqSection />
+      <SuccessStoriesSection />
       <TeamSection />
       <BlogSection />
     </main>
