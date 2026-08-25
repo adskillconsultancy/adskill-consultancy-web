@@ -76,10 +76,11 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 onMouseEnter={() => setActiveIndex(index)}
-                className="relative flex flex-col items-center text-center p-8 h-full transition-all duration-300 border cursor-pointer bg-white border-gray-100 hover:border-gray-300"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%)'
-                }}
+                className={`relative flex flex-col items-center text-center p-8 h-full transition-all duration-500 border cursor-pointer bg-white rounded-2xl ${
+                  isActive 
+                    ? "border-brand-primary/30 shadow-[0_20px_40px_rgba(0,0,0,0.12)] -translate-y-2" 
+                    : "border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1"
+                }`}
                 onClick={() => router.push(`/services/${service.id}`)}
               >
                 {/* Content Container */}
