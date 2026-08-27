@@ -144,14 +144,10 @@ export default function SuccessStoriesPage() {
                 
                 <div className="pt-5 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full overflow-hidden relative shadow-sm border border-gray-100 shrink-0">
-                      <Image 
-                        src={review.profile_photo_url} 
-                        alt={review.author_name} 
-                        fill
-                        sizes="48px"
-                        className="object-cover"
-                      />
+                    <div className="w-12 h-12 rounded-full shadow-sm border border-brand-primary/20 shrink-0 bg-brand-primary/10 flex items-center justify-center">
+                      <span className="text-brand-primary font-bold text-base tracking-wider">
+                        {review.author_name?.split(' ').map((n: string) => n[0]).join('').substring(0, 2).toUpperCase() || 'C'}
+                      </span>
                     </div>
                     <div>
                       <p className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</p>
@@ -219,13 +215,11 @@ export default function SuccessStoriesPage() {
                     className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group"
                   >
                     <div className="flex items-center gap-5">
-                      <Image
-                        src={review.profile_photo_url}
-                        alt={review.author_name}
-                        width={48}
-                        height={48}
-                        className="w-12 h-12 rounded-full object-cover shrink-0 shadow-sm"
-                      />
+                      <div className="w-12 h-12 rounded-full shadow-sm border border-brand-primary/20 shrink-0 bg-brand-primary/10 flex items-center justify-center">
+                        <span className="text-brand-primary font-bold text-base tracking-wider">
+                          {review.author_name?.split(' ').map((n: string) => n[0]).join('').substring(0, 2).toUpperCase() || 'C'}
+                        </span>
+                      </div>
                       <div>
                         <span className={`font-bold text-lg transition-colors duration-300 ${
                             openIndex === index ? "text-brand-primary" : "text-brand-dark group-hover:text-brand-primary"

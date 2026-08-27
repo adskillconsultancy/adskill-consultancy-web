@@ -46,7 +46,7 @@ export default function MissionVisionSection() {
   
   const tabData: Record<string, { title: string, description: string, checklist: string[] }> = {
     "About Us": {
-      title: "The Journey Behind Our Business Success",
+      title: "Your Trusted Partner in Global Immigration",
       description: "Adskill is your trusted partner for visa and immigration consultancy, providing expert guidance and personalized solutions to help you navigate global opportunities seamlessly.",
       checklist: [
         "Tailored Visa Guidance",

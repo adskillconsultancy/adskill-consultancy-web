@@ -50,7 +50,7 @@ export default function WhatsAppButton() {
         onClick={handleScrollClick}
         aria-label={scrollDirection === 'down' ? "Scroll to bottom" : "Scroll to top"}
         className={cn(
-          "w-12 h-12 rounded-full bg-brand-dark text-white shadow-lg flex items-center justify-center transition-all duration-300",
+          "w-12 h-12 rounded-full bg-brand-primary text-brand-dark shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl",
           showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
         )}>
         <ArrowUp 

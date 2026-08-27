@@ -82,6 +82,13 @@ export default function ServiceSection() {
         e.preventDefault();
         // Increased multiplier to 2.0 to compensate for the longer, smoother glide
         targetScroll += e.deltaY * 2.0;
+
+        // Limit manual mouse scrolling to the first 9 cards
+        const singleSetWidth = container.scrollWidth / 3;
+        const maxManualScroll = singleSetWidth - container.clientWidth;
+        
+        if (targetScroll < 0) targetScroll = 0;
+        if (targetScroll > maxManualScroll) targetScroll = maxManualScroll;
       }
     };
 
@@ -206,7 +213,10 @@ export default function ServiceSection() {
               </div>
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <span className="flex items-center justify-center w-12 h-24 md:w-16 md:h-32 rounded-full bg-brand-primary text-brand-dark group-hover:bg-white group-hover:text-brand-dark transition-all duration-500 ease-in-out shadow-xl">
-                  <ArrowUpRight className="w-[15px] md:w-[18px]" strokeWidth={2.5} />
+                  <ArrowUpRight
+                    className="w-[15px] md:w-[18px]"
+                    strokeWidth={2.5}
+                  />
                 </span>
               </div>
             </Link>

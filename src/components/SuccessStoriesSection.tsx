@@ -37,14 +37,10 @@ export default function SuccessStoriesSection() {
                   
                   <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-sm border border-gray-100 shrink-0">
-                        <Image 
-                          src={review.profile_photo_url} 
-                          alt={review.author_name} 
-                          fill
-                          sizes="40px"
-                          className="object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full shadow-sm border border-brand-primary/20 shrink-0 bg-brand-primary/10 flex items-center justify-center">
+                        <span className="text-brand-primary font-bold text-sm tracking-wider">
+                          {review.author_name?.split(' ').map((n: string) => n[0]).join('').substring(0, 2).toUpperCase() || 'C'}
+                        </span>
                       </div>
                       <div>
                         <p className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</p>
@@ -124,14 +120,10 @@ export default function SuccessStoriesSection() {
                   
                   <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-sm border border-gray-100 shrink-0">
-                        <Image 
-                          src={review.profile_photo_url} 
-                          alt={review.author_name} 
-                          fill
-                          sizes="40px"
-                          className="object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full shadow-sm border border-brand-primary/20 shrink-0 bg-brand-primary/10 flex items-center justify-center">
+                        <span className="text-brand-primary font-bold text-sm tracking-wider">
+                          {review.author_name?.split(' ').map((n: string) => n[0]).join('').substring(0, 2).toUpperCase() || 'C'}
+                        </span>
                       </div>
                       <div>
                         <p className="font-bold text-brand-dark text-sm leading-tight">{review.author_name}</p>
@@ -168,14 +160,10 @@ export default function SuccessStoriesSection() {
                 <p className="text-gray-700 text-sm font-medium leading-relaxed mb-4">"{review.text}"</p>
                 <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-sm border border-gray-100 shrink-0">
-                      <Image 
-                        src={review.profile_photo_url} 
-                        alt={review.author_name} 
-                        fill
-                        sizes="40px"
-                        className="object-cover"
-                      />
+                    <div className="w-10 h-10 rounded-full shadow-sm border border-brand-primary/20 shrink-0 bg-brand-primary/10 flex items-center justify-center">
+                      <span className="text-brand-primary font-bold text-sm tracking-wider">
+                        {review.author_name?.split(' ').map((n: string) => n[0]).join('').substring(0, 2).toUpperCase() || 'C'}
+                      </span>
                     </div>
                     <div>
                       <h4 className="font-bold text-sm text-brand-dark leading-tight">{review.author_name}</h4>
