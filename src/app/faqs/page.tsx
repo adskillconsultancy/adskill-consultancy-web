@@ -3,10 +3,11 @@ import FaqsPageClient from "./FaqsPageClient";
 import { faqCategories } from "@/lib/faqData";
 import { faqPageSchema, breadcrumbSchema, jsonLdScript } from "@/lib/jsonld";
 
+// Template appends "| AdSkill Consultancy" → final: "US Immigration FAQs | AdSkill Consultancy" (41 chars ✅)
 export const metadata: Metadata = {
-  title: "Immigration FAQs — EB-1A, EB-2 NIW, EB-5, E-2 Visa Questions Answered",
+  title: "US Immigration FAQs",
   description:
-    "Get answers to the most common US immigration questions — EB-1A eligibility, EB-2 NIW requirements, EB-5 investment amounts, E-2 investor visa, Green Card process, and more.",
+    "Answers to 40+ common US immigration questions — EB-1A eligibility, EB-2 NIW requirements, EB-5 investment, E-2 visa, and Green Card process.",
   keywords: [
     "immigration FAQs",
     "US visa frequently asked questions",
@@ -16,15 +17,15 @@ export const metadata: Metadata = {
     "E-2 visa requirements",
     "green card process",
     "immigration consultant FAQ",
-    "visa approval questions",
   ],
   alternates: {
     canonical: "https://adskillconsultancy.com/faqs",
   },
   openGraph: {
-    title: "Immigration FAQs — EB-1A, EB-2 NIW, EB-5, E-2 Visa Questions",
+    title: "US Immigration FAQs | AdSkill Consultancy",
+    siteName: "AdSkill Consultancy",
     description:
-      "Answers to 40+ common US immigration questions covering all visa categories — EB-1A, EB-2 NIW, EB-5, E-2, EB-3, EB-4.",
+      "Answers to 40+ common US immigration questions — EB-1A, EB-2 NIW, EB-5, E-2, EB-3, EB-4 visa categories explained.",
     url: "https://adskillconsultancy.com/faqs",
     type: "website",
   },

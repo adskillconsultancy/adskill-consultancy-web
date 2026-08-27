@@ -44,24 +44,31 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!post) return { title: "Article Not Found" };
 
   const url = `${BASE_URL}/blog/${id}`;
-  const description = post.description;
+
+  // Short title for template — template appends "| AdSkill Consultancy" (21 chars)
+  // Keep page title portion ≤39 chars so total is ≤60 chars
+  const shortTitle = post.title.length > 39
+    ? post.title.substring(0, 36) + "…"
+    : post.title;
+
+  // Keep description ≤155 chars
+  const description = post.description.length > 155
+    ? post.description.substring(0, 152) + "…"
+    : post.description;
 
   return {
-    title: post.title,
+    title: shortTitle,
     description,
     keywords: [
       "US immigration 2026",
       "visa guide",
-      post.title.split(" ").slice(0, 5).join(" "),
       "immigration news",
-      "visa updates 2026",
       "green card guide",
     ],
-    alternates: {
-      canonical: url,
-    },
+    alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: shortTitle,
+      siteName: "AdSkill Consultancy",
       description,
       url,
       type: "article",
@@ -78,7 +85,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: shortTitle,
       description,
       images: [`${BASE_URL}${post.image}`],
     },

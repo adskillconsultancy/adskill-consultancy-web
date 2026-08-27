@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import SuccessStoriesPageClient from "./SuccessStoriesPageClient";
 import { aggregateRatingSchema, breadcrumbSchema, jsonLdScript } from "@/lib/jsonld";
 
+// Template appends "| AdSkill Consultancy" → final: "Client Success Stories | AdSkill Consultancy" (44 chars ✅)
 export const metadata: Metadata = {
-  title: "Client Success Stories — 5,000+ Happy US Visa Clients",
+  title: "Client Success Stories",
   description:
-    "Read real success stories from AdSkill Consultancy's 5,000+ satisfied clients. See how we helped professionals and investors achieve US visas — EB-1A, EB-2 NIW, EB-5, E-2, and Green Card approvals.",
+    "Real success stories from AdSkill Consultancy's 5,000+ satisfied clients. EB-1A, EB-2 NIW, EB-5, E-2 & Green Card approvals. 98% success rate.",
   keywords: [
     "immigration success stories",
     "US visa client reviews",
@@ -14,15 +15,15 @@ export const metadata: Metadata = {
     "visa approved testimonials",
     "green card success stories",
     "AdSkill Consultancy reviews",
-    "immigration consultant testimonials",
   ],
   alternates: {
     canonical: "https://adskillconsultancy.com/success-stories",
   },
   openGraph: {
-    title: "Client Success Stories — 5,000+ Happy US Visa Clients",
+    title: "Client Success Stories | AdSkill Consultancy",
+    siteName: "AdSkill Consultancy",
     description:
-      "Real client reviews and success stories from AdSkill Consultancy. 98% success rate. 2,500+ visas approved.",
+      "5,000+ satisfied clients. Real visa approval stories — EB-1A, EB-2 NIW, EB-5, E-2 & Green Card. 98% success rate.",
     url: "https://adskillconsultancy.com/success-stories",
     type: "website",
   },

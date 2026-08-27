@@ -2,25 +2,26 @@ import type { Metadata } from "next";
 import AboutSection from "@/components/AboutSection";
 import { breadcrumbSchema, jsonLdScript } from "@/lib/jsonld";
 
+// Template appends "| AdSkill Consultancy" → final: "About Us | AdSkill Consultancy" (30 chars ✅)
 export const metadata: Metadata = {
-  title: "About Us — AdSkill Consultancy | US Immigration Experts",
+  title: "About Us",
   description:
-    "Learn about AdSkill Consultancy Inc., our team of immigration experts, our mission, and our track record of 5,000+ successful clients with a 98% visa approval rate. Based in Jackson Heights, NY.",
+    "Meet AdSkill Consultancy's immigration experts. 5,000+ clients helped, 98% success rate. Specialists in EB-1A, EB-2 NIW, EB-5, E-2 & Green Card. Jackson Heights, NY.",
   keywords: [
     "about AdSkill Consultancy",
     "immigration consultancy team",
     "US visa experts",
     "immigration consultants New York",
     "immigration firm Jackson Heights",
-    "expert visa consultants",
   ],
   alternates: {
     canonical: "https://adskillconsultancy.com/about",
   },
   openGraph: {
-    title: "About Us — AdSkill Consultancy Inc.",
+    title: "About Us | AdSkill Consultancy",
+    siteName: "AdSkill Consultancy",
     description:
-      "Meet the team behind 5,000+ successful US visa approvals. AdSkill Consultancy — immigration experts in Jackson Heights, NY.",
+      "Meet our team of US immigration experts. 5,000+ successful cases. EB-1A, EB-2 NIW, EB-5 & E-2 specialists.",
     url: "https://adskillconsultancy.com/about",
     type: "website",
   },

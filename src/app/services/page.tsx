@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import ServicesPageClient from "./ServicesPageClient";
 import { breadcrumbSchema, jsonLdScript } from "@/lib/jsonld";
 
+// Template appends "| AdSkill Consultancy" → final: "US Immigration Services | AdSkill Consultancy" (46 chars ✅)
 export const metadata: Metadata = {
-  title: "US Immigration Services — EB-1A, EB-2 NIW, EB-5, E-2 & Green Card",
+  title: "US Immigration Services",
   description:
-    "Explore AdSkill Consultancy's full range of US immigration services: EB-1A Extraordinary Ability, EB-2 National Interest Waiver, EB-5 Investor Visa, E-2 Treaty Investor, EB-3, EB-4, and Green Card pathways.",
+    "Full range of US immigration services — EB-1A Extraordinary Ability, EB-2 NIW, EB-5 Investor, E-2 Treaty Investor, EB-3 & EB-4. Expert guidance from petition to Green Card.",
   keywords: [
     "US immigration services",
     "EB-1A visa service",
@@ -15,15 +16,15 @@ export const metadata: Metadata = {
     "EB-3 skilled worker visa",
     "green card services",
     "employment based visa",
-    "immigration visa types",
   ],
   alternates: {
     canonical: "https://adskillconsultancy.com/services",
   },
   openGraph: {
-    title: "US Immigration Services — EB-1A, EB-2 NIW, EB-5, E-2 & Green Card",
+    title: "US Immigration Services | AdSkill Consultancy",
+    siteName: "AdSkill Consultancy",
     description:
-      "Full range of US immigration services — EB-1A, EB-2 NIW, EB-5, E-2, EB-3, EB-4. Expert guidance from petition to Green Card.",
+      "EB-1A, EB-2 NIW, EB-5, E-2, EB-3 & EB-4 visa services. Expert immigration guidance from petition to Green Card approval.",
     url: "https://adskillconsultancy.com/services",
     type: "website",
   },

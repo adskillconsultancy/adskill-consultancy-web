@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
 import { localBusinessSchema, breadcrumbSchema, jsonLdScript } from "@/lib/jsonld";
 
+// Template appends "| AdSkill Consultancy" → final: "Contact Us | AdSkill Consultancy" (32 chars ✅)
 export const metadata: Metadata = {
-  title: "Contact Us — Book a Free Immigration Consultation",
+  title: "Contact Us",
   description:
-    "Contact AdSkill Consultancy Inc. for a free immigration consultation. Located at 37-13 74th Street, Jackson Heights, NY 11372. Call +1 646-772-8544 or book online via Calendly.",
+    "Book a free immigration consultation with AdSkill Consultancy. Located at 37-13 74th Street, Jackson Heights, NY 11372. Call +1 646-772-8544 or book via Calendly.",
   keywords: [
     "contact immigration consultant",
     "free immigration consultation",
@@ -13,15 +14,15 @@ export const metadata: Metadata = {
     "book immigration consultation",
     "US visa consultant contact",
     "immigration help New York",
-    "immigration attorney phone number",
   ],
   alternates: {
     canonical: "https://adskillconsultancy.com/contact",
   },
   openGraph: {
-    title: "Contact AdSkill Consultancy — Free Immigration Consultation",
+    title: "Contact Us | AdSkill Consultancy",
+    siteName: "AdSkill Consultancy",
     description:
-      "Book your free 30-minute consultation with expert US immigration consultants. Jackson Heights, NY. Call +1 646-772-8544.",
+      "Book a free 30-min consultation with US immigration experts. Jackson Heights, NY. Call +1 646-772-8544.",
     url: "https://adskillconsultancy.com/contact",
     type: "website",
   },

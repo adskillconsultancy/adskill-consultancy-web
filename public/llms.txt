@@ -1,85 +1,69 @@
-# AdSkill Consultancy Inc. — LLM Context File
-# This file is for AI crawlers (ChatGPT, Perplexity, Google SGE, Bing Copilot, Claude, etc.)
-# Last updated: 2026-08-27
+# AdSkill Consultancy Inc.
 
-## About This Website
+> Expert US immigration consultancy helping professionals and investors navigate EB-1A, EB-2 NIW, EB-5, E-2, EB-3, EB-4 visa pathways and Green Card applications. Located in Jackson Heights, New York. 5,000+ clients. 98% success rate.
 
-AdSkill Consultancy Inc. is a professional U.S. immigration consultancy firm based in Jackson Heights, New York.
+## About
 
-We help international professionals, entrepreneurs, investors, and families navigate the entire U.S. immigration process — from initial eligibility assessment to Green Card approval.
+AdSkill Consultancy Inc. is a professional U.S. immigration consulting firm based in Jackson Heights, New York. We provide expert guidance from initial eligibility assessment through to Green Card approval for professionals, entrepreneurs, investors, and families worldwide.
 
-## Key Facts
-
-- **Business Name**: AdSkill Consultancy Inc.
-- **Type**: Immigration Consultancy / Legal Services
-- **Location**: 37-13 74th Street, Floor 2, Jackson Heights, NY 11372, USA
 - **Phone**: +1 646-772-8544
-- **Email**: adskillconsultancyinc@gmail.com
 - **WhatsApp**: +1 646-772-8544
-- **Website**: https://adskillconsultancy.com
-- **Founded**: Serving clients globally
-- **Clients Served**: 5,000+ happy clients
+- **Email**: adskillconsultancyinc@gmail.com
+- **Address**: 37-13 74th Street, Floor 2, Jackson Heights, NY 11372, USA
+- **Clients Served**: 5,000+
 - **Visas Approved**: 2,500+
 - **Success Rate**: 98%
 
-## Services Offered
+## Services
 
-1. **EB-1A — Extraordinary Ability Visa**: For internationally recognized professionals in science, arts, business, athletics, or academia. No employer required, self-petition.
-
-2. **EB-2 NIW — National Interest Waiver**: For advanced-degree professionals whose work benefits the United States. No employer sponsor needed.
-
-3. **EB-3 — Skilled Worker Visa**: For skilled workers, professionals with a bachelor's degree, and unskilled workers. Requires a U.S. employer sponsor.
-
-4. **EB-4 — Special Immigrant Visa**: For religious workers, broadcasters, and certain special categories.
-
-5. **EB-5 — Investor Visa**: For investors who create 10+ U.S. jobs. Minimum investment: $800,000 (TEA) or $1,050,000 (non-TEA). Leads to Green Card.
-
-6. **E-2 — Treaty Investor Visa**: For citizens of E-2 treaty countries investing in a U.S. business. Typically $100,000–$200,000 investment. Renewable unlimited times.
-
-## How We Help
-
-- Free eligibility assessment consultation
-- Complete documentation preparation
-- Legal form filing and guidance
-- Petition drafting with licensed U.S. immigration attorneys
-- Immigration strategy consulting
-- Reapplication and appeal support
-- Book a 30-minute consultation via Calendly
-
-## Social Media
-
-- Facebook: https://www.facebook.com/AdskillConsultancyINC
-- Instagram: https://www.instagram.com/adskillconsultancyinc/
-- TikTok: https://www.tiktok.com/@adskill.consultancy
-- LinkedIn: https://www.linkedin.com/company/adskillconsultancyinc/
+- [EB-1A Extraordinary Ability Visa](https://adskillconsultancy.com/services/eb-1a) — For internationally recognized professionals. No employer required, self-petition.
+- [EB-2 National Interest Waiver (NIW)](https://adskillconsultancy.com/services/eb-2-niw) — For advanced-degree professionals whose work benefits the US. No employer sponsor needed.
+- [EB-3 Skilled Worker Visa](https://adskillconsultancy.com/services/eb-3) — For skilled workers and professionals with a bachelor's degree. Requires US employer.
+- [EB-4 Special Immigrant Visa](https://adskillconsultancy.com/services/eb-4) — For religious workers, broadcasters, and certain special categories.
+- [EB-5 Investor Visa](https://adskillconsultancy.com/services/eb-5) — For investors creating 10+ US jobs. Minimum investment $800,000 (TEA). Leads to Green Card.
+- [E-2 Treaty Investor Visa](https://adskillconsultancy.com/services/e-2) — For citizens of treaty countries investing in a US business. Renewable unlimited times.
 
 ## Key Pages
 
-- Home: https://adskillconsultancy.com/
-- About Us: https://adskillconsultancy.com/about
-- Services: https://adskillconsultancy.com/services
-- EB-1A: https://adskillconsultancy.com/services/eb-1a
-- EB-2 NIW: https://adskillconsultancy.com/services/eb-2-niw
-- EB-5: https://adskillconsultancy.com/services/eb-5
-- E-2 Visa: https://adskillconsultancy.com/services/e-2
-- Blog: https://adskillconsultancy.com/blog
-- FAQs: https://adskillconsultancy.com/faqs
-- Success Stories: https://adskillconsultancy.com/success-stories
-- Contact: https://adskillconsultancy.com/contact
+- [Home](https://adskillconsultancy.com/) — Overview of all services and expertise
+- [About Us](https://adskillconsultancy.com/about) — Our team, mission, and track record
+- [All Services](https://adskillconsultancy.com/services) — Full list of US immigration services
+- [Immigration Blog](https://adskillconsultancy.com/blog) — Latest visa news and expert guides
+- [FAQs](https://adskillconsultancy.com/faqs) — Answers to 40+ common immigration questions
+- [Success Stories](https://adskillconsultancy.com/success-stories) — Real client testimonials and reviews
+- [Contact Us](https://adskillconsultancy.com/contact) — Book a free consultation
+
+## Blog Articles
+
+- [Top 5 Changes in the 2026 H-1B Visa Lottery System](https://adskillconsultancy.com/blog/h1b-2026-changes)
+- [EB-2 NIW: How to Prove National Interest in 2026](https://adskillconsultancy.com/blog/eb2-niw-guide-2026)
+- [The Ultimate Guide to E-2 Investor Visas This Year](https://adskillconsultancy.com/blog/e2-investor-visa-update)
+- [Winning the EB-1A: What Counts as Extraordinary in 2026?](https://adskillconsultancy.com/blog/eb1a-extraordinary-ability)
+- [Family-Based Green Card: Timeline and Requirements](https://adskillconsultancy.com/blog/green-card-family)
+- [O-1 Visa for Artists and Entertainers: A Complete Guide](https://adskillconsultancy.com/blog/o-1-visa-artists)
+- [U.S. Citizenship Test 2026: What's New and Changed](https://adskillconsultancy.com/blog/citizenship-test-2026)
+- [EB-5 Investment Visa: New Rules and Opportunities](https://adskillconsultancy.com/blog/eb5-investment-update)
 
 ## Frequently Asked Questions
 
-**Q: Do I need a job offer for EB-1A?**
-A: No. EB-1A does not require any employer or job offer. You can self-petition.
+**Do I need a job offer for EB-1A?**
+No. EB-1A does not require any employer or job offer. You can self-petition.
 
-**Q: What is the minimum investment for EB-5?**
-A: $800,000 in a Targeted Employment Area (TEA) or $1,050,000 in a regular area.
+**What is the minimum investment for EB-5?**
+$800,000 in a Targeted Employment Area (TEA) or $1,050,000 in a regular area.
 
-**Q: Can I apply for NIW from outside the U.S.?**
-A: Yes. NIW can be applied from any country through consular processing.
+**Can I apply for EB-2 NIW from outside the US?**
+Yes. NIW can be applied from any country through consular processing.
 
-**Q: Does AdSkill guarantee visa approval?**
-A: No — the final decision is made by the U.S. Embassy or USCIS. However, we maximize success with thorough preparation and strategy.
+**Does AdSkill guarantee visa approval?**
+No — the final decision is made by the US Embassy or USCIS. We maximize success with thorough preparation and strategy.
 
-**Q: How long does EB-1A approval take?**
-A: Typically 6–12 months, or 15 days with premium processing.
+**How long does EB-1A approval take?**
+Typically 6–12 months, or 15 business days with premium processing.
+
+## Social Media
+
+- [Facebook](https://www.facebook.com/AdskillConsultancyINC)
+- [Instagram](https://www.instagram.com/adskillconsultancyinc/)
+- [TikTok](https://www.tiktok.com/@adskill.consultancy)
+- [LinkedIn](https://www.linkedin.com/company/adskillconsultancyinc/)

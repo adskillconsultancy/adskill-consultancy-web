@@ -13,9 +13,12 @@ import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 import { localBusinessSchema, jsonLdScript } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Expert US Immigration Consultancy — EB-1A, EB-2 NIW, EB-5, E-2 Visa",
+  title: {
+    // Use absolute to bypass layout template (home page is the brand itself)
+    absolute: "AdSkill Consultancy — US Immigration Experts",
+  },
   description:
-    "AdSkill Consultancy Inc. helps professionals and investors navigate US employment-based visa pathways. EB-1A, EB-2 NIW, EB-5, E-2, Green Card. 5,000+ clients. 98% success rate. Based in Jackson Heights, NY.",
+    "Expert US immigration consultancy — EB-1A, EB-2 NIW, EB-5, E-2 & Green Card. 5,000+ clients. 98% success rate. Based in Jackson Heights, NY.",
   keywords: [
     "US immigration consultancy",
     "immigration consultant Jackson Heights NY",
@@ -30,9 +33,10 @@ export const metadata: Metadata = {
     canonical: "https://adskillconsultancy.com",
   },
   openGraph: {
-    title: "AdSkill Consultancy — Expert US Immigration & Visa Consultancy",
+    title: "AdSkill Consultancy — US Immigration Experts",
+    siteName: "AdSkill Consultancy",
     description:
-      "5,000+ clients helped. 98% success rate. Expert guidance on EB-1A, EB-2 NIW, EB-5, E-2, and all US visa pathways.",
+      "EB-1A, EB-2 NIW, EB-5, E-2 & Green Card experts. 5,000+ clients. 98% success rate. Jackson Heights, NY.",
     url: "https://adskillconsultancy.com",
     type: "website",
   },

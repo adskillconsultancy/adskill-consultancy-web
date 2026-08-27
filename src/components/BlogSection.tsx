@@ -90,6 +90,7 @@ export default function BlogSection() {
                     </h3>
                     <Link
                       href={`/blog/${blog.id}`}
+                      aria-label={`Read full article: ${blog.title}`}
                       className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary group-hover:gap-2.5 transition-all">
                       Read More
                       <ArrowRight size={14} />

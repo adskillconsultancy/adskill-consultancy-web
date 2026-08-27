@@ -97,6 +97,7 @@ export default function BlogPageClient() {
                     </h2>
                     <Link
                       href={`/blog/${blog.id}`}
+                      aria-label={`Read full article: ${blog.title}`}
                       className="inline-flex items-center gap-2 text-sm font-bold text-brand-dark group-hover:text-brand-primary transition-colors mt-auto pt-4 border-t border-gray-100"
                     >
                       Read Full Article

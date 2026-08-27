@@ -18,11 +18,11 @@ const BASE_URL = "https://adskillconsultancy.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "AdSkill Consultancy Inc. — Expert US Immigration Consultancy",
+    default: "AdSkill Consultancy — US Immigration Experts",
     template: "%s | AdSkill Consultancy",
   },
   description:
-    "AdSkill Consultancy Inc. helps professionals and investors navigate every US employment-based visa pathway — EB-1A, EB-2 NIW, EB-5, E-2, and Green Card. Based in Jackson Heights, NY.",
+    "Expert US immigration consultancy — EB-1A, EB-2 NIW, EB-5, E-2 & Green Card. 5,000+ clients. 98% success rate. Jackson Heights, NY.",
   keywords: [
     "US immigration consultancy",
     "immigration consultant New York",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "AdSkill Consultancy",
-    title: "AdSkill Consultancy Inc. — Expert US Immigration Consultancy",
+    title: "AdSkill Consultancy — US Immigration Experts",
     description:
-      "Helping professionals and investors navigate every US employment-based visa pathway — EB-1A, EB-2 NIW, EB-5, E-2, and Green Card. 5,000+ happy clients. 98% success rate.",
+      "EB-1A, EB-2 NIW, EB-5, E-2 & Green Card experts. 5,000+ clients. 98% success rate. Jackson Heights, NY.",
     images: [
       {
         url: "/adskillconsultancy.png",
@@ -77,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AdSkill Consultancy Inc. — Expert US Immigration Consultancy",
+    title: "AdSkill Consultancy — US Immigration Experts",
     description:
-      "Expert US immigration consultancy — EB-1A, EB-2 NIW, EB-5, E-2, Green Card. 5,000+ clients. 98% success rate.",
+      "EB-1A, EB-2 NIW, EB-5, E-2 & Green Card experts. 5,000+ clients. 98% success rate.",
     images: ["/adskillconsultancy.png"],
     creator: "@adskillconsultancy",
   },

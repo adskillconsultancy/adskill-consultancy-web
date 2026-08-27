@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import BlogPageClient from "./BlogPageClient";
 import { breadcrumbSchema, jsonLdScript } from "@/lib/jsonld";
 
+// Template appends "| AdSkill Consultancy" → final: "Immigration Blog & Visa Updates 2026 | AdSkill Consultancy" (58 chars ✅)
 export const metadata: Metadata = {
-  title: "Immigration Blog — US Visa Updates, Tips & Guides 2026",
+  title: "Immigration Blog & Visa Updates 2026",
   description:
-    "Stay informed with the latest U.S. immigration news, EB-1A, EB-2 NIW, EB-5, E-2 visa updates, Green Card tips, and expert immigration guides for 2026.",
+    "Latest US immigration news, EB-1A, EB-2 NIW, EB-5 & E-2 visa updates, Green Card tips, and expert guides for 2026 applicants.",
   keywords: [
     "US immigration blog",
     "visa updates 2026",
@@ -16,13 +17,13 @@ export const metadata: Metadata = {
     "green card tips",
     "immigration news 2026",
     "H-1B visa changes",
-    "O-1 visa guide",
   ],
   alternates: {
     canonical: "https://adskillconsultancy.com/blog",
   },
   openGraph: {
-    title: "Immigration Blog — US Visa Updates, Tips & Guides 2026",
+    title: "Immigration Blog & Visa Updates 2026",
+    siteName: "AdSkill Consultancy",
     description:
       "Expert immigration insights — EB-1A, EB-2 NIW, EB-5, E-2, H-1B, O-1, Green Card guides and 2026 policy updates.",
     url: "https://adskillconsultancy.com/blog",

@@ -18,27 +18,33 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const service = getService(id);
   if (!service) return { title: "Service Not Found" };
 
-  const description = service.overview.substring(0, 155) + (service.overview.length > 155 ? "…" : "");
+  // Keep description under 155 chars
+  const rawDesc = service.overview;
+  const description = rawDesc.length > 155 ? rawDesc.substring(0, 152) + "…" : rawDesc;
+
+  // Short title — template appends "| AdSkill Consultancy"
+  // e.g. "EB-1A Extraordinary Ability" (28 chars) → 49 total ✅
+  const shortTitle = service.title.length > 38
+    ? service.title.substring(0, 35) + "…"
+    : service.title;
+
   const url = `${BASE_URL}/services/${id}`;
 
   return {
-    title: `${service.title} — US Immigration Service`,
+    title: shortTitle,
     description,
     keywords: [
       service.title,
-      `${service.title} visa`,
       `${service.title} consultant`,
       "US immigration service",
       "immigration consultant New York",
       "green card pathway",
-      "employment based visa",
     ],
-    alternates: {
-      canonical: url,
-    },
+    alternates: { canonical: url },
     openGraph: {
-      title: `${service.title} | AdSkill Consultancy`,
-      description,
+      title: `${shortTitle} | AdSkill Consultancy`,
+      siteName: "AdSkill Consultancy",
+      description: description.length > 120 ? description.substring(0, 117) + "…" : description,
       url,
       type: "website",
       images: [
@@ -52,8 +58,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.title} | AdSkill Consultancy`,
-      description,
+      title: `${shortTitle} | AdSkill Consultancy`,
+      description: description.length > 120 ? description.substring(0, 117) + "…" : description,
       images: [`${BASE_URL}/adskillconsultancy.png`],
     },
   };
