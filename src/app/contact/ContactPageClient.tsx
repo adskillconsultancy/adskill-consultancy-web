@@ -296,7 +296,7 @@ export default function ContactPageClient() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="AdSkill Consultancy Location"
-                  className="grayscale hover:grayscale-0 transition-all duration-700"
+                  className="transition-all duration-700"
                 />
               </div>
             </div>
