@@ -60,6 +60,8 @@ export default function Home() {
           sizes="100vw"
           className="object-cover grayscale opacity-10"
           priority
+          fetchPriority="high"
+          quality={60}
         />
         {/* Subtle Grid Pattern */}
         <div 
@@ -143,8 +145,9 @@ export default function Home() {
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
                 alt="Expert Consultant"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 80vw, 40vw"
                 className="object-cover"
+                quality={70}
               />
             </div>
 

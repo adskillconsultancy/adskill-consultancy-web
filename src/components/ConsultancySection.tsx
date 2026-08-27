@@ -105,6 +105,7 @@ export default function ConsultancySection() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
+                quality={60}
               />
               {/* Dark slide-down overlay on hover/click */}
               <div className="absolute top-0 left-0 w-full h-full bg-black/40 -translate-y-full group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500 ease-in-out"></div>

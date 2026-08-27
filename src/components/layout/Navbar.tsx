@@ -119,7 +119,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/adskillconsultancy",
+    href: "https://www.instagram.com/adskillconsultancyinc/",
     icon: IconInstagram,
   },
   {

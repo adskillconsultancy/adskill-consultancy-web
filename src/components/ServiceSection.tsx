@@ -207,8 +207,9 @@ export default function ServiceSection() {
                   src={defaultImages[index % defaultImages.length]}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 50vw, 30vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:grayscale"
+                  quality={60}
                 />
               </div>
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
