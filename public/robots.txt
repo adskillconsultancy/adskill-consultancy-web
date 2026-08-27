@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow internal/API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /not-found
+
+# Sitemap location
+Sitemap: https://adskillconsultancy.com/sitemap.xml

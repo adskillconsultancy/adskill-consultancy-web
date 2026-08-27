@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarClock, CheckCircle2, TrendingUp, Users } from "lucide-react";
@@ -9,9 +10,42 @@ import TeamSection from "@/components/TeamSection";
 import BlogSection from "@/components/BlogSection";
 import TypingAnimation from "@/components/TypingAnimation";
 import SuccessStoriesSection from "@/components/SuccessStoriesSection";
+import { localBusinessSchema, jsonLdScript } from "@/lib/jsonld";
+
+export const metadata: Metadata = {
+  title: "Expert US Immigration Consultancy — EB-1A, EB-2 NIW, EB-5, E-2 Visa",
+  description:
+    "AdSkill Consultancy Inc. helps professionals and investors navigate US employment-based visa pathways. EB-1A, EB-2 NIW, EB-5, E-2, Green Card. 5,000+ clients. 98% success rate. Based in Jackson Heights, NY.",
+  keywords: [
+    "US immigration consultancy",
+    "immigration consultant Jackson Heights NY",
+    "EB-1A visa consultant",
+    "EB-2 NIW green card",
+    "EB-5 investor visa",
+    "E-2 investor visa",
+    "immigration lawyer New York",
+    "green card consultant",
+  ],
+  alternates: {
+    canonical: "https://adskillconsultancy.com",
+  },
+  openGraph: {
+    title: "AdSkill Consultancy — Expert US Immigration & Visa Consultancy",
+    description:
+      "5,000+ clients helped. 98% success rate. Expert guidance on EB-1A, EB-2 NIW, EB-5, E-2, and all US visa pathways.",
+    url: "https://adskillconsultancy.com",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
+    <>
+    {/* LocalBusiness JSON-LD for homepage */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: jsonLdScript(localBusinessSchema()) }}
+    />
     <main className="min-h-screen bg-[#f8f9fa] relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -168,5 +202,6 @@ export default function Home() {
       <TeamSection />
       <BlogSection />
     </main>
+    </>  
   );
 }
