@@ -76,7 +76,11 @@ export default function BlogPageClient() {
           <div className="w-full lg:w-[70%]">
             <div className="grid md:grid-cols-2 gap-8">
               {recentBlogs.map((blog) => (
-                <div key={blog.id} className="group relative bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <Link
+                  key={blog.id}
+                  href={`/blog/${blog.id}`}
+                  className="group relative bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+                >
                   <div className="relative w-full h-60 overflow-hidden bg-gray-200">
                     <Image
                       src={blog.image}
@@ -91,20 +95,14 @@ export default function BlogPageClient() {
                   </div>
                   <div className="p-6 flex flex-col grow">
                     <h2 className="text-xl font-bold text-brand-dark mb-4 leading-snug line-clamp-2 group-hover:text-brand-primary transition-colors grow">
-                      <Link href={`/blog/${blog.id}`}>
-                        {blog.title}
-                      </Link>
+                      {blog.title}
                     </h2>
-                    <Link
-                      href={`/blog/${blog.id}`}
-                      aria-label={`Read full article: ${blog.title}`}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-brand-dark group-hover:text-brand-primary transition-colors mt-auto pt-4 border-t border-gray-100"
-                    >
+                    <span className="inline-flex items-center gap-2 text-sm font-bold text-brand-dark group-hover:text-brand-primary transition-colors mt-auto pt-4 border-t border-gray-100">
                       Read Full Article
-                      <ArrowRight size={16} />
-                    </Link>
+                      <ArrowRight size={16} aria-hidden="true" />
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

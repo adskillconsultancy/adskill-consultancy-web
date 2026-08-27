@@ -75,27 +75,29 @@ export default function BlogSection() {
               }}>
               {recentBlogs.map((blog) => (
                 <div key={blog.id} className="shrink-0 px-2 group" style={{ width: `${pct}%` }}>
-                  <div className="relative w-full aspect-4/3 overflow-hidden rounded-t-xl bg-gray-200">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
-                  </div>
-                  <div className="relative -mt-12 mx-3 bg-white p-5 sm:p-6 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] z-10 group-hover:shadow-[0_10px_40px_rgba(0,0,0,0.12)] transition-shadow">
-                    <h3 className="text-lg font-bold text-brand-dark mb-3 leading-snug line-clamp-2 group-hover:text-brand-primary transition-colors">
-                      <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
-                    </h3>
-                    <Link
-                      href={`/blog/${blog.id}`}
-                      aria-label={`Read full article: ${blog.title}`}
-                      className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary group-hover:gap-2.5 transition-all">
-                      Read More
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
+                  <Link
+                    href={`/blog/${blog.id}`}
+                    className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-xl"
+                  >
+                    <div className="relative w-full aspect-4/3 overflow-hidden rounded-t-xl bg-gray-200">
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    </div>
+                    <div className="relative -mt-12 mx-3 bg-white p-5 sm:p-6 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] z-10 group-hover:shadow-[0_10px_40px_rgba(0,0,0,0.12)] transition-shadow">
+                      <h3 className="text-lg font-bold text-brand-dark mb-3 leading-snug line-clamp-2 group-hover:text-brand-primary transition-colors">
+                        {blog.title}
+                      </h3>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-primary group-hover:gap-2.5 transition-all">
+                        Read Article
+                        <ArrowRight size={14} aria-hidden="true" />
+                      </span>
+                    </div>
+                  </Link>
                 </div>
               ))}
             </div>
