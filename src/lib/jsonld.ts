@@ -32,8 +32,8 @@ export function organizationSchema() {
       latitude: 40.7468,
       longitude: -73.8912,
     },
-    telephone: "+1-646-772-8544",
-    email: "adskillconsultancyinc@gmail.com",
+    telephone: "+1-425-540-7996",
+    email: "admin@adskillconsultancy.com",
     areaServed: {
       "@type": "Country",
       name: "United States",
@@ -210,8 +210,8 @@ export function localBusinessSchema() {
     image: `${BASE_URL}/adskillconsultancy.png`,
     "@id": `${BASE_URL}/#localbusiness`,
     url: BASE_URL,
-    telephone: "+1-646-772-8544",
-    email: "adskillconsultancyinc@gmail.com",
+    telephone: "+1-425-540-7996",
+    email: "admin@adskillconsultancy.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "37-13 74th Street, Floor 2",

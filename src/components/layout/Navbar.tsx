@@ -195,39 +195,78 @@ export default function Navbar() {
                   className={cn(
                     "absolute left-0 top-full shadow-xl rounded-b-lg transition-all duration-300 bg-white border border-gray-100 opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto p-4",
                     link.label === "Services"
-                      ? "w-150 grid grid-cols-2 gap-x-4 gap-y-2"
+                      ? "w-[600px] flex flex-col"
                       : "min-w-60 flex flex-col gap-1",
                   )}
                   role="menu">
-                  {link.children.map((child) => (
-                    <li
-                      key={child.href}
-                      role="none"
-                      className={cn(
-                        "relative",
-                        child.label === "All Services" &&
-                          link.label === "Services"
-                          ? "col-span-2 mb-2 pb-2 border-b border-gray-100"
-                          : "",
-                      )}>
-                      <Link
-                        href={child.href}
-                        role="menuitem"
-                        className={cn(
-                          "group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300",
-                          child.label === "All Services" &&
-                            "text-brand-dark font-bold bg-gray-50",
-                        )}>
-                        <span className="group-hover/item:translate-x-1 transition-transform">
-                          {child.label}
-                        </span>
-                        <ChevronRight
-                          size={14}
-                          className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary"
-                        />
-                      </Link>
-                    </li>
-                  ))}
+                  {link.label === "Services" ? (
+                    <>
+                      <li role="none" className="mb-2 pb-2 border-b border-gray-100">
+                        <Link
+                          href={link.children[0].href}
+                          role="menuitem"
+                          className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-bold text-brand-dark bg-gray-50 hover:bg-brand-primary/5 rounded-lg transition-all duration-300"
+                        >
+                          <span className="group-hover/item:translate-x-1 transition-transform">
+                            {link.children[0].label}
+                          </span>
+                          <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
+                        </Link>
+                      </li>
+                      <li role="none" className="grid grid-cols-2 gap-x-4">
+                        <ul className="flex flex-col">
+                          {link.children.slice(1, 6).map((child) => (
+                            <li key={child.href} role="none" className="relative">
+                              <Link
+                                href={child.href}
+                                role="menuitem"
+                                className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300"
+                              >
+                                <span className="group-hover/item:translate-x-1 transition-transform">
+                                  {child.label}
+                                </span>
+                                <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <ul className="flex flex-col">
+                          {link.children.slice(6).map((child) => (
+                            <li key={child.href} role="none" className="relative">
+                              <Link
+                                href={child.href}
+                                role="menuitem"
+                                className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300"
+                              >
+                                <span className="group-hover/item:translate-x-1 transition-transform">
+                                  {child.label}
+                                </span>
+                                <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    </>
+                  ) : (
+                    link.children.map((child) => (
+                      <li key={child.href} role="none" className="relative">
+                        <Link
+                          href={child.href}
+                          role="menuitem"
+                          className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300"
+                        >
+                          <span className="group-hover/item:translate-x-1 transition-transform">
+                            {child.label}
+                          </span>
+                          <ChevronRight
+                            size={14}
+                            className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary"
+                          />
+                        </Link>
+                      </li>
+                    ))
+                  )}
                 </ul>
               </>
             ) : (
@@ -249,7 +288,7 @@ export default function Navbar() {
 
       {/* Right: phone + CTA */}
       <div className="hidden lg:flex items-center gap-6 ml-auto shrink-0">
-        <a href="tel:+16467728544" className="flex items-center gap-3 group">
+        <a href="tel:+14255407996" className="flex items-center gap-3 group">
           <span className="flex items-center justify-center w-11 h-11 rounded-full bg-brand-primary text-brand-dark shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-110">
             <Phone
               size={18}
@@ -261,8 +300,9 @@ export default function Navbar() {
             <span className="text-[10px] font-bold uppercase tracking-widest text-brand-teal">
               PHONE:
             </span>
-            <span className="text-sm font-bold text-gray-900 group-hover:text-brand-secondary transition-colors">
-              +1 646-772-8544
+            <span className="text-sm font-bold text-gray-900 group-hover:text-brand-secondary transition-colors flex flex-col">
+              <span>+1 425-540-7996</span>
+              <span>+1 646-881-8711</span>
             </span>
           </div>
         </a>
@@ -295,10 +335,10 @@ export default function Navbar() {
           <div className="mx-auto max-w-360 flex items-stretch relative z-10">
             <div className="flex items-center gap-6 px-6 py-2.5 flex-1 text-sm bg-white">
               <a
-                href="mailto:adskillconsultancyinc@gmail.com"
+                href="mailto:admin@adskillconsultancy.com"
                 className="flex items-center gap-2 hover:text-brand-primary transition-colors font-medium text-gray-700">
                 <Mail size={16} className="text-brand-teal" />
-                adskillconsultancyinc@gmail.com
+                admin@adskillconsultancy.com
               </a>
               <span className="flex items-center gap-2 font-medium text-gray-700">
                 <MapPin size={16} className="text-brand-teal" />
@@ -391,14 +431,23 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-3">
-              <a
-                href="tel:+16467728544"
-                className="flex items-center gap-3 py-2 text-sm font-medium text-gray-700">
-                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-brand-secondary text-white shrink-0">
+              <div className="flex items-start gap-3 py-2 text-sm font-medium text-gray-700">
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-brand-secondary text-white shrink-0 mt-0.5">
                   <Phone size={15} />
                 </span>
-                +1 646-772-8544
-              </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+14255407996"
+                    className="hover:text-brand-secondary">
+                    +1 425-540-7996
+                  </a>
+                  <a
+                    href="tel:+16468818711"
+                    className="hover:text-brand-secondary">
+                    +1 646-881-8711
+                  </a>
+                </div>
+              </div>
             </li>
             <li className="pt-2">
               <Link

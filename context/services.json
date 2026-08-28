@@ -1,106 +1,5 @@
 [
   {
-    "id": "e-2",
-    "title": "E-2 Investor Visa",
-    "tagline": "Start or Invest in a U.S. Business and Live in the United States Legally",
-    "overview": "The E-2 Treaty Investor Visa allows eligible foreign nationals from treaty countries to live and work in the United States by investing in a qualifying U.S. business — ideal for entrepreneurs, investors, and business owners who want to establish or purchase a business in the United States.",
-    "short_description": "Invest in U.S. business from treaty country. Live and work legally while operating enterprise.",
-    "quick_facts": {
-      "Typical Minimum Investment": "$100K+",
-      "Processing Time": "4 – 6 Months",
-      "Professional Fee": "$15,000",
-      "Business Ownership Required": "50%+"
-    },
-    "benefits": [
-      {
-        "title": "Live & Work Legally",
-        "description": "Legally live and work in the United States while actively directing your business operations."
-      },
-      {
-        "title": "Start or Buy a Business",
-        "description": "Start a new company, purchase an existing U.S. business, or invest in one where you hold operational control."
-      },
-      {
-        "title": "Spouse Work Authorization",
-        "description": "Your spouse may receive E-2 dependent status and may be eligible to work in the United States."
-      },
-      {
-        "title": "Children's Education",
-        "description": "Unmarried children under 21 may attend U.S. schools, colleges, and universities on dependent status."
-      },
-      {
-        "title": "Renewable Status",
-        "description": "Renewable as long as the business remains active and compliant — no fixed maximum stay period."
-      },
-      {
-        "title": "Faster Processing",
-        "description": "Faster processing compared to many other business immigration options, with both consular and USCIS pathways."
-      }
-    ],
-    "eligibility": [
-      {
-        "title": "Treaty Country Citizenship",
-        "description": "You must be a citizen of a country that has an E-2 treaty with the United States, holding a valid passport from an eligible treaty country."
-      },
-      {
-        "title": "Substantial Investment",
-        "description": "You must invest a substantial amount into a real and active U.S. business. Many successful E-2 cases involve approximately $100,000 or more depending on the business type."
-      },
-      {
-        "title": "Investment Must Be At Risk",
-        "description": "The E-2 investment must be committed and at risk for the purpose of generating profit — funds must be spent or legally committed before the visa decision."
-      },
-      {
-        "title": "Ownership or Operational Control",
-        "description": "You must generally own at least 50% of the business or have sufficient operational control to direct and manage the enterprise."
-      },
-      {
-        "title": "Active and Legitimate Business",
-        "description": "The business must be a real, active, and operating commercial enterprise. Passive investments like property holdings or stocks typically do not qualify."
-      },
-      {
-        "title": "Non-Marginal Enterprise",
-        "description": "The business should generate more than minimal income and ideally support job creation and economic activity in the United States."
-      },
-      {
-        "title": "Intent to Depart",
-        "description": "The applicant must show an intention to depart the United States when E-2 status ends, though the visa may be renewed if the business continues to qualify."
-      }
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Business Selection & Investment Planning",
-        "description": "We help you evaluate business options, investment structure, ownership model, and visa suitability. You may choose to start a new company, purchase an existing business, or invest in a qualifying U.S. enterprise."
-      },
-      {
-        "step": "02",
-        "title": "Business Setup & Strategy",
-        "description": "Our team assists with business planning, company formation guidance, investment documentation, operational structure, and preparation of a strong E-2 business strategy."
-      },
-      {
-        "step": "03",
-        "title": "Document Preparation",
-        "description": "A successful E-2 application requires detailed documentation — including proof of funds, source of investment, business plan, ownership documents, lease agreements, invoices, contracts, and licenses."
-      },
-      {
-        "step": "04",
-        "title": "E-2 Application Filing",
-        "description": "Depending on your situation, the E-2 application may be filed through a U.S. consulate abroad or, in certain cases, through USCIS for a change of status inside the United States."
-      },
-      {
-        "step": "05",
-        "title": "Embassy Interview Preparation",
-        "description": "For consular cases, the applicant must attend an interview at the U.S. Embassy or Consulate. We provide structured interview preparation to help you explain your business and investment plans confidently."
-      },
-      {
-        "step": "06",
-        "title": "Visa Approval & U.S. Entry",
-        "description": "Once approved, you may enter the United States to direct, operate, and grow your E-2 business. Your spouse and children may also enter as E-2 dependents."
-      }
-    ]
-  },
-  {
     "id": "eb-1a",
     "title": "EB-1A Extraordinary Ability",
     "tagline": "Achieve Your U.S. Green Card Through Extraordinary Ability (EB-1A)",
@@ -460,6 +359,107 @@
     ]
   },
   {
+    "id": "e-2",
+    "title": "E-2 Investor Visa",
+    "tagline": "Start or Invest in a U.S. Business and Live in the United States Legally",
+    "overview": "The E-2 Treaty Investor Visa allows eligible foreign nationals from treaty countries to live and work in the United States by investing in a qualifying U.S. business — ideal for entrepreneurs, investors, and business owners who want to establish or purchase a business in the United States.",
+    "short_description": "Invest in U.S. business from treaty country. Live and work legally while operating enterprise.",
+    "quick_facts": {
+      "Typical Minimum Investment": "$100K+",
+      "Processing Time": "4 – 6 Months",
+      "Professional Fee": "$15,000",
+      "Business Ownership Required": "50%+"
+    },
+    "benefits": [
+      {
+        "title": "Live & Work Legally",
+        "description": "Legally live and work in the United States while actively directing your business operations."
+      },
+      {
+        "title": "Start or Buy a Business",
+        "description": "Start a new company, purchase an existing U.S. business, or invest in one where you hold operational control."
+      },
+      {
+        "title": "Spouse Work Authorization",
+        "description": "Your spouse may receive E-2 dependent status and may be eligible to work in the United States."
+      },
+      {
+        "title": "Children's Education",
+        "description": "Unmarried children under 21 may attend U.S. schools, colleges, and universities on dependent status."
+      },
+      {
+        "title": "Renewable Status",
+        "description": "Renewable as long as the business remains active and compliant — no fixed maximum stay period."
+      },
+      {
+        "title": "Faster Processing",
+        "description": "Faster processing compared to many other business immigration options, with both consular and USCIS pathways."
+      }
+    ],
+    "eligibility": [
+      {
+        "title": "Treaty Country Citizenship",
+        "description": "You must be a citizen of a country that has an E-2 treaty with the United States, holding a valid passport from an eligible treaty country."
+      },
+      {
+        "title": "Substantial Investment",
+        "description": "You must invest a substantial amount into a real and active U.S. business. Many successful E-2 cases involve approximately $100,000 or more depending on the business type."
+      },
+      {
+        "title": "Investment Must Be At Risk",
+        "description": "The E-2 investment must be committed and at risk for the purpose of generating profit — funds must be spent or legally committed before the visa decision."
+      },
+      {
+        "title": "Ownership or Operational Control",
+        "description": "You must generally own at least 50% of the business or have sufficient operational control to direct and manage the enterprise."
+      },
+      {
+        "title": "Active and Legitimate Business",
+        "description": "The business must be a real, active, and operating commercial enterprise. Passive investments like property holdings or stocks typically do not qualify."
+      },
+      {
+        "title": "Non-Marginal Enterprise",
+        "description": "The business should generate more than minimal income and ideally support job creation and economic activity in the United States."
+      },
+      {
+        "title": "Intent to Depart",
+        "description": "The applicant must show an intention to depart the United States when E-2 status ends, though the visa may be renewed if the business continues to qualify."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Business Selection & Investment Planning",
+        "description": "We help you evaluate business options, investment structure, ownership model, and visa suitability. You may choose to start a new company, purchase an existing business, or invest in a qualifying U.S. enterprise."
+      },
+      {
+        "step": "02",
+        "title": "Business Setup & Strategy",
+        "description": "Our team assists with business planning, company formation guidance, investment documentation, operational structure, and preparation of a strong E-2 business strategy."
+      },
+      {
+        "step": "03",
+        "title": "Document Preparation",
+        "description": "A successful E-2 application requires detailed documentation — including proof of funds, source of investment, business plan, ownership documents, lease agreements, invoices, contracts, and licenses."
+      },
+      {
+        "step": "04",
+        "title": "E-2 Application Filing",
+        "description": "Depending on your situation, the E-2 application may be filed through a U.S. consulate abroad or, in certain cases, through USCIS for a change of status inside the United States."
+      },
+      {
+        "step": "05",
+        "title": "Embassy Interview Preparation",
+        "description": "For consular cases, the applicant must attend an interview at the U.S. Embassy or Consulate. We provide structured interview preparation to help you explain your business and investment plans confidently."
+      },
+      {
+        "step": "06",
+        "title": "Visa Approval & U.S. Entry",
+        "description": "Once approved, you may enter the United States to direct, operate, and grow your E-2 business. Your spouse and children may also enter as E-2 dependents."
+      }
+    ]
+  },
+  {
     "id": "l1a",
     "title": "L1A (Executive & Manager Transfer Visa)",
     "tagline": "Transfer Key Executives and Managers to the U.S.",
@@ -518,6 +518,161 @@
         "step": "03",
         "title": "Visa Application",
         "description": "Once the petition is approved, the employee applies for the L-1A visa at a U.S. Embassy or Consulate."
+      }
+    ]
+  },
+  {
+    "id": "l1b",
+    "title": "L-1B Specialized Knowledge",
+    "tagline": "Transfer Employees with Specialized Knowledge to the U.S.",
+    "overview": "The L-1B nonimmigrant visa enables a U.S. employer to transfer a professional employee with specialized knowledge relating to the organization's interests from one of its affiliated foreign offices to one of its offices in the United States.",
+    "short_description": "Transfer employees with specialized knowledge of your company's products, services, or procedures.",
+    "quick_facts": {
+      "Visa Type": "Nonimmigrant Work Visa (Dual Intent)",
+      "Target Group": "Specialized Knowledge Employees",
+      "Maximum Stay": "Up to 5 Years",
+      "Spouse Benefits": "L-2 Spouse may work in the U.S."
+    },
+    "benefits": [
+      {
+        "title": "Transfer to U.S. Company Branch",
+        "description": "Seamlessly move critical specialized knowledge employees from a foreign branch to the U.S. headquarters or affiliate."
+      },
+      {
+        "title": "Live & Work in the U.S.",
+        "description": "Work legally in the U.S. while providing essential specialized knowledge to your company's operations."
+      },
+      {
+        "title": "Spouse Work Authorization",
+        "description": "L-2 spouses are eligible to apply for work authorization in the United States."
+      }
+    ],
+    "eligibility": [
+      {
+        "title": "Qualifying Relationship",
+        "description": "There must be a qualifying relationship between the U.S. company and the foreign entity."
+      },
+      {
+        "title": "One Year Continuous Employment",
+        "description": "The employee must have worked for the foreign company continuously for at least one year within the three years preceding admission."
+      },
+      {
+        "title": "Specialized Knowledge",
+        "description": "The employee must be entering the U.S. to provide services that involve specialized knowledge of the company's product, service, research, equipment, techniques, management, or other interests."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Establish Qualifying Relationship",
+        "description": "Document the corporate relationship between the foreign entity and the U.S. office."
+      },
+      {
+        "step": "02",
+        "title": "File Form I-129",
+        "description": "The U.S. employer files the L-1B petition with USCIS on behalf of the employee."
+      }
+    ]
+  },
+  {
+    "id": "o1a",
+    "title": "O-1A Extraordinary Ability",
+    "tagline": "For Individuals with Extraordinary Ability in Sciences, Education, Business, or Athletics",
+    "overview": "The O-1A nonimmigrant visa is for the individual who possesses extraordinary ability in the sciences, arts, education, business, or athletics, or who has a demonstrated record of extraordinary achievement in the motion picture or television industry.",
+    "short_description": "Visa for top-tier professionals in science, business, education, or athletics with sustained acclaim.",
+    "quick_facts": {
+      "Visa Type": "Nonimmigrant Work Visa (Dual Intent)",
+      "Target Group": "Top Tier Professionals",
+      "Sponsor Required": "Yes (U.S. Employer or Agent)",
+      "Initial Stay": "Up to 3 Years (Renewable)"
+    },
+    "benefits": [
+      {
+        "title": "Work in the U.S.",
+        "description": "Live and work in the United States in your area of extraordinary ability."
+      },
+      {
+        "title": "Family Dependent Benefits",
+        "description": "Your spouse and unmarried children under 21 can join you on O-3 visas and attend school."
+      },
+      {
+        "title": "Unlimited Renewals",
+        "description": "The visa can be renewed indefinitely in 1-year increments as long as you continue to work in your field."
+      }
+    ],
+    "eligibility": [
+      {
+        "title": "Extraordinary Ability",
+        "description": "Must demonstrate extraordinary ability by sustained national or international acclaim."
+      },
+      {
+        "title": "Major Award or Criteria",
+        "description": "Must have received a major internationally recognized award (e.g., Nobel Prize) or meet at least 3 alternative criteria."
+      },
+      {
+        "title": "U.S. Employer or Agent",
+        "description": "Must have a U.S. employer or agent willing to sponsor the petition."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Evidence Gathering",
+        "description": "Collect evidence of your extraordinary ability, such as awards, publications, memberships, and press coverage."
+      },
+      {
+        "step": "02",
+        "title": "File Form I-129",
+        "description": "The U.S. sponsor files Form I-129 with USCIS on your behalf."
+      }
+    ]
+  },
+  {
+    "id": "o1b",
+    "title": "O-1B Extraordinary Arts",
+    "tagline": "For Exceptional Artists and Entertainers",
+    "overview": "The O-1B visa is for individuals with an extraordinary ability in the arts or extraordinary achievement in motion picture or television industry. You must be recognized as prominent in your field, demonstrated by a record of acclaim.",
+    "short_description": "Visa for highly acclaimed artists, musicians, actors, and entertainers.",
+    "quick_facts": {
+      "Visa Type": "Nonimmigrant Work Visa",
+      "Target Group": "Artists & Entertainers",
+      "Sponsor Required": "Yes (U.S. Employer or Agent)",
+      "Initial Stay": "Up to 3 Years (Renewable)"
+    },
+    "benefits": [
+      {
+        "title": "Perform and Work in the U.S.",
+        "description": "Pursue your artistic or entertainment career in the United States."
+      },
+      {
+        "title": "Family Dependent Benefits",
+        "description": "Your spouse and children under 21 can accompany you on O-3 visas."
+      },
+      {
+        "title": "Unlimited Renewals",
+        "description": "The visa can be extended in 1-year increments to complete ongoing events or activities."
+      }
+    ],
+    "eligibility": [
+      {
+        "title": "Distinction in the Arts",
+        "description": "Must demonstrate a high level of achievement in the arts evidenced by a degree of skill and recognition substantially above that ordinarily encountered."
+      },
+      {
+        "title": "Major Award or Criteria",
+        "description": "Must have been nominated for or received a significant national or international award or meet at least 3 alternative criteria."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Evidence Gathering",
+        "description": "Compile a portfolio of your work, critical reviews, awards, box office receipts, and expert testimonials."
+      },
+      {
+        "step": "02",
+        "title": "File Form I-129",
+        "description": "Your U.S. sponsor submits the O-1B petition to USCIS."
       }
     ]
   },

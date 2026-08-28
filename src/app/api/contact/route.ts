@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     // Configure the email content
     const mailOptions = {
       from: process.env.EMAIL_USER, // The robot sender (your personal email)
-      to: 'adskillconsultancyinc@gmail.com', // The destination (your official company email)
+      to: 'admin@adskillconsultancy.com', // The destination (your official company email)
       replyTo: email,               // Allows you to hit "Reply" and email the user back directly
       subject: `🚨 Website Inquiry: ${subject || 'New Message'}`,
       text: `

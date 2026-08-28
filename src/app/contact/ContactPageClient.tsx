@@ -51,9 +51,9 @@ const socials = [
 
 const contactInfo = [
   { icon: MapPin, label: "Address", value: "37-13 74th Street, Floor 2<br/>Jackson Heights, NY 11372", href: "https://maps.google.com/?q=37-13+74th+Street+Jackson+Heights+NY+11372" },
-  { icon: Phone, label: "Phone", value: "+1 646-772-8544", href: "tel:+16467728544" },
+  { icon: Phone, label: "Phone", value: null, jsxValue: <div className="flex flex-col gap-1"><a href="tel:+14255407996" className="hover:text-brand-primary transition-colors">+1 425-540-7996</a><a href="tel:+16468818711" className="hover:text-brand-primary transition-colors">+1 646-881-8711</a></div>, href: "" },
   { icon: MessageCircle, label: "WhatsApp", value: "+1 646-772-8544", href: "https://wa.me/16467728544" },
-  { icon: Mail, label: "Email", value: "adskillconsultancyinc@gmail.com", href: "mailto:adskillconsultancyinc@gmail.com" },
+  { icon: Mail, label: "Email", value: "admin@adskillconsultancy.com", href: "mailto:admin@adskillconsultancy.com" },
 ];
 
 export default function ContactPageClient() {
@@ -171,20 +171,29 @@ export default function ContactPageClient() {
               {/* Left Column: Contact Cards */}
               <div className="lg:col-span-4 flex flex-col gap-6">
                 <div className="grid gap-4">
-                  {contactInfo.map((item, i) => (
-                    <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-brand-primary/20 group-hover:bg-brand-primary transition-colors duration-300" />
-                      <div className="flex items-start gap-5">
-                        <div className="shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform duration-300">
-                          <item.icon size={22} strokeWidth={2.5} />
+                  {contactInfo.map((item, i) => {
+                    const CardWrapper = item.href ? "a" : "div";
+                    const wrapperProps = item.href ? { href: item.href, target: "_blank", rel: "noopener noreferrer" } : {};
+                    
+                    return (
+                      <CardWrapper key={item.label} {...wrapperProps} className="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-brand-primary/20 group-hover:bg-brand-primary transition-colors duration-300" />
+                        <div className="flex items-start gap-5">
+                          <div className="shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform duration-300">
+                            <item.icon size={22} strokeWidth={2.5} />
+                          </div>
+                          <div>
+                            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">{item.label}</p>
+                            {item.jsxValue ? (
+                              <div className="text-brand-dark font-medium text-sm leading-relaxed">{item.jsxValue}</div>
+                            ) : (
+                              <p className="text-brand-dark font-medium text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.value as string }} />
+                            )}
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">{item.label}</p>
-                          <p className="text-brand-dark font-medium text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.value }} />
-                        </div>
-                      </div>
-                    </a>
-                  ))}
+                      </CardWrapper>
+                    );
+                  })}
                 </div>
 
                 {/* Social Links */}

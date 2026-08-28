@@ -128,13 +128,16 @@ export default function Footer() {
                 <MapPin className="text-brand-primary shrink-0 mt-0.5" size={18} />
                 <span>37-13 74th Street, Floor 2<br/>Jackson Heights, NY 11372</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Phone className="text-brand-primary shrink-0" size={18} />
-                <a href="tel:+16467728544" className="hover:text-white transition-colors">+1 646-772-8544</a>
+              <li className="flex items-start gap-3 text-gray-400">
+                <Phone className="text-brand-primary shrink-0 mt-0.5" size={18} />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+14255407996" className="hover:text-white transition-colors">+1 425-540-7996</a>
+                  <a href="tel:+16468818711" className="hover:text-white transition-colors">+1 646-881-8711</a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-brand-primary shrink-0" />
-                <a href="mailto:adskillconsultancyinc@gmail.com" className="hover:text-white transition-colors">adskillconsultancyinc@gmail.com</a>
+                <a href="mailto:admin@adskillconsultancy.com" className="hover:text-white transition-colors">admin@adskillconsultancy.com</a>
               </li>
             </ul>
 

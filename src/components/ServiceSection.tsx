@@ -15,6 +15,9 @@ const defaultImages = [
   "/service/7.png",
   "/service/8.png",
   "/service/9.png",
+  "/service/10.png",
+  "/service/11.png",
+  "/service/12.png",
 ];
 
 export default function ServiceSection() {
