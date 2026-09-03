@@ -40,7 +40,7 @@ const NAV_LINKS = [
     label: "Success Story",
     href: "/success-stories",
   },
-  { label: "News", href: "/blog" },
+  { label: "News", href: "/news" },
   { label: "FAQs", href: "/faqs" },
   { label: "Contact", href: "/contact" },
 ];
@@ -201,47 +201,61 @@ export default function Navbar() {
                   role="menu">
                   {link.label === "Services" ? (
                     <>
-                      <li role="none" className="mb-2 pb-2 border-b border-gray-100">
+                      <li
+                        role="none"
+                        className="mb-2 pb-2 border-b border-gray-100">
                         <Link
                           href={link.children[0].href}
                           role="menuitem"
-                          className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-bold text-brand-dark bg-gray-50 hover:bg-brand-primary/5 rounded-lg transition-all duration-300"
-                        >
+                          className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-bold text-brand-dark bg-gray-50 hover:bg-brand-primary/5 rounded-lg transition-all duration-300">
                           <span className="group-hover/item:translate-x-1 transition-transform">
                             {link.children[0].label}
                           </span>
-                          <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
+                          <ChevronRight
+                            size={14}
+                            className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary"
+                          />
                         </Link>
                       </li>
                       <li role="none" className="grid grid-cols-2 gap-x-4">
                         <ul className="flex flex-col">
                           {link.children.slice(1, 6).map((child) => (
-                            <li key={child.href} role="none" className="relative">
+                            <li
+                              key={child.href}
+                              role="none"
+                              className="relative">
                               <Link
                                 href={child.href}
                                 role="menuitem"
-                                className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300"
-                              >
+                                className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300">
                                 <span className="group-hover/item:translate-x-1 transition-transform">
                                   {child.label}
                                 </span>
-                                <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
+                                <ChevronRight
+                                  size={14}
+                                  className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary"
+                                />
                               </Link>
                             </li>
                           ))}
                         </ul>
                         <ul className="flex flex-col">
                           {link.children.slice(6).map((child) => (
-                            <li key={child.href} role="none" className="relative">
+                            <li
+                              key={child.href}
+                              role="none"
+                              className="relative">
                               <Link
                                 href={child.href}
                                 role="menuitem"
-                                className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300"
-                              >
+                                className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300">
                                 <span className="group-hover/item:translate-x-1 transition-transform">
                                   {child.label}
                                 </span>
-                                <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary" />
+                                <ChevronRight
+                                  size={14}
+                                  className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-brand-secondary"
+                                />
                               </Link>
                             </li>
                           ))}
@@ -254,8 +268,7 @@ export default function Navbar() {
                         <Link
                           href={child.href}
                           role="menuitem"
-                          className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300"
-                        >
+                          className="group/item flex items-center justify-between px-4 py-3 text-[14px] font-medium text-gray-700 hover:text-brand-secondary rounded-lg hover:bg-brand-primary/5 transition-all duration-300">
                           <span className="group-hover/item:translate-x-1 transition-transform">
                             {child.label}
                           </span>

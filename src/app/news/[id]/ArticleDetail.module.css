@@ -1,0 +1,111 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #f8fafc;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  min-height: 100vh;
+}
+
+.backLink {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #f1f5f9;
+}
+
+.articleHeader {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badgeUSCIS {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badgeDHS {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.content p {
+  margin-bottom: 24px;
+}
+
+.content p:first-of-type {
+  font-size: 1.25rem;
+  color: #f1f5f9;
+}
+
+.externalLink {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.externalLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #7dd3fc;
+}
+
+.notFound {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.notFound h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}

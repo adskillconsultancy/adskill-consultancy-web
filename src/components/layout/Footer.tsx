@@ -55,7 +55,7 @@ export default function Footer() {
       <div className="max-w-360 mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           
           {/* Col 1: About & Logo */}
           <div className="flex flex-col gap-6">
@@ -112,6 +112,22 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-gray-400 hover:text-brand-primary hover:translate-x-1 transition-all inline-block">Contact Us</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Government Links */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
+              GOVERNMENT
+            </h3>
+            <ul className="flex flex-col gap-3 text-sm">
+              <li>
+                <Link href="/news?source=USCIS" className="text-gray-400 hover:text-brand-primary hover:translate-x-1 transition-all inline-block">USCIS News</Link>
+              </li>
+              <li>
+                <Link href="/news?source=DHS" className="text-gray-400 hover:text-brand-primary hover:translate-x-1 transition-all inline-block">Homeland Security</Link>
               </li>
             </ul>
           </div>
