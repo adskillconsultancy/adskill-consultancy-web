@@ -89,10 +89,12 @@ export default function TeamPage() {
 
       {/* Team Content Area */}
       <div className="max-w-360 mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {teamMembers.map((member) => (
-            <TeamCard key={member.id} member={member} />
-          ))}
+        <div className="flex justify-center">
+          <div className="w-full max-w-sm">
+            {teamMembers.map((member) => (
+              <TeamCard key={member.id} member={member} />
+            ))}
+          </div>
         </div>
       </div>
     </main>

@@ -1,6 +1,6 @@
 "use client";
 import { services } from "@/lib/services";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -23,6 +23,8 @@ const defaultImages = [
 export default function ServiceSection() {
   const loopServices = [...services, ...services, ...services];
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  /* Auto-scroll logic kept commented out for future use if needed
   const isHoveredRef = React.useRef(false);
   const isDraggingRef = React.useRef(false);
 
@@ -38,12 +40,9 @@ export default function ServiceSection() {
       const singleSetWidth = container.scrollWidth / 3;
 
       if (isDraggingRef.current) {
-        // User is swiping on mobile! Let them scroll natively.
-        // Sync our JS variables so when they let go, it resumes smoothly from where they are.
         currentScroll = container.scrollLeft;
         targetScroll = container.scrollLeft;
 
-        // Wrap around seamlessly if they swipe past the edge
         if (container.scrollLeft >= singleSetWidth) {
           container.scrollLeft -= singleSetWidth;
           currentScroll = container.scrollLeft;
@@ -55,19 +54,15 @@ export default function ServiceSection() {
         }
       } else {
         if (!isHoveredRef.current) {
-          targetScroll += 1.5; // Auto-scroll speed
+          targetScroll += 1.5;
         }
 
-        // Smooth lerp (momentum) scrolling
         currentScroll += (targetScroll - currentScroll) * 0.04;
 
-        // Infinite loop forwards
         if (currentScroll >= singleSetWidth) {
           currentScroll -= singleSetWidth;
           targetScroll -= singleSetWidth;
-        }
-        // Infinite loop backwards (if user scrolls left manually with mouse wheel)
-        else if (currentScroll <= 0) {
+        } else if (currentScroll <= 0) {
           currentScroll += singleSetWidth;
           targetScroll += singleSetWidth;
         }
@@ -83,10 +78,8 @@ export default function ServiceSection() {
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY !== 0) {
         e.preventDefault();
-        // Increased multiplier to 2.0 to compensate for the longer, smoother glide
         targetScroll += e.deltaY * 2.0;
 
-        // Limit manual mouse scrolling to the first 9 cards
         const singleSetWidth = container.scrollWidth / 3;
         const maxManualScroll = singleSetWidth - container.clientWidth;
         
@@ -101,6 +94,18 @@ export default function ServiceSection() {
       container.removeEventListener("wheel", handleWheel);
     };
   }, []);
+  */
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    // Scroll by width of one card + gap (card is ~450-600px + 24px gap)
+    const scrollAmount = container.clientWidth > 768 ? 624 : 320;
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="relative pt-12 pb-24 lg:pt-16 bg-[#f8f9fa] overflow-hidden">
@@ -129,6 +134,7 @@ export default function ServiceSection() {
               Immigration Made Simple
             </h2>
           </div>
+
           <div className="mt-8 lg:mt-0 relative hidden md:block">
             <svg
               className="absolute -top-12 right-10 w-12 h-12 text-brand-primary"
@@ -151,16 +157,29 @@ export default function ServiceSection() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full pb-12">
+      <div className="relative z-10 w-full pb-12 group/carousel">
+        {/* Left Navigation Button */}
+        <button
+          type="button"
+          onClick={() => scroll("left")}
+          aria-label="Previous services"
+          className="absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-brand-primary text-brand-dark shadow-xl border border-gray-200 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95">
+          <ArrowLeft className="w-6 h-6" />
+        </button>
+
+        {/* Right Navigation Button */}
+        <button
+          type="button"
+          onClick={() => scroll("right")}
+          aria-label="Next services"
+          className="absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 hover:bg-brand-primary text-brand-dark shadow-xl border border-gray-200 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95">
+          <ArrowRight className="w-6 h-6" />
+        </button>
+
         <div
           ref={scrollContainerRef}
-          className="flex gap-6 px-6 lg:px-12 overflow-x-auto"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          onMouseEnter={() => (isHoveredRef.current = true)}
-          onMouseLeave={() => (isHoveredRef.current = false)}
-          onTouchStart={() => (isDraggingRef.current = true)}
-          onTouchEnd={() => (isDraggingRef.current = false)}
-          onTouchCancel={() => (isDraggingRef.current = false)}>
+          className="flex gap-6 px-6 lg:px-12 overflow-x-auto scroll-smooth"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
           {loopServices.map((service, index) => (
             <Link
               key={`${service.id}-${index}`}

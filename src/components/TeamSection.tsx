@@ -13,27 +13,6 @@ export const teamMembers = [
     image: "/founder iamge.png",
     linkedin: "https://www.linkedin.com/in/adiiladnaan/",
   },
-  {
-    id: 2,
-    name: "Jacob Jones",
-    role: "Manager",
-    description: "Experienced manager leading cross-functional teams to deliver impactful business solutions globally.",
-    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Kristin Watson",
-    role: "Consultant",
-    description: "Expert consultant specializing in market analysis, business strategy, and client relations for rapid growth.",
-    image: "https://images.unsplash.com/photo-1550525811-e5869dd03032?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Bessie Cooper",
-    role: "Founder",
-    description: "Visionary founder driving innovation and strategic direction to achieve sustainable business success.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-  },
 ];
 
 const IconFacebook = ({ size = 18 }: { size?: number }) => (
@@ -165,10 +144,12 @@ export default function TeamSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member) => (
-            <TeamCard key={member.id} member={member} />
-          ))}
+        <div className="flex justify-center">
+          <div className="w-full max-w-sm">
+            {teamMembers.map((member) => (
+              <TeamCard key={member.id} member={member} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
